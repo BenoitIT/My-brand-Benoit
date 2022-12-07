@@ -99,7 +99,7 @@ a:hover{
     margin-bottom: -4px;
 
 }
-.material-icons{
+.menu-icon{
   color:white;
   margin-top: 4vh;
   visibility:hidden;
@@ -163,6 +163,7 @@ a:hover{
     gap:4vw;
     font-family: var(--base-font);
     margin-left: 17vw;
+    margin-top: -3vh;
     margin-right: 20vw;
      }
   .img-container{
@@ -615,7 +616,7 @@ a:hover{
   .menus{
     display:none;
   }
-  .material-icons{
+  .menu-icon{
     visibility:visible;
     margin-right: 10vw;
     margin-top:3vh;
@@ -630,7 +631,7 @@ a:hover{
   top:5vh;
   gap:2vh;
   margin-left: 10vw;
-  width:45vh;
+  width: 80vw;
   height:65vh;
    }
    .profile-container{
@@ -652,12 +653,13 @@ position: relative;
 .profile-decription h6:nth-child(odd){
   display: block;
   font-size: 2.4vh;
-  margin-left: 9vw;
-  text-shadow: 1px 1px 2px #000000;
-}
+  margin-left: 1vw;
+  text-align: center;
+  text-shadow: none;
+ }
 .profile-decription>h6 span{
   font-size:3vh;
-  margin-left:4vw;
+  margin-left:2vw;
   font-weight: 700;
   text-shadow: none;
 }
@@ -671,4 +673,221 @@ position: relative;
 .nav-home-container{
   height:40vh;
   }
-}
+  .img-container{
+    display: none;
+  }
+  .about{
+    margin-left: 10vw;
+    margin-top: -20vh;
+    font-size: 1.5vh;
+  }
+  .about-description{
+    margin-left: 1vw;
+  }
+  .about-description h1{
+   font-size: 4vh;
+    opacity: 95%;
+  }
+  h1>span{
+    border-bottom: 2px solid black;
+    margin-right:20px;
+    border-radius: 3px;
+  }
+  .about-description>h3{
+    font-size: 3vh;
+  }
+  .about-description>p{
+    margin-top:1rem;
+    font-size: 2vh;
+      }
+      .address{
+        display: flex;
+        justify-content: space-around;
+        margin-top: 3vh;
+      }
+      hr{
+        margin-top: 4vh;
+        height:3px;
+        border-radius: 3px;
+      }
+      .about-description>button{
+        padding:5px 20px 5px 20px;
+        border-radius:10px;
+        background-color: var(--main-background-color);
+        margin-left: 15vw;
+      }
+      #portifolio{
+       margin-top: -40vh;
+       height:80vh;
+      }
+      .projects{
+        display: flex;
+        flex-direction: column;
+      }
+      .projects:nth-child(2){
+        display:none;
+      }
+      .project-img img{
+        width:50vw;
+      }
+     .project-description{
+      font-family: var(--profile-description-font);
+      font-size: 2vh;
+      width:60vw;
+      margin-top: 1vh;
+     }
+     .project-description h3{
+      margin-top: -3vh;
+      }
+     .project-description p{
+      width: 70vw;
+      font-size: 2.4vh;
+      }
+      .project-description>button{
+        padding:2px 30px 2px 30px;
+        border-radius:5px;
+        margin-top:2vh;
+        }
+        .sectionskills-title>h1{
+          font-size: 4vh;
+        }
+        .sectionskills-title>h2{
+          font-size: 2.4vh;
+        }
+        .sectionskills-title>h6{
+          font-size: 2vh;
+        }
+       .skills-cards{
+        display: flex;
+        flex-direction: column;
+        margin-left: 10vw;
+        margin-top: 20vw;
+       }
+       #ui{
+        width:80vw;
+       }
+       .ui-card{
+        width:80vw;
+       }
+       .ux-footer{
+        display: flex;
+        gap:5vh;
+        margin-top: 20vh;
+       }
+       .webdev-card,.database-card{
+        display: none;
+       }
+       .contact-title>h1{
+        font-size: 4vh;
+       }
+       .contact-title>h6{
+        font-size: 2.5vh;
+       }
+       .contact-intro p,.contact-intro hr{
+        width:80vw;
+        margin-left: -20vw;
+        font-size: 2vh;
+       }
+       .contact-body{
+        display:flex;
+        flex-direction: column;
+        gap:1vh;
+       }
+        #contact{
+          margin-top: -10vh;
+        }
+       .form-data .inputs{
+        margin-top:0vh;
+        width:60vw;
+       }
+       .fields button{
+        margin-left: 0vw;
+        font-size: 2vh;
+       }
+       .contact-box h1{
+        margin-top: -3vh;
+        margin-left: 15vw;
+        font-weight: 600;
+        font-size: 2vh;
+        margin-bottom: 2vh;
+       }
+       .contact-box p{
+        margin-top: -1vh;
+        margin-right: 25vw;
+       }
+       .icons{
+        margin-left:5vw;
+       }
+       .icon-fb img,.icon-linkedin img{
+        width:10vw;
+       }
+       .icon-insta img{
+        width:13vw;
+       }
+       .blg{
+        width:65vw;
+        text-align: center;
+        font-size: 2vh;
+       }
+       .blog{
+        gap:2vh;
+        margin-left: 15vw;
+       }
+       #blogs{
+        height:80vh;
+       }
+       .blog img{
+        width:24vw;
+        height:13vh;
+       }
+       .blog-description .topic{
+        font-size: 2vh;
+        width: 25vw;
+        }
+       .blog-description h1{
+        font-size: 2.4vh;
+        margin-top: -2vh;
+       }
+       .blog-description p{
+        margin-top: -2vh;
+        font-size: 2vh;
+        width:50vw;
+       }
+       .logo>img{
+        display: none;
+       }
+       .footer{
+        gap:18vh;
+        }
+       .footer .logo{
+        margin-left:-75vw;
+       }
+       .footer .logo{
+        margin-left:-75vw;
+       }
+       .footer .menu{
+        margin-left:-30vw;
+        font-size: 2vh;
+       }
+       .subscribe{
+        margin-left: -28vw;
+       }
+       .footer .menu ul li{
+        list-style: none;
+        padding-top:1vh ;
+       }
+        .subscribe form p{
+          font-size: 2vh;
+          opacity:70%;
+        }
+        .subscribe form input[type="text"]{
+          height:2vh;
+          width:25vw;
+           }
+           .subscribe form button{
+            height:2vh;
+            width:25vw;
+            font-size: 2vh;
+            font-weight: 300;
+             }
+      }
