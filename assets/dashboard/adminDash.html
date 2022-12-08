@@ -44,10 +44,10 @@
       <!--end of side bar-->
       <div class="contents" id="blogs-section">
         <div class="short-nav">
-          <span>CREATE BLOG</span>
-          <span>MANAGE BLOGS</span>
+          <span id="create">CREATE BLOG</span>
+          <span id="mnge-blog">MANAGE BLOGS</span>
         </div>
-        <div class="create-blog">
+        <div class="create-blog show-blog">
           <form class="logn">
             <label for="topic">Topic</label>
             <input
@@ -72,7 +72,64 @@
             <button class="lgn-btn">Save blog</button>
           </form>
         </div>
-      </div>
+        <div class="blog-table hide-blogs">
+          <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Topic</th>
+                    <th>Title</th>
+                    <th>Blog-file</th>
+                    <th>Message</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="active-row">
+                    <td>suggestion</td>
+                    <td>Mac book</td>
+                    <td>Drinking te...</td>
+                    <td>it is better to..</td>
+                    <td><button class="delete">delete</button><button id="update">update</button></td>
+                </tr>
+                <tr>
+                  <td>Mac book</td>
+                  <td>Why peoples</td>
+                  <td>IMG_38AS</td>
+                  <td>it is better to..</td>
+                  <td><button class="delete">delete</button><button>update</button></td>
+                </tr>
+                <!-- and so on... -->
+            </tbody>
+        </table>
+        <div class="create-blog edit-form hide-blogs">
+          <form class="logn">
+            <label for="topic">Topic</label>
+            <input
+              type="text"
+              name="blog-topic"
+              id="topic"
+              class="text-input"
+              value="suggestion"
+            />
+            <label for="Title">Blog-Title</label>
+            <input
+              type="text"
+              name="Blog-Title"
+              id="Title"
+              class="text-input"
+              value="Mac book"
+            />
+            <label for="contents">blog contents</label>
+            <textarea class="text-input"
+            >
+            amet, consectetur it is better Lorem ipsum dolor
+            sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            </textarea>
+            <button class="lgn-btn">Edit</button>
+          </form>
+        </div>
+        </div>
     </div>
+    <script src="../js/admindash.js"></script>
   </body>
 </html>
