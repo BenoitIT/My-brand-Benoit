@@ -576,8 +576,8 @@ a:hover{
               background-color: var(--main-background-color);
               display: flex;
               gap:10vw;
-              padding-left: 15rem;
-              padding-top:2rem;
+              padding-left: 20vw;
+              padding-top:4vh;
              }
              .logo>img{
               width:8vw;
