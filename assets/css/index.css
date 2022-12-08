@@ -291,13 +291,14 @@ a:hover{
         margin-top: 2vw;
               }
       .project-description>button{
-        padding:10px 50px 10px 50px;
+        padding:5vh 12vw 5vh 12vw;
         border-radius:20px;
         background-color: var(--main-background-color);
         border: none;
         margin-left: 6rem;
         margin-top:2rem;
         color:white;
+        font-size: 2vh;
       }
       #skills{
         background-color: var(--profile-background-color);
