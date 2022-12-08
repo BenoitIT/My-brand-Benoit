@@ -137,8 +137,8 @@ a:hover{
     }
     .profile-decription button{
         background-color: var(--main-background-color);
-        height:2rem;
-        width:8rem;
+        height:3vh;
+        width:8vw;
         font-family:Ledger;
         color:white;
         font-size: 2vh;
@@ -213,6 +213,7 @@ a:hover{
     gap:1px;
     align-items: center;
     opacity:80%;
+    font-size: 2vh;
   }
   .in{
     background-color: black;
