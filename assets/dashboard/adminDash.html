@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/adminDash.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="side-bar">
+        <!--nav logo-->
+        <div id="logo">
+          <img src="../images/logp.png"/>
+        </div>
+        <!--nav-menus-->
+        <span class="material-icons menu-icon"> menu </span>
+        <div class="side-menus">
+          <ul>
+            <li>
+              <a href="#" id="home">Home</a>
+            </li>
+            <li>
+              <a href="#">Messages</a>
+            </li>
+            <li>
+              <a href="#">Skills</a>
+            </li>
+            <li>
+              <a href="#">Portifolio</a>
+            </li>
+
+            <li>
+              <a href="#">Blogs</a>
+            </li>
+            <li>
+              <a href="#">logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!--end of side bar-->
+      <div class="contents" id="blogs-section">
+        <div class="short-nav">
+          <span>CREATE BLOG</span>
+          <span>MANAGE BLOGS</span>
+        </div>
+        <div class="create-blog">
+          <form class="logn">
+            <label for="topic">Topic</label>
+            <input
+              type="text"
+              name="blog-topic"
+              id="topic"
+              class="text-input"
+            />
+            <label for="Title">Blog-Title</label>
+            <input
+              type="text"
+              name="Blog-Title"
+              id="Title"
+              class="text-input"
+            />
+            <label for="image">Upload image</label>
+            <input type="file" name="Blog-file" id="image" class="text-input"/>
+            <label for="contents">blog contents</label>
+            <textarea class="text-input">
+
+            </textarea>
+            <button class="lgn-btn">Save blog</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

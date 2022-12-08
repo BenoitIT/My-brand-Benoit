@@ -139,17 +139,17 @@ a:hover{
         opacity:70%;
     }
     .profile-decription button{
-        background-color: var(--main-background-color);
-        height:3vh;
-        width:8vw;
-        font-family:Ledger;
-        color:white;
-        font-size: 2vh;
-        border-radius: 4px;
-        border:4px solid var(--profile-border-color);
-        margin-top: 2rem;
-        margin-left:3rem;
-        transition: all 300 ms ease;
+      margin-top: 4vh;
+      background-color: var(--main-background-color);
+      width: 15vw;
+      height:5vh;
+      margin-left: 8vw;
+      border: none;
+      border-radius: 0.3vw;
+      color:white;
+      font-size: 2.5vh;
+      font-weight: 500;
+      box-shadow: inset 0.5px 0.5px 1px 1px #C76BCF;
     }
   button:hover{
     background-color: blue;
@@ -234,13 +234,17 @@ a:hover{
     opacity:80%;
   }
   .about-description>button{
-    padding:2vh 5vw 2vh 5vw;
-    border-radius:20px;
-    background-color: var(--main-background-color);
-    border: none;
-    margin-left: 10vw;
-    margin-top:1rem;
-    color:white;
+      margin-top: 4vh;
+        background-color: var(--main-background-color);
+        width: 15vw;
+        height:5vh;
+        margin-left: 8vw;
+        border: none;
+        border-radius: 0.3vw;
+        color:white;
+        font-size: 2.5vh;
+        font-weight: 500;
+        box-shadow: inset 0.5px 0.5px 1px 1px #C76BCF;
   }
   .about-description>button:hover{
   background-color:blue;
@@ -294,14 +298,17 @@ a:hover{
         margin-top: 2vw;
               }
       .project-description>button{
-        padding:2vh 5vw 2vh 5vw;
-        border-radius:20px;
+        margin-top: 2vh;
         background-color: var(--main-background-color);
+        width: 15vw;
+        height:4vh;
+        margin-left: 8vw;
         border: none;
-        margin-left: 6rem;
-        margin-top:2rem;
+        border-radius: 2vw;
         color:white;
-        font-size: 2vh;
+        font-size: 2.5vh;
+        font-weight: 500;
+        box-shadow: inset 0.5px 0.5px 1px 1px #C76BCF;
       }
       #skills{
         background-color: var(--profile-background-color);
@@ -502,15 +509,17 @@ a:hover{
               outline: none;
               }
               .fields>button{
-                margin-left:20rem;
-                width:20vh;
-                height:4vh;
+                margin-top: 2vh;
                 background-color: var(--main-background-color);
-                text-transform: uppercase;
+                width: 15vw;
+                height:5vh;
+                margin-left: 15vw;
+                border: none;
+                border-radius: 1vw;
                 color:white;
+                font-size: 2.5vh;
                 font-weight: 500;
-                border:none;
-                border-radius: 10px;
+                box-shadow: inset 0.5px 0.5px 1px 1px #C76BCF;
               }
               .fields>button:hover{
                 background-color: blue;
@@ -634,6 +643,7 @@ a:hover{
                 border: none;
                 border-radius: 10vw;
                 color:white;
+                font-size: 2.5vh;
                 font-weight: 500;
                 box-shadow: inset 0.5px 0.5px 1px 1px #C76BCF;
               }
