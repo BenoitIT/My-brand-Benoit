@@ -231,7 +231,7 @@ a:hover{
     opacity:80%;
   }
   .about-description>button{
-    padding:10px 40px 10px 40px;
+    padding:5vh 12vw 5vh 12vw;
     border-radius:20px;
     background-color: var(--main-background-color);
     border: none;
