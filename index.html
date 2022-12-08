@@ -22,7 +22,7 @@
    <div class="menus">
     <ul>
        <li>
-        <a href="#home">Home</a>
+        <a href="#home" id="home">Home</a>
        </li>
        <li>
         <a href="#about">About</a>
@@ -295,5 +295,25 @@
 </form>
 </div>
  </section>
+ <!---login-->
+ <section class="section hideLogn" id="loginPage">
+  <div class="form-container">
+    <div class="title">Login</div>
+    <form class="logn">
+     <label for="username">Username</label>
+     <span class="material-icons person-icon">
+     person_outline
+    </span>
+    <input type="text" name="username" id="username" class="text-input">
+    <label for="password">Password</label>
+     <span class="material-icons lock-icon">
+      lock_outline
+      </span>
+    <input type="password" name="password" id="password" class="text-input">
+    <button class="lgn-btn">Sign up</button>
+    </form>
+  </div>
+ </section>
+ <script src="./assets/js/index.js"></script>
 </body>
 </html>
