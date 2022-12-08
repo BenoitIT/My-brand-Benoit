@@ -231,7 +231,7 @@ a:hover{
     opacity:80%;
   }
   .about-description>button{
-    padding:3vh 7vw 3vh 7vw;
+    padding:2vh 5vw 2vh 5vw;
     border-radius:20px;
     background-color: var(--main-background-color);
     border: none;
@@ -291,7 +291,7 @@ a:hover{
         margin-top: 2vw;
               }
       .project-description>button{
-        padding:3vh 7vw 3vh 7vw;
+        padding:2vh 5vw 2vh 5vw;
         border-radius:20px;
         background-color: var(--main-background-color);
         border: none;
