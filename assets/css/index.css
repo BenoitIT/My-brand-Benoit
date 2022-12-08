@@ -256,7 +256,7 @@ a:hover{
       padding: 0;
     }
     .section-title{
-      margin-left: 20vw;
+      margin-left: 27vw;
       font-weight: Karla;
       opacity:70%;
       padding-top: 5vh;
@@ -268,7 +268,7 @@ a:hover{
     .projects{
       display:flex;
       margin-top: 5vh;
-      margin-left: 20vw;
+      margin-left: 27vw;
       margin-right: 20vw;
       flex-direction: row;
       gap: 5vw;
