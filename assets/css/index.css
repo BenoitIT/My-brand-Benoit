@@ -280,6 +280,7 @@ a:hover{
     opacity:80%;
     font-weight: 300;
     margin-left: 5vh;
+    font-size: 3vh;
 
        }
       .project-description p{
@@ -574,7 +575,7 @@ a:hover{
               height: 20vh;
               background-color: var(--main-background-color);
               display: flex;
-              gap:10rem;
+              gap:10vw;
               padding-left: 15rem;
               padding-top:2rem;
              }
@@ -590,6 +591,7 @@ a:hover{
               text-decoration: none;
               color:white;
               font-weight: 500;
+              font-size: 2vh;
              }
              .subscribe>form{
               display: flex;
