@@ -238,7 +238,13 @@ td .delete{
     }
     .hide-side-bar{
         display:none;
+        z-index:-1;
         }
+    .hide-menu-icon{
+        display:none;
+        z-index:-1;
+        margin-left:-10vw;
+            }
     #logo{
         margin-top: 2vh;
         width:3vw;

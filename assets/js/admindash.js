@@ -47,7 +47,7 @@ blogBtn.addEventListener("click", () => {
   menuIcon.addEventListener("click" ,()=>{
     sideBar.classList.add("show-side-bar");
     rightContents.classList.add("hide-side-bar");
-    menuDiv.classList.add("hide-section");
+    menuDiv.classList.add("hide-menu-icon");
       });
   console.log(menuIcon)
 //manage blog button
