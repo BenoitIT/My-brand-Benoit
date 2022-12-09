@@ -26,23 +26,24 @@
               <a href="#">Messages</a>
             </li>
             <li>
-              <a href="#">Skills</a>
+              <a href="#" id="skills-menu">Skills</a>
             </li>
             <li>
-              <a href="#">Portifolio</a>
+              <a href="#" id="portifolio-menu">Portifolio</a>
             </li>
 
             <li>
-              <a href="#">Blogs</a>
+              <a href="#" id="blog-menu">Blogs</a>
             </li>
             <li>
-              <a href="#">logout</a>
+              <a href="/index.html">logout</a>
             </li>
           </ul>
         </div>
       </div>
       <!--end of side bar-->
-      <div class="contents" id="blogs-section">
+      <div class="right-contents">
+      <div class="contents blogs-section">
         <div class="short-nav">
           <span id="create">CREATE BLOG</span>
           <span id="mnge-blog">MANAGE BLOGS</span>
@@ -129,7 +130,136 @@
           </form>
         </div>
         </div>
-    </div>
+        <!--end of blog section-->
+         <div class="contents show-section portifolio-section">
+          <div class="short-nav">
+            <span id="new-project">ADD PROJECT</span>
+            <span id="projects">MANAGE PROJECTS</span>
+          </div>
+          <div class="create-project show-project">
+            <form class="logn">
+              <label for="topic">Project Name</label>
+              <input
+                type="text"
+                name="project-topic"
+                id="topic"
+                class="text-input"
+              />
+              <label for="contents">Project description</label>
+              <textarea class="text-input">
+
+              </textarea>
+              <label for="image">project image</label>
+              <input type="file" name="Blog-file" id="image" class="text-input"/>
+              <button class="lgn-btn">Save Project</button>
+            </form>
+          </div>
+          <div class="project-table hide-project">
+            <table class="styled-table">
+              <thead>
+                  <tr>
+                      <th>Project Name</th>
+                      <th>Project description</th>
+                      <th>Project image</th>
+                       <th>Action</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr class="active-row">
+                      <td>e-health</td>
+                      <td>amet, consectetur it is better Lorem ipsum dolor
+                        sit amet, consectetur adipiscing elitr</td>
+                      <td>IMG_38AS</td>
+                      <td><button>delete</button><button>update</button></td>
+                  </tr>
+                  <tr>
+                    <td>e-health</td>
+                    <td>amet, consectetur it is better Lorem ipsum dolor
+                      sit amet, consectetur adipiscing elitr</td>
+                    <td>IMG_38AS</td>
+                    <td><button class="delete-proect">delete</button><button id="update-project">update</button></td>
+                  </tr>
+                  <!-- and so on... -->
+              </tbody>
+          </table>
+          <div class="create-project edit-form hide-project">
+            <form class="logn">
+              <label for="topic">Project Name</label>
+              <input
+                type="text"
+                name="ProjectName"
+                id="topic"
+                class="text-input"
+                value="e-health"
+              />
+              <label for="contents">blog contents</label>
+              <textarea class="text-input"
+              >
+              amet, consectetur it is better Lorem ipsum dolor
+              sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              </textarea>
+              <button class="lgn-btn">Edit</button>
+            </form>
+          </div>
+          </div>
+          <!--end of portifolio-->
+           <div class="contents show-section skills-section">
+          <div class="short-nav">
+            <span id="new-skills">ADD AND MANIPULATE SKILLS</span>
+             </div>
+          <div class="create-skills show-skills">
+            <form class="logn">
+              <label for="topic">skills category</label>
+              <input
+                type="text"
+                name="project-topic"
+                id="topic"
+                class="text-input"
+              />
+              <label for="contents">skills description</label>
+              <input
+                type="text"
+                name="project-topic"
+                id="topic"
+                class="text-input"
+              />
+              <label for="image">skill details</label>
+              <textarea class="text-input">
+
+              </textarea>
+              <button class="lgn-btn">Save skills</button>
+            </form>
+          </div>
+          <div class="skills-table hide-skill">
+            <table class="styled-table">
+              <thead>
+                  <tr>
+                      <th>Skills category</th>
+                      <th>skills description</th>
+                      <th>Skills details</th>
+                       <th>Action</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr class="active-row">
+                      <td>UI/UX Design</td>
+                      <td>amet, consectetur it is better Lorem ipsum dolor
+                        sit amet, consectetur adipiscing elitr</td>
+                      <td>figma and XD design</td>
+                      <td><button>delete</button><button>update</button></td>
+                  </tr>
+                  <tr>
+                    <td>Website and web app...</td>
+                    <td>amet, consectetur it is better Lorem ipsum dolor
+                      sit amet, consectetur adipiscing elitr</td>
+                    <td>react js ,node js</td>
+                    <td><button class="delete-proect">delete</button><button id="update-project">update</button></td>
+                  </tr>
+                  <!-- and so on... -->
+              </tbody>
+          </table>
+           </div>
+  </div>
     <script src="../js/admindash.js"></script>
   </body>
 </html>

@@ -747,8 +747,9 @@ position: relative;
         height:3px;
         border-radius: 3px;
       }
-      .about-description>button{
-        padding:5px 20px 5px 20px;
+      .about-description>button,.profile-decription>button,.project-description>button,.fields>button{
+        width:40vw;
+        height:4vh;
         border-radius:10px;
         background-color: var(--main-background-color);
         margin-left: 15vw;
@@ -760,6 +761,7 @@ position: relative;
       .projects{
         display: flex;
         flex-direction: column;
+        margin-left:18vw;
       }
       .projects:nth-child(2){
         display:none;
@@ -780,11 +782,6 @@ position: relative;
       width: 70vw;
       font-size: 2.4vh;
       }
-      .project-description>button{
-        padding:2px 30px 2px 30px;
-        border-radius:5px;
-        margin-top:2vh;
-        }
         .sectionskills-title>h1{
           font-size: 4vh;
         }
@@ -838,7 +835,8 @@ position: relative;
         width:60vw;
        }
        .fields button{
-        margin-left: 0vw;
+        margin-top: -1vh;
+        margin-left: 5vw;
         font-size: 2vh;
        }
        .contact-box h1{
@@ -868,7 +866,7 @@ position: relative;
        }
        .blog{
         gap:2vh;
-        margin-left: 15vw;
+        margin-left: 13vw;
        }
        #blogs{
         height:80vh;
@@ -895,19 +893,17 @@ position: relative;
        }
        .footer{
         gap:18vh;
+
         }
        .footer .logo{
-        margin-left:-75vw;
-       }
-       .footer .logo{
-        margin-left:-75vw;
+        margin-left:-10vw;
        }
        .footer .menu{
-        margin-left:-30vw;
+        margin-left:-28vw;
         font-size: 2vh;
        }
        .subscribe{
-        margin-left: -28vw;
+        margin-left: -17vw;
        }
        .footer .menu ul li{
         list-style: none;
