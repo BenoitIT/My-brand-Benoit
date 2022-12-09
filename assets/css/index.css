@@ -741,6 +741,7 @@ position: relative;
         display: flex;
         justify-content: space-around;
         margin-top: 3vh;
+        font-size: 2vh;
       }
       hr{
         margin-top: 4vh;
@@ -753,6 +754,9 @@ position: relative;
         border-radius:10px;
         background-color: var(--main-background-color);
         margin-left: 15vw;
+      }
+      .about-description>button{
+        margin-bottom: 2vh;
       }
       #portifolio{
        margin-top: -40vh;

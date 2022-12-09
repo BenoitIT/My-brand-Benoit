@@ -5,6 +5,8 @@ let UpdateBtn = document.querySelector("#update");
 let editForm = document.querySelector(".edit-form");
 let createBlogForm = document.querySelector(".create-blog");
 let ManageBlogTable = document.querySelector(".blog-table");
+let menuIcon=document.querySelector("#hurmbug");
+let menuDiv=document.querySelector(".menu-icon");
 //portifolio section variable
 let addpojectBtn = document.querySelector("#new-project");
 let mngProjectBtn = document.querySelector("#projects");
@@ -18,24 +20,36 @@ let SkillBtn = document.querySelector("#skills-menu");
 let portifolioSCTN = document.querySelector(".portifolio-section");
 let blogSCTN = document.querySelector(".blogs-section");
 let skillSCTN = document.querySelector(".skills-section");
-
+let rightContents = document.querySelector(".right-contents");
+let sideBar = document.querySelector(".side-bar");
 blogBtn.addEventListener("click", () => {
   portifolioSCTN.classList.remove("show-section");
   blogSCTN.classList.add("show-section");
   blogSCTN.classList.remove("hide-section");
   portifolioSCTN.classList.add("hide-section");
   skillSCTN.classList.add("hide-section");
+  sideBar.classList.add("hide-side-bar");
+  rightContents.classList.remove("hide-side-bar");
   });
   portifolioBtn.addEventListener("click", () => {
    portifolioSCTN.classList.remove("hide-section");
    portifolioSCTN.classList.add("show-section");
    skillSCTN.classList.add("hide-section");
+   sideBar.classList.add("hide-side-bar");
+   rightContents.classList.remove("hide-side-bar");
     });
     SkillBtn.addEventListener("click", () => {
       skillSCTN.classList.remove("hide-section");
       skillSCTN.classList.add("show-section");
+      sideBar.classList.add("hide-side-bar");
+      rightContents.classList.remove("hide-side-bar");
        });
-  console.log(blogBtn);
+  menuIcon.addEventListener("click" ,()=>{
+    sideBar.classList.add("show-side-bar");
+    rightContents.classList.add("hide-side-bar");
+    menuDiv.classList.add("hide-section");
+      });
+  console.log(menuIcon)
 //manage blog button
 mngBlogBtn.addEventListener("click", () => {
   createBlogForm.classList.add("hide-blog-form");

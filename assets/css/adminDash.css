@@ -222,3 +222,86 @@ td .delete{
 .hide-section-pro{
     display: none;
 }
+.right-contents .menu-icon{
+    visibility: hidden;
+    }
+@media(max-width:600px){
+    .side-bar{
+       height:100vh;
+       width:100vw;
+       margin-left:-100vw;
+        }
+    .show-side-bar{
+        display:block;
+        margin-left:0vw;
+        transition: step-end;
+    }
+    .hide-side-bar{
+        display:none;
+        }
+    #logo{
+        margin-top: 2vh;
+        width:3vw;
+        margin-left: 30vw;
+    }
+    .side-menus{
+        margin-top: 20vh;
+            }
+    .side-menus ul li {
+        margin-top:1vh;
+        font-size: 2vh;
+        }
+        .right-contents{
+            width:100vw;
+        }
+        .contents{
+            width:100vw;
+              }
+    /*section contents*/
+    .short-nav{
+        display:flex;
+        margin-left:5vh;
+        width:80vw;
+         }
+    .short-nav span{
+        margin-left: 10vw;
+        font-size: 1.8vh;
+        }
+        .create-skills .logn{
+            font-size: 1.5vh;
+        }
+        .logn input[type="text"],.logn input[type="file"],.logn textarea{
+            width:70vw;
+        }
+        .create-skills .logn>.lgn-btn{
+            width:70vw;
+            margin-left: -0.3vw;
+            font-size: 1.6vh;
+            height:3.5vh;
+        }
+        .skills-table{
+            width:95vw;
+            margin-left:4vw;
+               }
+        .skills-table .styled-table thead th{
+                font-size: 2vh;
+            }
+        .skills-table .styled-table tbody tr{
+            font-size: 1.5vh;
+        }
+        td button{
+            width:15vw;
+            font-size: 1.4vh;
+            height:2vh;
+            margin:0.2vh;
+        }
+        .right-contents .menu-icon{
+            visibility: visible;
+            position:absolute;
+            top:-2vh;
+            left:10vw;
+            color:black;
+            z-index:1;
+        }
+
+}
