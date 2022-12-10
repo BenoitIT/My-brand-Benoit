@@ -1,0 +1,197 @@
+#single-blog-section{
+    background-color: #EFEBEB;
+    }
+    .blog-contents{
+       display: flex;
+       gap:2vw;
+        }
+    .blog-contents .blog-list{
+        display: flex;
+        flex-direction: column;
+        margin-top: 3vh;
+    }
+    .blog-contents .blog-list .blog{
+        margin-left: 2vw;
+        margin-top: 5vh;
+        background-color:#d4cfcf ;
+        border-radius: 1vh;
+        box-shadow: 1px 2px 4px gray;
+        }
+        .blog-contents .blog-list .blog:hover{
+            cursor: pointer;
+            background-color: #EFEBEB;
+        }
+        .blog-contents .blog-list .blog .blog-description{
+            margin-top: 3vh;
+        }
+    .blog-contents .blog-list .blog .blog-description .topic,.blog-contents .blog-list .blog .blog-description h1{
+       margin-bottom: -4vh;
+        }
+        .blog-contents .blog-list .blog .blog-description .topic{
+            font-size: 2vh;
+        }
+        .blog-contents .blog-list .blog .blog-description p{
+            width:15vw;
+            margin-left: -1vw;
+        }
+
+    .blog-contents .blog-list .blog img{
+        width:8vw;
+        border-radius: 50%;
+        height:15vh;
+        margin-top: 3vh;
+    }
+    .blog-contents .blog-list .blog h1,.blog-contents .blog-list .blog p{
+        font-size: 2vh;
+        margin-left: -2vw;
+    }
+    .blog-contents h1{
+        font-size: 5vh;
+        font-family: Inter;
+        font-weight: 900;
+        opacity: 80%;
+        padding: 2vw;
+    }
+    .blog-body{
+        display:flex;
+        flex-direction: column;
+        gap:2vh;
+        }
+    .blog-body img{
+        width:35vw;
+        height:auto;
+        margin-left: 3vw;
+    }
+    .blog-body h6{
+        color:white;
+        background-color: #45F841;
+        height: 3vh;
+        width:10vw;
+        margin-left:3vw;
+         }
+    .blog-body h6 span{
+            font-size: 2.5vh;
+            margin-left:2vw;
+         }
+     .blog-body p{
+        font-size: 3vh;
+        width:42vw;
+     }
+     .blog-body p span{
+        padding-top:2vh;
+     }
+     .blog-body .like .material-icons{
+        background-color: blue;
+        opacity:70%;
+        color:white;
+        margin-left: 0.5;
+        margin-top: 5px;
+        font-weight: 700;
+        border-radius: 2px;
+     }
+     .blog-body .like .material-icons:hover{
+        font-weight: 900;
+        background-color: white;
+        color:blue;
+        border-radius: 10px;
+        cursor:pointer
+     }
+     .blog-body .like .material-icons span{
+        padding-top:-1vh;
+        }
+       .blog-body .like{
+        color:white;
+        font-weight: bold;
+        background-color: blue;
+        opacity:70%;
+        width:4vw;
+        border-radius: 1vh;
+     }
+     .blog-body .logn{
+        margin-top: -1vh;
+        width:35vw;
+     }
+     .blog-body .logn .text-input:focus{
+        outline: none;
+        border: none;
+        height:8vh;
+     }
+     .blog-body .logn .lgn-btn{
+        margin-left: 20vw;
+        margin-top: -0.5vh;
+        height:3.5vh;
+        border-radius: 10px;
+     }
+ .comment-list{
+    display:flex;
+    flex-direction: column;
+    gap:2vh;
+    margin-left: -6vh;
+    margin-top: 12vh;
+ }
+ .comment-list .comment{
+    background-color:#d4cfcf ;
+    padding:1vw;
+    margin-top: 3vh;
+    margin-right: 8vw;
+    border-radius: 2vh;
+    box-shadow: 1px 2px 4px gray;
+   }
+   .comment-list .comment h1{
+    font-size: 2vh;
+   }
+   .comment-list .comment p{
+    font-size: 2vh;
+    margin-top: -2vh;
+   }
+   .comment-list h5:hover{
+    cursor: pointer;
+    color: blue;
+}
+@media(max-width:600px){
+    .blog-list .blog{
+        display:none;
+    }
+    .comment-list{
+        display:none;
+    }
+    .blog-body {
+        margin-left: 6vw;
+    }
+    .blog-body p{
+        width:80vw;
+        font-size: 4vw;
+    }
+    .blog-descr h1{
+        font-size: 6vw;
+    }
+    .blog-body img{
+        width:75vw;
+    }
+    .blog-body h6{
+        height: 3vh;
+        width:25vw;
+    }
+    .blog-body h6 span{
+        font-size: 2vh;
+    }
+    .blog-body .logn .text-input{
+        width:75vw;
+    }
+    .blog-body .logn .lgn-btn{
+        margin-left:40vw;
+        height:4vh;
+        width:35vw;
+        font-size: 3vw;
+    }
+    .blog-body .like .material-icons{
+        padding-top:-1vh;
+        font-size: 2vh;
+        }
+       .blog-body .like{
+        width:10vw;
+        border-radius: 1vh;
+        font-size: 2vh;
+        margin-bottom: 2vh;
+     }
+    }
