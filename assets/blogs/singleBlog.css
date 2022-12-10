@@ -164,6 +164,7 @@
     }
     .blog-descr h1{
         font-size: 6vw;
+        margin-left:6vw;
     }
     .blog-body img{
         width:75vw;
