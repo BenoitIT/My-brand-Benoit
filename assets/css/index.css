@@ -789,8 +789,14 @@ position: relative;
         display: flex;
         justify-content: space-around;
         margin-top: 3vh;
-        font-size: 2vh;
+        font-size: 1.5vh;
       }
+      .address2,.address1{
+        font-size: 1.7vh;
+              }
+        .address1 .material-icons,.address2 .material-icons{
+          font-size:2.5vh;
+        }
       hr{
         margin-top: 4vh;
         height:3px;
