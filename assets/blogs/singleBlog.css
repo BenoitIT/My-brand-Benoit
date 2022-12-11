@@ -155,6 +155,9 @@
     .comment-list{
         display:none;
     }
+    .icons .menu-icon{
+        margin-left: 25vw;
+    }
     .blog-body {
         margin-left: 6vw;
     }

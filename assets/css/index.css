@@ -107,6 +107,11 @@ a:hover{
   margin-top: 4vh;
   visibility:hidden;
 }
+.close{
+  color:white;
+  margin-top: 4vh;
+  visibility:hidden;
+}
 .profile-decription{
   position: relative;
  width:30vw;
@@ -654,6 +659,9 @@ a:hover{
                 font-weight: 500;
                 box-shadow: inset 0.5px 0.5px 1px 1px #C76BCF;
               }
+              .mobile-menus{
+                display:none;
+              }
 /*media queries*/
 
 @media(max-width:600px){
@@ -661,13 +669,46 @@ a:hover{
     display:none;
   }
   .menu-icon{
+    margin-right: -10vw;
+    margin-top:3vh;
+  }
+  .make-visible{
     visibility:visible;
+  }
+  .make-invisible{
+    visibility:hidden;
+  }
+  .close{
     margin-right: 10vw;
     margin-top:3vh;
   }
   #logo img{
     height:3vh;
  }
+ .mobile-menus{
+  display:block;
+  position: absolute;
+  left: 10vw;
+  top:10vh;
+  background-color: var(--main-background-color);
+  opacity:90%;
+  width:80vw;
+}
+.mobile-menus ul{
+  font-size: 2.5vh;
+}
+.mobile-menus ul li{
+list-style-type: none;
+padding:1vh;
+}
+.mobile-menus ul li a{
+  text-decoration: none;
+  color:white;
+  margin-left: 40%;
+}
+.mobile-menus ul li:hover{
+  background-color: rgb(79, 137, 224);
+}
  .home-contents{
   position: absolute;
   display: flex;
