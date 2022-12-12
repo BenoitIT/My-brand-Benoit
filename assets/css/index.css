@@ -1065,6 +1065,10 @@ position: relative;
   border-bottom: 0.3vh solid #9F9A9A;
   border-radius: 2px;
   margin-top: -2vh;
+  padding-left: 2vw;
+}
+.logn .text-input:focus{
+  outline: none;
 }
 .logn .person-icon{
 position: absolute;
