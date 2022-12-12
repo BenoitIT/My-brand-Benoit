@@ -245,7 +245,8 @@ td .delete {
 .skills-section {
   position: absolute;
   top: 0;
-}
+  height:100vh;
+ }
 .show-section {
   display: block;
 }
@@ -275,6 +276,7 @@ td .delete {
   top:15vh;
   left:2vw;
   width:75vw;
+  height:100vh;
   }
 
 /* home MAin Section */

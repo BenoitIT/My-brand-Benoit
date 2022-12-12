@@ -503,6 +503,12 @@ a:hover{
                 font-weight: 300;
                 opacity: 80%;
               }
+              .error input{
+               border-bottom: 0.1vh solid red;
+              }
+              .success input{
+                border-bottom: 0.3vh solid green;
+              }
               .inputs{
                 border: none;
                 background-color: var(--section-odd-backcolor);
@@ -662,7 +668,8 @@ a:hover{
               .mobile-menus{
                 display:none;
               }
-/*media queries*/
+
+             /*media queries*/
 
 @media(max-width:600px){
   .menus{
@@ -1043,11 +1050,16 @@ position: relative;
 .logn{
   position: relative;
   margin-top: 10vh;
-  display:flex;
+  display: flex;
   flex-direction: column;
   gap:1.5vh;
   margin-left:5vw;
   margin-right: 5vw;
+}
+.logn div{
+  display:flex;
+  flex-direction: column;
+  gap:0.5vh;
 }
 .logn label{
   font-size: 2.5vh;
@@ -1065,6 +1077,18 @@ position: relative;
   margin-top: -2vh;
   padding-left: 2vw;
 }
+.logn .error .text-input{
+  border-bottom: 0.1vh solid red;
+ }
+ .logn .success .text-input{
+   border-bottom: 0.3vh solid green;
+ }
+ .subscribe >.error #emailForSub{
+  border: 0.1vh solid red;
+ }
+ .subscribe > .success #emailForSub{
+   border: 0.2vh solid green;
+ }
 .logn .text-input:focus{
   outline: none;
 }
@@ -1074,7 +1098,7 @@ top:3vh;
 }
 .logn .lock-icon{
   position: absolute;
-  top:10.5vh;
+  top:11vh;
   }
   #editor{
     background-color: white;
@@ -1083,3 +1107,5 @@ top:3vh;
 .showLogn{
   visibility:visible;
 }
+
+
