@@ -10,7 +10,14 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-  </head>
+    <!--initializing quill cdn main libraries-->
+    <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
+    <!-- Theme included stylesheets for quill -->
+    <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />
+    <link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet" />
+    <link href="//cdn.quilljs.com/1.3.6/quill.core.css" rel="stylesheet" />
+     </head>
   <body>
     <div class="nav-bar">
       <!--nav logo-->
@@ -19,10 +26,8 @@
       </div>
       <!--nav-menus-->
       <div class="icons">
-      <span class="material-icons menu-icon make-visible"> menu </span>
-      <span class="material-icons close">
-           close
-        </span>
+        <span class="material-icons menu-icon make-visible"> menu </span>
+        <span class="material-icons close"> close </span>
       </div>
       <div class="menus">
         <ul>
@@ -171,7 +176,6 @@
     </section>
     <!--end of skills sections-->
 
-    <!--end of contact section-->
     <section class="section" id="blogs">
       <div class="contact-title">
         <h1>Blogs</h1>
@@ -182,7 +186,11 @@
           <img src="./assets/images/pc-one.jpg" />
           <div class="blog-description">
             <div class="topic">suggestion</div>
-            <h1><a href="./assets/blogs/singleBlog.html">Drink tea at work is good</a></h1>
+            <h1>
+              <a href="./assets/blogs/singleBlog.html"
+                >Drink tea at work is good</a
+              >
+            </h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor
@@ -193,7 +201,11 @@
           <img src="./assets/images/pc-two.jpg" />
           <div class="blog-description">
             <div class="topic">story</div>
-            <h1><a href="./assets/blogs/singleBlog.html">Why peoples fear coding</a></h1>
+            <h1>
+              <a href="./assets/blogs/singleBlog.html"
+                >Why peoples fear coding</a
+              >
+            </h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor
@@ -241,10 +253,18 @@
               <h6>your subject</h6>
               <input type="text" name="name" class="inputs" />
             </div>
-            <div class="fields">
-              <h6>Message</h6>
-              <textarea class="inputs"> </textarea>
+              <div class="fields">
+                <h6>Message</h6>
             </div>
+            <!--adding quiil ,what you see is what you get editor-->
+            <div id="editor">
+            </div>
+            <script>
+              var quill = new Quill('#editor', {
+                theme: 'snow',
+                placeholder:'type some message to the admin'
+              });
+            </script>
             <div class="fields">
               <button>send message</button>
             </div>
@@ -326,33 +346,39 @@
             id="password"
             class="text-input"
           />
-          <button class="lgn-btn"><a  style="text-decoration: none; color:white;"href="./assets/dashboard/adminDash.html">Sign up</a></button>
+          <button class="lgn-btn">
+            <a
+              style="text-decoration: none; color: white"
+              href="./assets/dashboard/adminDash.html"
+              >Sign up</a
+            >
+          </button>
         </form>
       </div>
     </section>
     <!--mobile phones menus-->
-     <div class="mobile-menus make-invisible">
-        <ul>
-          <li>
-            <a href="#home">Home</a>
-          </li>
-          <li>
-            <a href="#about">About</a>
-          </li>
-          <li>
-            <a href="#portifolio">Portifolio</a>
-          </li>
-          <li>
-            <a href="#skills">Skills</a>
-          </li>
-          <li>
-            <a href="#blogs">Blog</a>
-          </li>
-          <li>
-            <a href="#contact">contact</a>
-          </li>
-        </ul>
-      </div>
+    <div class="mobile-menus make-invisible">
+      <ul>
+        <li>
+          <a href="#home">Home</a>
+        </li>
+        <li>
+          <a href="#about">About</a>
+        </li>
+        <li>
+          <a href="#portifolio">Portifolio</a>
+        </li>
+        <li>
+          <a href="#skills">Skills</a>
+        </li>
+        <li>
+          <a href="#blogs">Blog</a>
+        </li>
+        <li>
+          <a href="#contact">contact</a>
+        </li>
+      </ul>
+    </div>
 
     <script src="./assets/js/index.js"></script>
   </body>

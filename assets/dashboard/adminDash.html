@@ -13,6 +13,13 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
     <link rel="stylesheet" href="style.css" />
+    <!--initializing quill cdn main libraries-->
+    <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
+    <!-- Theme included stylesheets for quill -->
+    <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />
+    <link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet" />
+    <link href="//cdn.quilljs.com/1.3.6/quill.core.css" rel="stylesheet" />
   </head>
   <body>
     <div class="container">
@@ -68,11 +75,14 @@
               class="text-input"
             />
             <label for="image">Upload image</label>
-            <input type="file" name="Blog-file" id="image" class="text-input"/>
-            <label for="contents">blog contents</label>
-            <textarea class="text-input">
-
-            </textarea>
+            <input type="file" name="Blog-file" id="image"/>
+             <div id="blog-editor"></div>
+            <script>
+              var quill = new Quill('#blog-editor', {
+                theme: 'snow',
+                placeholder:'type contents for a blog'
+              });
+            </script>
             <button class="lgn-btn">Save blog</button>
           </form>
         </div>
@@ -148,12 +158,16 @@
                 id="topic"
                 class="text-input"
               />
-              <label for="contents">Project description</label>
-              <textarea class="text-input">
-
-              </textarea>
+              <div id="editor">
+              </div>
+              <script>
+                var quill = new Quill('#editor', {
+                  theme: 'snow',
+                  placeholder:'type your project description'
+                });
+              </script>
               <label for="image">project image</label>
-              <input type="file" name="Blog-file" id="image" class="text-input"/>
+              <input type="file" name="Blog-file" id="image"/>
               <button class="lgn-btn">Save Project</button>
             </form>
           </div>
@@ -226,11 +240,14 @@
                 id="topic"
                 class="text-input"
               />
-              <label for="image">skill details</label>
-              <textarea class="text-input">
-
-              </textarea>
-              <button class="lgn-btn">Save skills</button>
+              <label for="deatails">skills details</label>
+              <input
+                type="text"
+                name="project-topic"
+                id="details"
+                class="text-input"
+              />
+             <button class="lgn-btn">Save skills</button>
             </form>
           </div>
           <div class="skills-table hide-skill">
@@ -265,10 +282,7 @@
            </div>
            </div>
            </div>
-
   <!-- home contents  -->
-
-
   <div class="hom-container hide-section">
       <section class="main">
       <div class="main-top">
@@ -376,9 +390,6 @@
       </section>
     </section>
   </div>
-
-
-
   </div>
     <script src="../js/admindash.js"></script>
   </body>

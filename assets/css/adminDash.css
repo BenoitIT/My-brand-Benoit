@@ -85,6 +85,7 @@
 .create-blog {
   width: 50vw;
   margin-left: 18vh;
+  opacity: 70%;
 }
 .show-blog,
 .show-project {
@@ -105,12 +106,24 @@
 .create-skills .logn {
   width: 50vw;
   margin-left: 15vw;
+  opacity: 90%;
+}
+.create-blog .logn .lgn-btn {
+  margin-left: 25vw;
+  margin-top: -1vh;
+  height: 4vh;
+  border-radius: 0.5vh;
+  border: none;
+}
+#blog-editor{
+  border:0.3vh solid gray;
+  background-color: white;
 }
 .create-skills .logn .lgn-btn {
   margin-left: 35vw;
   margin-top: -1vh;
   height: 4vh;
-  border-radius: 10px;
+  border-radius: 0.5vh;
   border: none;
 }
 .styled-table {
@@ -214,12 +227,19 @@ td .delete {
 .blog-table .create-blog .logn button,
 .project-table .create-project .logn input[type="text"] {
   height: 4vh;
-  border-radius: 10px;
+  border-radius: 0.2vh;
   margin-left: 25vw;
 }
 .create-project {
   width: 50vw;
   margin-left: 18vh;
+  opacity: 70%;
+}
+.create-project .logn .lgn-btn {
+  height:4vh;
+  width:15vw;
+  border-radius: 0.2vh;
+  margin-left:0.3vw;
 }
 .portifolio-section,
 .skills-section {
