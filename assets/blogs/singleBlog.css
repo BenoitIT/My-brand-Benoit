@@ -59,8 +59,10 @@
         }
     .blog-body img{
         width:35vw;
-        height:auto;
+        height:40vh;
         margin-left: 3vw;
+        object-fit: cover;
+        aspect-ratio: 1/-1;
     }
     .blog-body h6{
         color:white;
@@ -148,6 +150,7 @@
     cursor: pointer;
     color: blue;
 }
+
 @media(max-width:600px){
     .blog-list .blog{
         display:none;

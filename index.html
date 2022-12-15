@@ -18,7 +18,7 @@
     <link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet" />
     <link href="//cdn.quilljs.com/1.3.6/quill.core.css" rel="stylesheet" />
      </head>
-  <body>
+  <body class="body">
     <div class="nav-bar">
       <!--nav logo-->
       <div id="logo">
@@ -182,16 +182,16 @@
         <h6 class="blg">read and get something from the interesting stories</h6>
       </div>
       <div class="container">
-        <div class="blog">
-          <img src="./assets/images/pc-one.jpg" />
+        <!-- <div class="blog">
+          <img src="./assets/images/pc-one.jpg"/>
           <div class="blog-description">
             <div class="topic">suggestion</div>
-            <h1>
-              <a href="./assets/blogs/singleBlog.html"
+            <h1 class="blogHeader">
+              <a id="blogLink" href="./assets/blogs/singleBlog.html"
                 >Drink tea at work is good</a
               >
             </h1>
-            <p>
+            <p class="text-contents">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor
             </p>
@@ -222,7 +222,7 @@
               eiusmod tempor
             </p>
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
     <!--end of blog section-->
@@ -266,7 +266,8 @@
               var quill = new Quill('#editor', {
                 theme: 'snow',
                 placeholder:'type some message to the admin',
-                required:'true'
+                required:'true',
+                height:'20vh'
               });
             </script>
             <div class="fields">
@@ -392,5 +393,6 @@
     </div>
     <script src="./assets/js/index.js"></script>
     <script defer src="./assets/js/validation.js"></script>
+    <script src="./assets/js/blogDisplay.js"></script>
   </body>
 </html>

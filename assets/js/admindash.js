@@ -25,7 +25,6 @@ let skillSCTN = document.querySelector(".skills-section");
 let rightContents = document.querySelector(".right-contents");
 let sideBar = document.querySelector(".side-bar");
 //home variables
-
    menuIcon.addEventListener("click" ,()=>{
     sideBar.classList.remove("hide-side-bar");
     sideBar.classList.add("show-side-bar");
