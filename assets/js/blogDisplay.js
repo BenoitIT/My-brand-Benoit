@@ -16,7 +16,7 @@ blogs.forEach(blog => {
   let linktoSinglepage=document.createElement('a');
   linktoSinglepage.href=`/assets/blogs/singleBlog.html?id=${blog.id}`;
   linktoSinglepage.innerText=blog.Title;
-   TitleHeader.appendChild(linktoSinglepage)
+   TitleHeader.appendChild(linktoSinglepage);
       //displaying blog text-contents
   let contentsListing=document.createElement('p');
   contentsListing.classList.add('text-contents');
@@ -33,4 +33,4 @@ blogs.forEach(blog => {
   blogDivsion.appendChild(blogDiv)
   });
   blogContainer.appendChild(blogDivsion);
-  
+

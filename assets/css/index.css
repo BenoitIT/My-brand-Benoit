@@ -623,6 +623,8 @@ a:hover{
               font-size: 3vh;
               opacity: 80%;
               width: 20rem;
+              height: 10vh;
+              overflow: hidden;
              }
              .footer{
               height: 20vh;

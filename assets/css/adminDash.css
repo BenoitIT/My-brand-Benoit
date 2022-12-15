@@ -114,10 +114,12 @@
   height: 4vh;
   border-radius: 0.5vh;
   border: none;
+  margin-bottom:2vh;
 }
 #blog-editor{
   border:0.3vh solid gray;
   background-color: white;
+  height:80px;
 }
 .create-skills .logn .lgn-btn {
   margin-left: 35vw;
@@ -125,7 +127,7 @@
   height: 4vh;
   border-radius: 0.5vh;
   border: none;
-}
+  }
 .styled-table {
   border-collapse: collapse;
   margin: 25px 0;
@@ -392,6 +394,19 @@ table thead tr{
   color: #fff;
   transition: 0.5vw;
 }
+.resize-cell{
+  width:200px;
+  height:1vh;
+  padding-left: 2vw;
+ }
+ #table-blog{
+  margin-left: -10vw;
+  margin-top: -10vh;
+ }
+ .table-button:hover{
+background-color: rgb(195, 59, 59);
+cursor: pointer;
+ }
 
 @media (max-width: 600px) {
   .side-bar {

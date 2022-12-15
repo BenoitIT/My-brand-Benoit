@@ -29,10 +29,14 @@
         }
         .blog-contents .blog-list .blog .blog-description .topic{
             font-size: 2vh;
+            margin-right: 1vh;
         }
         .blog-contents .blog-list .blog .blog-description p{
             width:15vw;
             margin-left: -1vw;
+            height:7vh;
+            margin-right: 1vh;
+            overflow: hidden;
         }
 
     .blog-contents .blog-list .blog img{
