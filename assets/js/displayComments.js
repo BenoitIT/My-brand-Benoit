@@ -1,14 +1,11 @@
 const fiblogid=()=>{
     let parameter=new URLSearchParams(window.location.search);
     let foundId=parameter.get("id");
-    return foundId;
-}
-let Bid=fiblogid();
-console.log(Bid);
+     console.log(foundId);
 let commentList=document.querySelector('.comment-list');
 let comments = JSON.parse(localStorage.getItem("comment-List") || "[]");
 comments.forEach(comm=>{
-    if (comm.blogId==Bid){
+    if (comm.blogId==foundId){
     let commenting=document.createElement('div');
     commenting.classList.add('comment');
   let commentdDscription=document.createElement('comment-description');
@@ -22,7 +19,10 @@ comments.forEach(comm=>{
       commenting.appendChild(commentdDscription);
     commentList.appendChild(commenting);
        return commentList;
-       location.reload();
-        }
+             }
    })
+   return commentList;
+}
+window.addEventListener('load',fiblogid())
+
 
