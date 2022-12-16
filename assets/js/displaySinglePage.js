@@ -8,7 +8,9 @@ let blogs = JSON.parse(localStorage.getItem("blogList") || "[]");
 let find=blogs.find(blog=>{
     if (blog.id==id){
   let blogBody=document.querySelector('.blog-body');
-  let img=document.createElement('img');
+  let h1=document.createElement('h1');
+     h1.innerText=blog.Title;
+   let img=document.createElement('img');
        img.src=blog.blog_Image;
   let h6=document.createElement('h6');
   let span=document.createElement('span');
@@ -22,7 +24,7 @@ let find=blogs.find(blog=>{
   likeIcon.classList.add('material-icons');
   likeIcon.innerText='thumb_up_off_alt ';
   likeDiv.appendChild(likeIcon);
-  likeDiv.innerText='38';
+  likeDiv.innerText='like 38';
   let form=document.createElement('form');
   form.classList.add('logn');
   let input=document.createElement('input');
@@ -33,9 +35,11 @@ let find=blogs.find(blog=>{
   input.classList.add("text-input");
   form.appendChild(input);
   let button=document.createElement('button');
+   button.id="comment-btn";
    button.classList.add('lgn-btn');
    button.innerText="comment";
    form.appendChild(button);
+   blogBody.appendChild(h1);
    blogBody.appendChild(img);
    blogBody.appendChild(h6);
    blogBody.appendChild(blogParagraph);

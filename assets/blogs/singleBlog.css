@@ -1,7 +1,7 @@
-#single-blog-section{
+body{
     background-color: #EFEBEB;
     }
-    .blog-contents{
+     .blog-contents{
        display: flex;
        gap:2vw;
         }
@@ -9,6 +9,7 @@
         display: flex;
         flex-direction: column;
         margin-top: 3vh;
+        margin-left: 1vw;
     }
     .blog-contents .blog-list .blog{
         margin-left: 2vw;
@@ -60,7 +61,7 @@
         display:flex;
         flex-direction: column;
         gap:2vh;
-        }
+                }
     .blog-body img{
         width:35vw;
         height:40vh;
@@ -86,22 +87,7 @@
      .blog-body p span{
         padding-top:2vh;
      }
-     .blog-body .like .material-icons{
-        background-color: blue;
-        opacity:70%;
-        color:white;
-        margin-left: 0.5;
-        margin-top: 5px;
-        font-weight: 700;
-        border-radius: 2px;
-     }
-     .blog-body .like .material-icons:hover{
-        font-weight: 900;
-        background-color: white;
-        color:blue;
-        border-radius: 10px;
-        cursor:pointer
-     }
+
      .blog-body .like .material-icons span{
         padding-top:-1vh;
         }
@@ -109,46 +95,56 @@
         color:white;
         font-weight: bold;
         background-color: blue;
+        padding-left: 0.3vw;
         opacity:70%;
         width:4vw;
         border-radius: 1vh;
      }
+     .blog-body .like:hover{
+        cursor:pointer;
+     }
      .blog-body .logn{
         margin-top: -1vh;
         width:35vw;
-     }
+         }
      .blog-body .logn .text-input:focus{
         outline: none;
         border: none;
-        height:8vh;
+        height:10vh;
      }
      .blog-body .logn .lgn-btn{
         margin-left: 20vw;
         margin-top: -0.5vh;
         height:3.5vh;
         border-radius: 10px;
+        margin-bottom: 3vw;
      }
  .comment-list{
     display:flex;
     flex-direction: column;
-    gap:2vh;
+    gap:1vh;
     margin-left: -6vh;
     margin-top: 12vh;
  }
  .comment-list .comment{
     background-color:#d4cfcf ;
-    padding:1vw;
-    margin-top: 3vh;
-    margin-right: 8vw;
+    padding-top:0;
+    margin-top: 1.5vh;
+    margin-right: 7vw;
     border-radius: 2vh;
     box-shadow: 1px 2px 4px gray;
    }
    .comment-list .comment h1{
+    margin-top: -2vh;
     font-size: 2vh;
    }
    .comment-list .comment p{
     font-size: 2vh;
-    margin-top: -2vh;
+    margin-top: -4vh;
+    width:20vw;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    padding-bottom: 2vh;
    }
    .comment-list h5:hover{
     cursor: pointer;

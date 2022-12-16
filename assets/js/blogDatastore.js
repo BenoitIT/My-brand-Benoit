@@ -5,11 +5,13 @@ let blogTitle = document.querySelector("#Title");
 let blogImage = document.querySelector("#image-upload");
 let quillEditor = document.querySelector("#blog-editor");
 let uploadBtn = document.querySelector("#upload");
-let imgView = document.querySelector("#test-img");
+let imgView = document.querySelector(".imge-preview");
 let image;
 //loading animage
 blogImage.addEventListener("change", (event) => {
   event.preventDefault();
+  imgView.classList.add('show-preview');
+  imgView.classList.remove('imge-preview');
   let reader = new FileReader();
   reader.addEventListener("load", () => {
     image = reader.result;
@@ -31,7 +33,6 @@ uploadBtn.addEventListener("click", (e) => {
   blogImage.value = "";
   blogTitle.value = "";
   let blogs = JSON.parse(localStorage.getItem("blogList") || "[]");
-  console.log(blogs);
   blogs.push(newBlog);
   alert("new blog saved in local storage");
   localStorage.setItem("blogList", JSON.stringify(blogs));

@@ -229,6 +229,12 @@ td .delete {
   font-style: italic;
   font-size: 1.8vh;
 }
+.imge-preview{
+  display:none;
+}
+.show-preview{
+  display:block;
+}
 .blog-table .create-blog .logn button,
 .project-table .create-project .logn input[type="text"] {
   height: 4vh;
