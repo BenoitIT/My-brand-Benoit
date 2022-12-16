@@ -608,7 +608,7 @@ a:hover{
                 color:#999DF6;
                }
              .topic{
-              background-color: green;
+              background-color:  #055804;
               color:white;
               font-weight: 500;
               width: 10vw;
@@ -667,7 +667,7 @@ a:hover{
                border: none;
             }
             .subscribe> form button{
-              background-color: green;
+              background-color:  #043d03;
               color:white;
               font-weight: 700;
               }
@@ -742,6 +742,11 @@ padding:1vh;
 .mobile-menus ul li:hover{
   background-color: rgb(79, 137, 224);
 }
+/*beginning of home section*/
+#home{
+  margin-bottom: -10vh;
+  height:90vh;
+}
  .home-contents{
   position: absolute;
   display: flex;
@@ -791,28 +796,30 @@ position: relative;
 .nav-home-container{
   height:40vh;
   }
+  /*about section*/
   .img-container{
     display: none;
   }
   .about{
     margin-left: 10vw;
-    margin-top: -20vh;
     font-size: 1.5vh;
-  }
+    margin-top: 3vh;
+     }
   .about-description{
     margin-left: 1vw;
-  }
+     }
   .about-description h1{
    font-size: 4vh;
     opacity: 95%;
-  }
+     }
   h1>span{
     border-bottom: 2px solid black;
     margin-right:20px;
     border-radius: 3px;
   }
   .about-description>h3{
-    font-size: 3vh;
+    font-size: 2vh;
+    width:80vw;
   }
   .about-description>p{
     margin-top:1rem;
@@ -845,9 +852,10 @@ position: relative;
       .about-description>button{
         margin-bottom: 2vh;
       }
+      /*portifolio section*/
       #portifolio{
        margin-top: -40vh;
-       height:80vh;
+       height:70vh;
       }
       .projects{
         display: flex;
@@ -959,32 +967,40 @@ position: relative;
        }
        #blogs{
         height:80vh;
+        padding-bottom: 3vh;
+        overflow-y: hidden;
        }
        .blog img{
         width:24vw;
-        height:13vh;
+        height:11vh;
         margin-left: -4vw;
+        object-fit: cover;
+        aspect-ratio: 1/-1vh;
         border-radius: 2px;
         }
        .blog-description .topic{
-        font-size: 2vh;
+        font-size: 1vh;
         width: 25vw;
+        padding: 0.3vh;
         margin-left: -2vw;
         margin-left: 1.5vw;
         }
        .blog-description h1{
-        font-size: 2.4vh;
+        font-size: 1.8vh;
         margin-top: -2vh;
-        margin-left: -2vw;
+        margin-left: -1vw;
         padding-left: 1.5vw;
+        width: 50vw;
+        overflow-x: hidden;
        }
        .blog-description p{
         margin-top: -2vh;
-        font-size: 2vh;
+        font-size:1.5vh;
         width:50vw;
-        margin-left: -2vw;
+        margin-left: 1vw;
         margin-right: 2vw;
-        padding-left: 1.5vw;
+        height: 5vh;
+        overflow: hidden;
        }
        .logo>img{
         display: none;
@@ -1001,7 +1017,7 @@ position: relative;
         font-size: 2vh;
        }
        .subscribe{
-        margin-left: -17vw;
+        margin-left: -20vw;
        }
        .footer .menu ul li{
         list-style: none;

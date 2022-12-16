@@ -44,6 +44,7 @@ body{
         width:8vw;
         border-radius: 50%;
         height:15vh;
+        margin-left: 2vw;
         margin-top: 3vh;
     }
     .blog-contents .blog-list .blog h1,.blog-contents .blog-list .blog p{
@@ -71,7 +72,7 @@ body{
     }
     .blog-body h6{
         color:white;
-        background-color: #45F841;
+        background-color: #043d03;
         height: 3vh;
         width:10vw;
         margin-left:3vw;
@@ -87,7 +88,9 @@ body{
      .blog-body p span{
         padding-top:2vh;
      }
-
+     .moreComment{
+        visibility: hidden;
+     }
      .blog-body .like .material-icons span{
         padding-top:-1vh;
         }
