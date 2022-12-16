@@ -562,3 +562,148 @@ cursor: pointer;
     margin-top: -7vh;
   }
 }
+  @media (max-width: 1024px) {
+    .side-bar {
+      height: 100vh;
+      width: 100vw;
+      margin-left: -100vw;
+    }
+    .show-side-bar {
+      display: block;
+      margin-left: 0vw;
+      transition: step-end;
+    }
+    .hide-side-bar {
+      display: none;
+      z-index: -1;
+    }
+    .hide-menu-icon {
+      display: none;
+      z-index: -1;
+      margin-left: -10vw;
+    }
+    #logo {
+      margin-top: 2vh;
+      width: 3vw;
+      margin-left: 30vw;
+    }
+    .side-menus {
+      margin-top: 20vh;
+    }
+    .side-menus ul li {
+      margin-top: 1vh;
+      font-size: 2vh;
+    }
+    .right-contents {
+      width: 100vw;
+    }
+    .contents {
+      width: 100vw;
+    }
+    /*section contents*/
+    .short-nav {
+      display: flex;
+      margin-left: 5vh;
+      width: 80vw;
+    }
+    .short-nav span {
+      margin-left: 10vw;
+      font-size: 2vh;
+    }
+    .create-skills .logn,
+    .create-project .logn,
+    .create-blog.logn {
+      font-size: 2vh;
+    }
+    .logn input[type="text"],
+    .logn input[type="file"],
+    .logn textarea {
+      width: 70vw;
+    }
+    .create-skills .logn > .lgn-btn,
+    .create-project .logn > .lgn-btn,
+    .create-blog .logn > .lgn-btn
+    {
+      width: 70vw;
+      margin-left: -0.3vw;
+      font-size: 1.6vh;
+      height: 3.5vh;
+    }
+    .create-blog .logn  {
+      margin-left:-10vh;
+    }
+    .skills-table,
+    .create-project {
+      width: 100vw;
+      margin-left: 4vw;
+      height: 100vh;
+    }
+    .blog-table {
+      width: 90vw;
+      margin-left: -6vh;
+      overflow-x: scroll;
+    }
+    .blog-table.styled-table thead th,
+    .blog-table.styled-table tbody td {
+      padding: 6px 8px;
+    }
+    .project-table .styled-table,
+    .blog-table .styled-table {
+      margin-left: -6vh;
+    }
+    .skills-table .styled-table thead th,
+    .project-table .styled-table thead th {
+      font-size: 2.4vh;
+    }
+    .blog-table .styled-table thead th {
+      font-size: 2vh;
+    }
+    .skills-table .styled-table tbody tr,
+    .project-table .styled-table tbody tr,
+    .blog-table .styled-table tbody tr {
+      font-size: 2vh;
+    }
+    td button {
+      width: 15vw;
+      font-size: 1.8vh;
+      height: 2vh;
+      margin: 0.2vh;
+    }
+    td .update {
+      width: 15vw;
+      font-size: 1.8vh;
+      height: 1.8vh;
+      margin: 0.2vh;
+    }
+    .right-contents .menu-icon {
+      visibility: visible;
+      position: absolute;
+      top: -2vh;
+      left: 10vw;
+      color: black;
+      z-index: 1;
+    }
+    .message-list{
+      display:none;
+    }
+    .main .upperPart{
+      display: flex;
+      flex-direction: column;
+    }
+    .upperPart .card{
+      width: 100%;
+      margin: 1vw;
+      padding-bottom: 3vw;
+      margin-left: 10vw;
+    }
+    .upperPart .card img{
+      width: 15vw;
+      height: 15vw;
+    }
+    .main-top h1{
+      font-size: 2.4vh;
+      opacity: 80%;
+      margin-left: 20vw;
+      margin-top: -7vh;
+    }
+  }
