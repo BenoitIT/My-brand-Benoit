@@ -832,7 +832,7 @@ hr {
   /*beginning of home section*/
   #home {
     margin-bottom: -10vh;
-    height: 90vh;
+    height: 100vh;
   }
   .home-contents {
     position: absolute;
@@ -863,7 +863,7 @@ hr {
   .profile-decription h6:nth-child(odd) {
     display: block;
     font-size: 2.4vh;
-    margin-left: 1vw;
+    margin-left: 3vw;
     text-align: center;
     text-shadow: none;
   }
@@ -959,6 +959,7 @@ hr {
   }
   .project-img img {
     width: 50vw;
+    margin-left: 5vw;
   }
   .project-description {
     font-family: var(--profile-description-font);
@@ -972,6 +973,9 @@ hr {
   .project-description p {
     width: 70vw;
     font-size: 2.4vh;
+  }
+  .project-description button{
+    margin-left: 10vw;
   }
   /*skills*/
   .sectionskills-title > h1 {
@@ -1093,7 +1097,7 @@ hr {
   }
   .blog-description p {
     margin-top: -2vh;
-    font-size: 1.5vh;
+    font-size: 1.7vh;
     width: 50vw;
     margin-left: 1vw;
     margin-right: 2vw;
@@ -1163,7 +1167,7 @@ hr {
     margin-left: 15vw;
   }
 }
-@media(max-width:1024px){
+ @media only screen and (min-width: 624px) and (max-width: 1024px){
   /*navbar*/
   .menus {
     display: none;
@@ -1344,6 +1348,7 @@ hr {
   }
   .project-img img {
     width: 60vw;
+    margin-left:2vw;
   }
   .project-description {
     font-family: var(--profile-description-font);
@@ -1353,6 +1358,7 @@ hr {
   }
   .project-description h3 {
     margin-top: -3vh;
+    margin-left: 18vw;
   }
   .project-description p {
     width: 70vw;
