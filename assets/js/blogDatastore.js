@@ -10,8 +10,8 @@ let image;
 //loading animage
 blogImage.addEventListener("change", (event) => {
   event.preventDefault();
-  imgView.classList.add('show-preview');
-  imgView.classList.remove('imge-preview');
+  imgView.classList.add("show-preview");
+  imgView.classList.remove("imge-preview");
   let reader = new FileReader();
   reader.addEventListener("load", () => {
     image = reader.result;

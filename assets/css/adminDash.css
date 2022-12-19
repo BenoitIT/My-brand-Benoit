@@ -562,7 +562,7 @@ cursor: pointer;
     margin-top: -7vh;
   }
 }
-  @media (max-width: 1024px) {
+@media only screen and (min-width: 624px) and (max-width: 1024px) {
     .side-bar {
       height: 100vh;
       width: 100vw;

@@ -5,8 +5,8 @@ let UpdateBtn = document.querySelector("#update");
 let editForm = document.querySelector(".edit-form");
 let createBlogForm = document.querySelector(".create-blog");
 let ManageBlogTable = document.querySelector(".blog-table");
-let menuIcon=document.querySelector("#hurmbug");
-let menuDiv=document.querySelector(".menu-icon");
+let menuIcon = document.querySelector("#hurmbug");
+let menuDiv = document.querySelector(".menu-icon");
 //portifolio section variable
 let addpojectBtn = document.querySelector("#new-project");
 let mngProjectBtn = document.querySelector("#projects");
@@ -25,65 +25,65 @@ let skillSCTN = document.querySelector(".skills-section");
 let rightContents = document.querySelector(".right-contents");
 let sideBar = document.querySelector(".side-bar");
 //home variables
-   menuIcon.addEventListener("click" ,()=>{
-    sideBar.classList.remove("hide-side-bar");
-    sideBar.classList.add("show-side-bar");
-    rightContents.classList.add("hide-side-bar");
-    menuDiv.classList.add("hide-menu-icon");
-      });
-      homeBtn.addEventListener("click", () => {
-        homeSCTN.classList.remove("hide-section");
-        homeSCTN.classList.add("show-section");
-        skillSCTN.classList.add("hide-section");
-        sideBar.classList.add("hide-side-bar");
-          rightContents.classList.remove("hide-side-bar");
-         portifolioSCTN.classList.remove("show-section");
-         portifolioSCTN.classList.add("hide-section");
-         blogSCTN.classList.add("hide-section");
-         homeBtn.classList.add("active-menu");
-         portifolioBtn.classList.remove("active-menu");
-         blogBtn.classList.remove("active-menu");
-         SkillBtn.classList.remove("active-menu");
-        });
-        SkillBtn.addEventListener("click", () => {
-          skillSCTN.classList.remove("hide-section");
-          skillSCTN.classList.add("show-section");
-          homeSCTN.classList.add("hide-section");
-          sideBar.classList.add("hide-side-bar");
-          rightContents.classList.remove("hide-side-bar");
-          homeSCTN.classList.add("hide-section");
-          SkillBtn.classList.add("active-menu");
-          blogBtn.classList.remove("active-menu");
-          portifolioBtn.classList.remove("active-menu");
-          homeBtn.classList.remove("active-menu");
-           });
-           portifolioBtn.addEventListener("click", () => {
-            portifolioSCTN.classList.remove("hide-section");
-            portifolioSCTN.classList.add("show-section");
-            skillSCTN.classList.add("hide-section");
-            homeSCTN.classList.add("hide-section");
-            sideBar.classList.add("hide-side-bar");
-            rightContents.classList.remove("hide-side-bar");
-            blogBtn.classList.remove("active-menu");
-            portifolioBtn.classList.add("active-menu");
-            SkillBtn.classList.remove("active-menu");
-            homeBtn.classList.remove("active-menu");
-             });
-             blogBtn.addEventListener("click", () => {
-              portifolioSCTN.classList.remove("show-section");
-              blogSCTN.classList.add("show-section");
-              blogSCTN.classList.remove("hide-section");
-              portifolioSCTN.classList.add("hide-section");
-              skillSCTN.classList.add("hide-section");
-              homeSCTN.classList.add("hide-section");
-              sideBar.classList.add("hide-side-bar");
-              rightContents.classList.remove("hide-side-bar");
-              blogBtn.classList.add("active-menu");
-              portifolioBtn.classList.remove("active-menu");
-              SkillBtn.classList.remove("active-menu");
-              homeBtn.classList.remove("active-menu");
-              });
-  //manage blog button
+menuIcon.addEventListener("click", () => {
+  sideBar.classList.remove("hide-side-bar");
+  sideBar.classList.add("show-side-bar");
+  rightContents.classList.add("hide-side-bar");
+  menuDiv.classList.add("hide-menu-icon");
+});
+homeBtn.addEventListener("click", () => {
+  homeSCTN.classList.remove("hide-section");
+  homeSCTN.classList.add("show-section");
+  skillSCTN.classList.add("hide-section");
+  sideBar.classList.add("hide-side-bar");
+  rightContents.classList.remove("hide-side-bar");
+  portifolioSCTN.classList.remove("show-section");
+  portifolioSCTN.classList.add("hide-section");
+  blogSCTN.classList.add("hide-section");
+  homeBtn.classList.add("active-menu");
+  portifolioBtn.classList.remove("active-menu");
+  blogBtn.classList.remove("active-menu");
+  SkillBtn.classList.remove("active-menu");
+});
+SkillBtn.addEventListener("click", () => {
+  skillSCTN.classList.remove("hide-section");
+  skillSCTN.classList.add("show-section");
+  homeSCTN.classList.add("hide-section");
+  sideBar.classList.add("hide-side-bar");
+  rightContents.classList.remove("hide-side-bar");
+  homeSCTN.classList.add("hide-section");
+  SkillBtn.classList.add("active-menu");
+  blogBtn.classList.remove("active-menu");
+  portifolioBtn.classList.remove("active-menu");
+  homeBtn.classList.remove("active-menu");
+});
+portifolioBtn.addEventListener("click", () => {
+  portifolioSCTN.classList.remove("hide-section");
+  portifolioSCTN.classList.add("show-section");
+  skillSCTN.classList.add("hide-section");
+  homeSCTN.classList.add("hide-section");
+  sideBar.classList.add("hide-side-bar");
+  rightContents.classList.remove("hide-side-bar");
+  blogBtn.classList.remove("active-menu");
+  portifolioBtn.classList.add("active-menu");
+  SkillBtn.classList.remove("active-menu");
+  homeBtn.classList.remove("active-menu");
+});
+blogBtn.addEventListener("click", () => {
+  portifolioSCTN.classList.remove("show-section");
+  blogSCTN.classList.add("show-section");
+  blogSCTN.classList.remove("hide-section");
+  portifolioSCTN.classList.add("hide-section");
+  skillSCTN.classList.add("hide-section");
+  homeSCTN.classList.add("hide-section");
+  sideBar.classList.add("hide-side-bar");
+  rightContents.classList.remove("hide-side-bar");
+  blogBtn.classList.add("active-menu");
+  portifolioBtn.classList.remove("active-menu");
+  SkillBtn.classList.remove("active-menu");
+  homeBtn.classList.remove("active-menu");
+});
+//manage blog button
 mngBlogBtn.addEventListener("click", () => {
   createBlogForm.classList.add("hide-blog-form");
   ManageBlogTable.classList.add("blog-table-show");

@@ -2,7 +2,8 @@ let blogContainer=document.querySelector(".container");
 let blogDivsion=document.createElement('div');
 //display data from local storage
 let blogs = JSON.parse(localStorage.getItem("blogList") || "[]");
-blogs.forEach(blog => {
+let threeLatestBlog=blogs.slice(-3);
+threeLatestBlog.reverse().forEach(blog => {
     //creating element to hol image source
   let img=document.createElement('img');
      img.src = blog.blog_Image;

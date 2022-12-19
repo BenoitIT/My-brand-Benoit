@@ -13,6 +13,7 @@ body{
     }
     .blog-contents .blog-list .blog{
         margin-left: 2vw;
+        width:25vw;
         margin-top: 5vh;
         background-color:#d4cfcf ;
         border-radius: 1vh;
@@ -24,28 +25,30 @@ body{
         }
         .blog-contents .blog-list .blog .blog-description{
             margin-top: 3vh;
+            margin-left: -1vw;
         }
     .blog-contents .blog-list .blog .blog-description .topic,.blog-contents .blog-list .blog .blog-description h1{
        margin-bottom: -4vh;
-        }
+              }
+        .blog-contents .blog-list .blog .blog-description h1{
+                margin-left: -4vw;
+             }
         .blog-contents .blog-list .blog .blog-description .topic{
             font-size: 2vh;
-            margin-right: 1vh;
+            margin-left: -2vw;
         }
         .blog-contents .blog-list .blog .blog-description p{
             width:15vw;
-            margin-left: -1vw;
             height:7vh;
-            margin-right: 1vh;
             overflow: hidden;
         }
 
     .blog-contents .blog-list .blog img{
-        width:8vw;
+        width:5vw;
         border-radius: 50%;
-        height:15vh;
+        height:10vh;
         margin-left: 2vw;
-        margin-top: 3vh;
+        margin-top: 6vh;
     }
     .blog-contents .blog-list .blog h1,.blog-contents .blog-list .blog p{
         font-size: 2vh;
@@ -205,7 +208,7 @@ body{
         margin-bottom: 2vh;
      }
     }
-    @media(max-width:1024px){
+    @media only screen and (min-width:624px) and (max-width:1024px){
         .blog-list .blog{
             display:none;
         }
