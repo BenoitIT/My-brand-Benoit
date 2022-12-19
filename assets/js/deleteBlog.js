@@ -13,8 +13,8 @@ headers.forEach(header=>{
 table.appendChild(headerRow);
 let tbody=document.createElement('tbody');
 //loading table data
-let blogs = JSON.parse(localStorage.getItem("blogList") || "[]");
-blogs.forEach(blog => {
+let arrayOfBlogs = JSON.parse(localStorage.getItem("blogList") || "[]");
+arrayOfBlogs.forEach(blog => {
 let dataRow=document.createElement('tr');
 Object.values(blog).forEach(text=>{
     if(typeof text!='number'){

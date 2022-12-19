@@ -97,10 +97,10 @@ createBtn.addEventListener("click", () => {
   createBlogForm.classList.remove("hide-blog-form");
 });
 // update button
-UpdateBtn.addEventListener("click", () => {
-  editForm.classList.add("show-blog");
-  editForm.classList.remove("hide-blogs");
-});
+// UpdateBtn.addEventListener("click", () => {
+//   editForm.classList.add("show-blog");
+//   editForm.classList.remove("hide-blogs");
+// });
 //add project button
 addpojectBtn.addEventListener("click", () => {
   ManageProjectTable.classList.remove("project-table-show");

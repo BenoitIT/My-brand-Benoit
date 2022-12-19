@@ -91,6 +91,14 @@ body{
      .blog-body p span{
         padding-top:2vh;
      }
+     .logn #comment{
+        height:7vh;
+     }
+     .logn #comment:focus{
+        height:14vh;
+        outline: none;
+        border: none;
+     }
      .moreComment{
         visibility: hidden;
      }
@@ -113,12 +121,7 @@ body{
         margin-top: -1vh;
         width:35vw;
          }
-     .blog-body .logn .text-input:focus{
-        outline: none;
-        border: none;
-        height:10vh;
-     }
-     .blog-body .logn .lgn-btn{
+    .blog-body .logn .lgn-btn{
         margin-left: 20vw;
         margin-top: -0.5vh;
         height:3.5vh;

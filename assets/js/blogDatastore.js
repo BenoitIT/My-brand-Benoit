@@ -6,6 +6,8 @@ let blogImage = document.querySelector("#image-upload");
 let quillEditor = document.querySelector("#blog-editor");
 let uploadBtn = document.querySelector("#upload");
 let imgView = document.querySelector(".imge-preview");
+let countBlog=document.querySelector("#count-blogs");
+let blogs;
 let image;
 //loading animage
 blogImage.addEventListener("change", (event) => {
@@ -32,8 +34,10 @@ uploadBtn.addEventListener("click", (e) => {
   blogTopic.value = "";
   blogImage.value = "";
   blogTitle.value = "";
-  let blogs = JSON.parse(localStorage.getItem("blogList") || "[]");
+  blogs = JSON.parse(localStorage.getItem("blogList") || "[]");
   blogs.push(newBlog);
   alert("new blog saved in local storage");
   localStorage.setItem("blogList", JSON.stringify(blogs));
-});
+ });
+ let blogFolder = JSON.parse(localStorage.getItem("blogList") || "[]");
+ countBlog.innerText=blogFolder.length;

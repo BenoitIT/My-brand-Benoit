@@ -2,6 +2,7 @@ let blogContainer=document.querySelector(".container");
 let blogDivsion=document.createElement('div');
 //display data from local storage
 let blogs = JSON.parse(localStorage.getItem("blogList") || "[]");
+if(blogs.length>1){
 let threeLatestBlog=blogs.slice(-3);
 threeLatestBlog.reverse().forEach(blog => {
     //creating element to hol image source
@@ -34,4 +35,7 @@ threeLatestBlog.reverse().forEach(blog => {
   blogDivsion.appendChild(blogDiv)
   });
   blogContainer.appendChild(blogDivsion);
-
+}
+else{
+   blogContainer.innerText='no blog found';
+}
