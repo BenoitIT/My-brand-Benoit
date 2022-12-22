@@ -1,5 +1,3 @@
-
-
 import { initializeApp } from "firebase/app";
 import {
   getFirestore,
@@ -93,12 +91,10 @@ onSnapshot(colRef, (snapshot) => {
            alert("you successfull subscribed");
           emailInput.value='';
         });
-      }
-      }
+      }}
  else{
    alert('enter your email');
- }
-   });
+ }});
 blogImage.addEventListener("change", (event) => {
     event.preventDefault();
     imgView.classList.add("show-preview");
@@ -110,7 +106,6 @@ blogImage.addEventListener("change", (event) => {
       });
       reader.readAsDataURL(fileItem);
       });
-
 // ===== Adding blog ====
 const UploadBlogForm = document.querySelector("#blog-form");
 UploadBlogForm &&
@@ -155,16 +150,12 @@ UploadBlogForm &&
       created_at: serverTimestamp(),
       image: uploadedImageURL,
         }).then(() => {
-
       UploadBlogForm.reset();
       alert("new blog saved hhhh");
       imgView.classList.remove("imge-preview");
        UploadBlogForm.reset();
-
     });
  });
-    }
-  );
-
+    });
   });
 

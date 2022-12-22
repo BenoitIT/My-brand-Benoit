@@ -514,7 +514,7 @@ hr {
   margin-top: 6vh;
   display: flex;
   flex-direction: row;
-  gap: 8rem;
+  gap: 10rem;
 }
 .fields {
   margin-top: 2vh;
@@ -561,11 +561,12 @@ hr {
 .contact-box > h1 {
   font-weight: 300;
   font-size: 3vh;
-  margin-left: 5vw;
+  margin-left: 3vw;
 }
 .contact-box > p {
   text-align: center;
   margin-bottom: 1.5vh;
+  margin-left: 2vw;
   font-size: 2vh;
 }
 .icons {
@@ -697,7 +698,6 @@ hr {
   display: none;
 }
 /*login page */
-
 #loginPage {
   position: absolute;
   top: 0;
@@ -708,7 +708,6 @@ hr {
   align-content: center;
   align-items: center;
 }
-
 .title {
   font-size: 4vh;
   font-weight: 800;
@@ -772,7 +771,6 @@ hr {
 #editor {
   background-color: white;
 }
-
 .showLogn {
   visibility: visible;
   overflow-y: hidden;
@@ -782,9 +780,7 @@ hr {
 .hideLogn {
   visibility: hidden;
 }
-
 /*media queries*/
-
 @media (max-width: 600px) {
   .menus {
     display: none;
