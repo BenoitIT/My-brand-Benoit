@@ -5,12 +5,18 @@ import {
   onSnapshot,
   addDoc,
   deleteDoc,
-  serverTimestamp
+  serverTimestamp,
 } from "firebase/firestore";
-import { getStorage, ref,uploadBytesResumable,getDownloadURL} from "firebase/storage";
+import {
+  getStorage,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+} from "firebase/storage";
 import { displayBlist } from "./displayFrontBlogs";
 import { leftSideBlogs } from "./displayBleftSide";
 import { getClickedBlog } from "./chosenBlog";
+import { saveIntoLocalStorage, sendComment } from "./localStorageSub";
 const firebaseConfig = {
   apiKey: "AIzaSyAr8kCqD4Wj-O70pZkT52l2ZTktKC85Fz4",
   authDomain: "my-brand-7cc53.firebaseapp.com",
@@ -26,8 +32,10 @@ const db = getFirestore();
 //blogs collections
 const colRef = collection(db, "blogs");
 //subscribe collection
-const subRef=collection(db,'subscribes');
+const subRef = collection(db, "subscribes");
+const commentRef = collection(db, "comments");
 let blogs = [];
+let subbscribes = [];
 const findblogid = () => {
   let parameter = new URLSearchParams(window.location.search);
   let foundId = parameter.get("id");
@@ -36,21 +44,24 @@ const findblogid = () => {
 let id = findblogid();
 //get docoments data.........
 onSnapshot(colRef, (snapshot) => {
-   snapshot.docs.forEach((doc) => {
+  snapshot.docs.forEach((doc) => {
     blogs.push({ ...doc.data(), id: doc.id });
   });
-  if(!id){
+  if (!id) {
     displayBlist(blogs);
   }
   leftSideBlogs(blogs);
- });
+});
+//get subscribes data.........
+onSnapshot(subRef, (snapshot) => {
+  snapshot.docs.forEach((doc) => {
+    subbscribes.push({ ...doc.data(), id: doc.id });
+  });
+});
 // //displaying document data.......................................
-let reader=new FileReader();
-let imgView = document.querySelector(".imge-preview");
-let blogImage = document.querySelector("#image-upload");
-let blogTopic = document.querySelector("#topic");
-let blogTitle = document.querySelector("#Title");
-let quillEditor = document.querySelector("#blog-editor");
+let subscribeBtn = document.querySelector("#subscribeBtn");
+let commentInput = document.querySelector("#comment");
+let commenBtn = document.querySelector("#comment-btn");
 let image;
 let fileItem;
 let fileName;
@@ -65,97 +76,129 @@ onSnapshot(colRef, (snapshot) => {
   snapshot.docs.forEach((doc) => {
     blogs.push({ ...doc.data(), id: doc.id });
   });
-   getClickedBlog(blogs,id)
-    });
-   //----adding subscription--
-   let subscribes = [];
-   onSnapshot(subRef, (snapshot) => {
-      snapshot.docs.forEach((doc) => {
-      subscribes.push({ ...doc.data(), id: doc.id });
-    });
+  getClickedBlog(blogs, id);
+});
+//----adding subscription--
+let subscribes = [];
+onSnapshot(subRef, (snapshot) => {
+  snapshot.docs.forEach((doc) => {
+    subscribes.push({ ...doc.data(), id: doc.id });
+  });
+});
+// console.log(commenBtn);
+// //get subscribe from clinet side
+// let subscribess = JSON.parse(localStorage.getItem("subsList") || "[]");
+// //colling the function to check whether a person subcribed or not
+// let userEmail = sendComment(subbscribes, subscribess);
+// commenBtn.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   console.log('event triggered');
+//   let commText = commentInput.value;
+//   if (!userEmail) {
+//     alert("subscribe first please!");
+//   }
+//   addDoc(commentRef, {
+//     email: userEmail,
+//     Bcoment: commText,
+//     blogId: id
+//   }).then(() => {
+//     alert("you commented to this post");
+//     commText = "";
+//   });
+// });
+//subscribe button
+
+let emailInput = document.querySelector("#emailForSub");
+subscribeBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  saveIntoLocalStorage(emailInput.value);
+  if (emailInput.value !== "") {
+    //checking if person have arleady subscribed...
+    if (subscribes.findIndex((sub) => sub.email == emailInput.value) > -1) {
+      alert("you had arleady subscribed");
+    } else {
+      addDoc(subRef, {
+        email: emailInput.value,
+        created_at: serverTimestamp(),
+      }).then(() => {
+        alert("you successfull subscribed");
+        emailInput.value = "";
       });
-   let subscribeBtn = document.querySelector("#subscribeBtn");
-   let emailInput = document.querySelector("#emailForSub");
-     subscribeBtn.addEventListener("click", (e) => {
-     e.preventDefault();
-     if(emailInput.value!==''){
-      //checking if person have arleady subscribed...
-      if(subscribes.findIndex(sub=>sub.email==emailInput.value)>-1){
-        alert('you had arleady subscribed');
-      }
-      else{
-        addDoc(subRef,{
-          email: emailInput.value,
-           created_at: serverTimestamp(),
-            }).then(() => {
-           alert("you successfull subscribed");
-          emailInput.value='';
-        });
-      }}
- else{
-   alert('enter your email');
- }});
+    }
+  } else {
+    alert("enter your email");
+  }
+});
+let reader = new FileReader();
+let imgView = document.querySelector(".imge-preview");
+let blogImage = document.querySelector("#image-upload");
+let blogTopic = document.querySelector("#topic");
+let blogTitle = document.querySelector("#Title");
+let quillEditor = document.querySelector("#blog-editor");
+
 blogImage.addEventListener("change", (event) => {
-    event.preventDefault();
-    imgView.classList.add("show-preview");
-    imgView.classList.remove("imge-preview");
-       getFile(event);
-       reader.addEventListener("load", () => {
-        image=reader.result
-        imgView.src =image ;
-      });
-      reader.readAsDataURL(fileItem);
-      });
+  event.preventDefault();
+  imgView.classList.add("show-preview");
+  imgView.classList.remove("imge-preview");
+  getFile(event);
+  reader.addEventListener("load", () => {
+    image = reader.result;
+    imgView.src = image;
+  });
+  reader.readAsDataURL(fileItem);
+});
+
 // ===== Adding blog ====
 const UploadBlogForm = document.querySelector("#blog-form");
 UploadBlogForm &&
   UploadBlogForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    const storage=getStorage();
-   let storageRef = ref(storage, "images/" + fileName);
+    const storage = getStorage();
+    let storageRef = ref(storage, "images/" + fileName);
     const uploadTask = uploadBytesResumable(storageRef, fileItem);
-  // Register three observers:
-  // 1. 'state_changed' observer, called any time the state changes
-  // 2. Error observer, called on failure
-  // 3. Completion observer, called on successful completion
-  uploadTask.on(
-    "state_changed",
-    (snapshot) => {
-      // Observe state change events such as progress, pause, and resume
-      // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-      const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-      console.log("Upload is " + progress + "% done");
-      switch (snapshot.state) {
-        case "paused":
-          console.log("Upload get paused");
-          break;
-        case "running":
-          console.log("Upload is running...");
-          break;
+    // Register three observers:
+    // 1. 'state_changed' observer, called any time the state changes
+    // 2. Error observer, called on failure
+    // 3. Completion observer, called on successful completion
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        // Observe state change events such as progress, pause, and resume
+        // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+        const progress =
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log("Upload is " + progress + "% done");
+        switch (snapshot.state) {
+          case "paused":
+            console.log("Upload get paused");
+            break;
+          case "running":
+            console.log("Upload is running...");
+            break;
+        }
+      },
+      (error) => {
+        console.log(error);
+        alert("Some internal problems while uploading..");
+        return false;
+      },
+      () => {
+        // On successful image uploads
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          uploadedImageURL = downloadURL;
+          addDoc(colRef, {
+            topic: blogTopic.value,
+            Title: blogTitle.value,
+            description: quillEditor.textContent,
+            created_at: serverTimestamp(),
+            image: uploadedImageURL,
+          }).then(() => {
+            UploadBlogForm.reset();
+            alert("new blog saved hhhh");
+            imgView.classList.remove("imge-preview");
+            UploadBlogForm.reset();
+          });
+        });
       }
-    },
-    (error) => {
-      console.log(error);
-      alert("Some internal problems while uploading..");
-      return false;
-    },
-    () => {
-  // On successful image uploads
-      getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-        uploadedImageURL = downloadURL;
-      addDoc(colRef,{
-      topic: blogTopic.value,
-      Title: blogTitle.value,
-      description: quillEditor.textContent,
-      created_at: serverTimestamp(),
-      image: uploadedImageURL,
-        }).then(() => {
-      UploadBlogForm.reset();
-      alert("new blog saved hhhh");
-      imgView.classList.remove("imge-preview");
-       UploadBlogForm.reset();
-    });
- });
-    });
+    );
   });
-

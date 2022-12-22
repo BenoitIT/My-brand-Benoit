@@ -21,6 +21,7 @@ export function getClickedBlog(arr,idd){
           likeDiv.innerText = "like 38";
           let form = document.createElement("form");
           form.classList.add("logn");
+          form.id="comment-form";
           let input = document.createElement("input");
           input.type = "text";
           input.name = "comment";
@@ -30,6 +31,7 @@ export function getClickedBlog(arr,idd){
           form.appendChild(input);
           let button = document.createElement("button");
           button.id = "comment-btn";
+          button.type="submit";
           button.classList.add("lgn-btn");
           button.innerText = "comment";
           form.appendChild(button);

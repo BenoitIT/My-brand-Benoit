@@ -573,6 +573,7 @@ hr {
   display: flex;
   flex-direction: row;
   gap: 1rem;
+  margin-left: 3vw;
 }
 #blogs {
   background-color: #efebeb;
