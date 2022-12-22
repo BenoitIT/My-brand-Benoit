@@ -697,9 +697,7 @@ hr {
   display: none;
 }
 /*login page */
-.hideLogn {
-  visibility: hidden;
-}
+
 #loginPage {
   position: absolute;
   top: 0;
@@ -780,6 +778,9 @@ hr {
   overflow-y: hidden;
   width: 100vw;
   height: 100vh;
+}
+.hideLogn {
+  visibility: hidden;
 }
 
 /*media queries*/
