@@ -3,10 +3,8 @@ import { initializeApp } from "firebase/app";
 import {
   getFirestore,
   collection,
-  onSnapshot,
-  addDoc,
-  deleteDoc,
-  serverTimestamp,
+   addDoc,
+   serverTimestamp,
 } from "firebase/firestore";
 import {
   getStorage,
@@ -28,8 +26,6 @@ const db = getFirestore();
 //get collection
 //blogs collections
 const colRef = collection(db, "blogs");
-
-
 let reader = new FileReader();
 let imgView = document.querySelector(".imge-preview");
 let blogImage = document.querySelector("#image-upload");
@@ -56,7 +52,6 @@ blogImage.addEventListener("change", (event) => {
   });
   reader.readAsDataURL(fileItem);
 });
-
 // ===== Adding blog ====
 const UploadBlogForm = document.querySelector("#blog-form");
 UploadBlogForm &&

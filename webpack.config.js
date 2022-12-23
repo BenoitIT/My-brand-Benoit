@@ -4,7 +4,12 @@ module.exports={
     entry:{
         home:'./firebase/src/index.js',
         addBlog:'./firebase/src/addblog.js',
-        deleteBlog:'./firebase/src/blogTable.js'
+        deleteBlog:'./firebase/src/blogTable.js',
+        chosenBlog:'./firebase/src/chosenBlog.js',
+        frontPageBlog:'./firebase/src/displayFrontBlogs.js',
+        subscribePage:'./firebase/src/subscribePage.js',
+        addComment:'./firebase/src/addcomment.js',
+        displayComment:'./firebase/src/Displaycomment.js'
       },
     output:{
         path:path.resolve(__dirname,'dst'),

@@ -5,7 +5,6 @@ import {
   onSnapshot,
   addDoc,
 } from "firebase/firestore";
-import {sendComment } from "./localStorageSub";
 const firebaseConfig = {
   apiKey: "AIzaSyAr8kCqD4Wj-O70pZkT52l2ZTktKC85Fz4",
   authDomain: "my-brand-7cc53.firebaseapp.com",
@@ -19,7 +18,6 @@ initializeApp(firebaseConfig);
 const db = getFirestore();
 //comment collection
 const commentRef = collection(db, "comments");
-let subbscribes = [];
 const findblogid = () => {
   let parameter = new URLSearchParams(window.location.search);
   let foundId = parameter.get("id");
@@ -27,31 +25,27 @@ const findblogid = () => {
 };
 let id = findblogid();
 //get subscribes data.........
-onSnapshot(subRef, (snapshot) => {
-    snapshot.docs.forEach((doc) => {
-      subbscribes.push({ ...doc.data(), id: doc.id });
-    });
+if (id) {
+  //get docoments data.........
+  let commentInput = document.querySelector("#comment");
+  let commenBtn = document.querySelector("#comment-btn");
+  let nameInput = document.querySelector("#name-sender");
+  //get subscribe from clinet side
+  commenBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    let commText = commentInput.value;
+    if (nameInput.value === "") {
+      alert("please enter your name");
+    } else {
+      addDoc(commentRef, {
+        email: nameInput.value,
+        Bcoment: commText,
+        blogId: id,
+      }).then(() => {
+        commText = "";
+        nameInput.value = "";
+        alert("you commented to this post");
+      });
+    }
   });
-//get docoments data.........
-let commentInput = document.querySelector("#comment");
-let commenBtn = document.querySelector("#comment-btn");
-//get subscribe from clinet side
-let subscribess = JSON.parse(localStorage.getItem("subsList") || "[]");
-//colling the function to check whether a person subcribed or not
-let userEmail = sendComment(subbscribes, subscribess);
-commenBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  console.log('event triggered');
-  let commText = commentInput.value;
-  if (!userEmail) {
-    alert("subscribe first please!");
-  }
-  addDoc(commentRef, {
-    email: userEmail,
-    Bcoment: commText,
-    blogId: id
-  }).then(() => {
-    alert("you commented to this post");
-    commText = "";
-  });
-});
+}

@@ -10,13 +10,23 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./firebase/src/addcomment.js":
-/*!************************************!*\
-  !*** ./firebase/src/addcomment.js ***!
-  \************************************/
+/***/ "./firebase/src/localStorageSub.js":
+/*!*****************************************!*\
+  !*** ./firebase/src/localStorageSub.js ***!
+  \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! firebase/app */ \"./node_modules/firebase/app/dist/esm/index.esm.js\");\n/* harmony import */ var firebase_firestore__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! firebase/firestore */ \"./node_modules/firebase/firestore/dist/esm/index.esm.js\");\n\r\n\r\nconst firebaseConfig = {\r\n  apiKey: \"AIzaSyAr8kCqD4Wj-O70pZkT52l2ZTktKC85Fz4\",\r\n  authDomain: \"my-brand-7cc53.firebaseapp.com\",\r\n  projectId: \"my-brand-7cc53\",\r\n  storageBucket: \"my-brand-7cc53.appspot.com\",\r\n  messagingSenderId: \"9301501628\",\r\n  appId: \"1:9301501628:web:09bed15352d193ad1c92b9\",\r\n};\r\n(0,firebase_app__WEBPACK_IMPORTED_MODULE_0__.initializeApp)(firebaseConfig);\r\n//load database\r\nconst db = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.getFirestore)();\r\n//comment collection\r\nconst commentRef = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.collection)(db, \"comments\");\r\nconst findblogid = () => {\r\n  let parameter = new URLSearchParams(window.location.search);\r\n  let foundId = parameter.get(\"id\");\r\n  return foundId;\r\n};\r\nlet id = findblogid();\r\n//get subscribes data.........\r\nif (id) {\r\n  //get docoments data.........\r\n  let commentInput = document.querySelector(\"#comment\");\r\n  let commenBtn = document.querySelector(\"#comment-btn\");\r\n  let nameInput = document.querySelector(\"#name-sender\");\r\n  //get subscribe from clinet side\r\n  commenBtn.addEventListener(\"click\", (e) => {\r\n    e.preventDefault();\r\n    let commText = commentInput.value;\r\n    if (nameInput.value === \"\") {\r\n      alert(\"please enter your name\");\r\n    } else {\r\n      (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.addDoc)(commentRef, {\r\n        email: nameInput.value,\r\n        Bcoment: commText,\r\n        blogId: id,\r\n      }).then(() => {\r\n        commText = \"\";\r\n        nameInput.value = \"\";\r\n        alert(\"you commented to this post\");\r\n      });\r\n    }\r\n  });\r\n}\r\n\n\n//# sourceURL=webpack://my-brand-benoit/./firebase/src/addcomment.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"saveIntoLocalStorage\": () => (/* binding */ saveIntoLocalStorage),\n/* harmony export */   \"sendComment\": () => (/* binding */ sendComment)\n/* harmony export */ });\nfunction saveIntoLocalStorage(value){\r\n    if (value !== \"\") {\r\n        let subscribess = JSON.parse(localStorage.getItem(\"subsList\") || \"[]\");\r\n        const checkEmail = subscribess.findIndex((sub) => sub.email == value);\r\n        if (checkEmail === -1) {\r\n            let newSubb = {\r\n                 email: value,\r\n              };\r\n          console.log(newSubb);\r\n          subscribess.push(newSubb);\r\n          localStorage.setItem(\"subsList\", JSON.stringify(subscribess));\r\n            }\r\n        }\r\n}\r\nfunction sendComment(subs,localSub){\r\n    let email;\r\n   subs.forEach(sub=> {\r\n       if(sub.email===localSub[0].email){\r\n         email = sub.email\r\n       }\r\n   });\r\n   return email;\r\n   }\n\n//# sourceURL=webpack://my-brand-benoit/./firebase/src/localStorageSub.js?");
+
+/***/ }),
+
+/***/ "./firebase/src/subscribePage.js":
+/*!***************************************!*\
+  !*** ./firebase/src/subscribePage.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! firebase/app */ \"./node_modules/firebase/app/dist/esm/index.esm.js\");\n/* harmony import */ var firebase_firestore__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! firebase/firestore */ \"./node_modules/firebase/firestore/dist/esm/index.esm.js\");\n/* harmony import */ var _localStorageSub__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./localStorageSub */ \"./firebase/src/localStorageSub.js\");\n\r\n\r\n\r\nconst firebaseConfig = {\r\n  apiKey: \"AIzaSyAr8kCqD4Wj-O70pZkT52l2ZTktKC85Fz4\",\r\n  authDomain: \"my-brand-7cc53.firebaseapp.com\",\r\n  projectId: \"my-brand-7cc53\",\r\n  storageBucket: \"my-brand-7cc53.appspot.com\",\r\n  messagingSenderId: \"9301501628\",\r\n  appId: \"1:9301501628:web:09bed15352d193ad1c92b9\",\r\n};\r\n(0,firebase_app__WEBPACK_IMPORTED_MODULE_0__.initializeApp)(firebaseConfig);\r\n//load database\r\nconst db = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.getFirestore)();\r\n//get collection\r\n//subscribe collection\r\nconst subRef = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.collection)(db, \"subscribes\");\r\n//----adding subscription--\r\nlet subscribeBtn = document.querySelector(\"#subscribeBtn\");\r\nlet subscribes = [];\r\n(0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.onSnapshot)(subRef, (snapshot) => {\r\n  snapshot.docs.forEach((doc) => {\r\n    subscribes.push({ ...doc.data(), id: doc.id });\r\n  });\r\n  //subscribe button\r\n  let emailInput = document.querySelector(\"#emailForSub\");\r\nsubscribeBtn.addEventListener(\"click\", (e) => {\r\n  e.preventDefault();\r\n  console.log('check the button');\r\n  (0,_localStorageSub__WEBPACK_IMPORTED_MODULE_2__.saveIntoLocalStorage)(emailInput.value);\r\n  if (emailInput.value !== \"\") {\r\n    //checking if person have arleady subscribed...\r\n    if (subscribes.findIndex((sub) => sub.email == emailInput.value) > -1) {\r\n      alert(\"you had arleady subscribed\");\r\n    } else {\r\n      (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.addDoc)(subRef, {\r\n        email: emailInput.value,\r\n        created_at: (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.serverTimestamp)(),\r\n      }).then(() => {\r\n        alert(\"you successfull subscribed\");\r\n        emailInput.value = \"\";\r\n      });\r\n    }\r\n  } else {\r\n    alert(\"enter your email\");\r\n  }\r\n});\r\n});\r\n\r\n\r\n\n\n//# sourceURL=webpack://my-brand-benoit/./firebase/src/subscribePage.js?");
 
 /***/ }),
 
@@ -192,7 +202,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./firebase/src/addcomment.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./firebase/src/subscribePage.js");
 /******/ 	
 /******/ })()
 ;

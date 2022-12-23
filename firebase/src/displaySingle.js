@@ -28,8 +28,7 @@ import {
     let blogContainerr = document.querySelector(".blog-list");
       let blogDivsionn = document.createElement("div");
       let sortedArray = blogs.reverse();
-      console.log(blogs+'hthose')
-      //display data from local storage
+       //display data from local storage
       sortedArray.forEach((blog) => {
         //creating element to hol image source
         let img = document.createElement("img");
@@ -58,7 +57,7 @@ import {
         blogDiv.appendChild(blogDecriptionDiv);
         blogDivsionn.appendChild(blogDiv);
       });
-      blogContainerr.appendChild(blogDivsionn);
+      blogContainerr.innerHTML=blogDivsionn;
       return blogContainerr;
     }
 

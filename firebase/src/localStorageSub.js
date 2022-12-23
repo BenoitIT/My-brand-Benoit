@@ -15,8 +15,8 @@ export function saveIntoLocalStorage(value){
 export function sendComment(subs,localSub){
     let email;
    subs.forEach(sub=> {
-       if(sub.email===localSub[0]){
-        email = sub.email
+       if(sub.email===localSub[0].email){
+         email = sub.email
        }
    });
    return email;
