@@ -11,7 +11,7 @@
 body{
   background-color:#d6d8f8;
 }
-.container {
+.dash-container {
   margin: 0;
   display: flex;
   flex-direction: row;

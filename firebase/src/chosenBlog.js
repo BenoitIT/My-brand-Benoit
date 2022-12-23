@@ -31,7 +31,6 @@ export function getClickedBlog(arr,idd){
           form.appendChild(input);
           let button = document.createElement("button");
           button.id = "comment-btn";
-          button.type="submit";
           button.classList.add("lgn-btn");
           button.innerText = "comment";
           form.appendChild(button);
