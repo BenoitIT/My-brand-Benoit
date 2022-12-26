@@ -240,7 +240,7 @@
       </div>
       <div class="contact-body">
         <div class="form-data">
-          <form id="contact-form">
+          <form id="contact-form" class="contact-message">
             <div class="fields">
               <h6>your Name</h6>
               <input type="text" name="name" id="senderNam" class="inputs"/>
@@ -248,12 +248,12 @@
             </div>
             <div class="fields">
               <h6>your email</h6>
-              <input type="text" name="name"  id="senderEmaill" class="inputs"/>
+              <input type="text" name="email"  id="senderEmaill" class="inputs"/>
               <div class="ErrMsg" style="color:red;font-size:2vh;padding-top:1vh"></div>
             </div>
             <div class="fields">
               <h6>your subject</h6>
-              <input type="text" name="name" id="subjec" class="inputs"/>
+              <input type="text" name="subject" id="subjec" class="inputs"/>
               <div class="ErrMsg" style="color:red;font-size:2vh;padding-top:1vh"></div>
             </div>
               <div class="fields">
@@ -267,11 +267,12 @@
                 theme: 'snow',
                 placeholder:'type some message to the admin',
                 required:'true',
-                height:'20vh'
+                height:'20vh',
+                name:'message'
               });
             </script>
             <div class="fields">
-              <button id="sendMsg">send message</button>
+              <button type="submit" id="sendMsg">send message</button>
             </div>
           </form>
         </div>
@@ -397,6 +398,7 @@
     <script src="/dst/home.bundler.js"></script>
     <script src="/dst/frontPageBlog.bundler.js"></script>
     <script src="/dst/subscribePage.bundler.js"></script>
+    <script src="/dst/recordMessage.bundler.js"></script>
     <!-- <script src="./assets/js/subscribe.js"></script> -->
   </body>
 </html>

@@ -1,403 +1,340 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="../css/index.css">
     <link rel="stylesheet" type="text/css" href="../css/adminDash.css">
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
-      <!--initializing quill cdn main libraries-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <!--initializing quill cdn main libraries-->
     <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
     <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
     <!-- Theme included stylesheets for quill -->
     <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />
     <link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet" />
     <link href="//cdn.quilljs.com/1.3.6/quill.core.css" rel="stylesheet" />
-     </head>
-  <body>
+</head>
+
+<body>
     <div class="dash-container">
-      <div class="side-bar">
-        <!--nav logo-->
-        <div id="logo">
-          <img src="../images/logp.png"/>
+        <div class="side-bar">
+            <!--nav logo-->
+            <div id="logo">
+                <img src="../images/logp.png" />
+            </div>
+            <!--nav-menus-->
+            <span class="material-icons menu-icon"> menu </span>
+            <div class="side-menus">
+                <ul>
+                    <li>
+                        <a href="#" id="home-menu">Home</a>
+                    </li>
+                    <li>
+                        <a href="#" id="blog-menu">Blogs</a>
+                    </li>
+                    <li>
+                        <a href="#" id="portifolio-menu">Portifolio</a>
+                    </li>
+                    <li>
+                        <a href="#" id="skills-menu">Skills</a>
+                    </li>
+                    <li>
+                        <a href="/index.html">logout</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <!--nav-menus-->
-        <span class="material-icons menu-icon"> menu </span>
-        <div class="side-menus">
-          <ul>
-            <li>
-              <a href="#" id="home-menu">Home</a>
-            </li>
-            <li>
-              <a href="#" id="blog-menu">Blogs</a>
-            </li>
-            <li>
-              <a href="#" id="portifolio-menu">Portifolio</a>
-            </li>
-            <li>
-              <a href="#" id="skills-menu">Skills</a>
-            </li>
-            <li>
-              <a href="/index.html">logout</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!--end of side bar-->
-      <div class="right-contents">
-        <span class="material-icons menu-icon" id="hurmbug"> menu </span>
-      <div class="contents blogs-section">
-        <div class="short-nav">
-          <span id="create">CREATE BLOG</span>
-          <span id="mnge-blog">MANAGE BLOGS</span>
-        </div>
-        <div class="create-blog show-blog">
-          <form class="logn" id="blog-form">
-            <label for="topic"><b>Topic</b></label>
-            <input
-              type="text"
-              name="blog-topic"
-              id="topic"
-              class="text-input"
-            />
-            <label for="Title"><b>Blog-Title</b></label>
-            <input
-              type="text"
-              name="Blog-Title"
-              id="Title"
-              class="text-input"
-            />
-            <label for="image"></label><img id="test-img" class="imge-preview" src="" alt="blog-file" width="50px" height="50px"/></label>
-            <input type="file" name="Blog-file" id="image-upload" mimeType="jpg"/>
-             <div id="blog-editor"></div>
-             <!--adding quill as wyisg editor-->
-            <script>
-              var quill = new Quill('#blog-editor', {
-                theme: 'snow',
-                placeholder:'type contents for a blog'
-              });
-              </script>
-            <button id="upload" class="lgn-btn">Save blog</button>
-            </form>
+        <!--end of side bar-->
+        <div class="right-contents">
+            <span class="material-icons menu-icon" id="hurmbug"> menu </span>
+            <div class="contents blogs-section">
+                <div class="short-nav">
+                    <span id="create">CREATE BLOG</span>
+                    <span id="mnge-blog">MANAGE BLOGS</span>
+                </div>
+                <div class="create-blog show-blog">
+                    <form class="logn" id="blog-form">
+                        <label for="topic"><b>Topic</b></label>
+                        <input type="text" name="blog-topic" id="topic" class="text-input" />
+                        <label for="Title"><b>Blog-Title</b></label>
+                        <input type="text" name="Blog-Title" id="Title" class="text-input" />
+                        <label for="image"></label><img id="test-img" class="imge-preview" src=""
+                            alt="blog-file" width="50px" height="50px" /></label>
+                        <input type="file" name="Blog-file" id="image-upload" mimeType="jpg" />
+                        <div id="blog-editor"></div>
+                        <!--adding quill as wyisg editor-->
+                        <script>
+                            var quill = new Quill('#blog-editor', {
+                                theme: 'snow',
+                                placeholder: 'type contents for a blog'
+                            });
+                        </script>
+                        <button id="upload" class="lgn-btn">Save blog</button>
+                    </form>
 
-        </div>
+                </div>
 
-        <div class="blog-table hide-blogs">
-          <table class="styled-table" id="table-blog">
-            <!-- <thead>
-                <tr>
-                    <th>Topic</th>
-                    <th>Title</th>
-                    <th>Blog-file</th>
-                    <th>Message</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="active-row">
-                    <td>suggestion</td>
-                    <td>Mac book</td>
-                    <td>Drinking te...</td>
-                    <td>it is better to..</td>
-                    <td><button>delete</button><button  class="update" id="update">update</button></td>
-                </tr>
-                <tr>
-                  <td>Mac book</td>
-                  <td>Why peoples</td>
-                  <td>IMG_38AS</td>
-                  <td>it is better to..</td>
-                  <td><button>delete</button><button class="update">update</button></td>
-                </tr>
-                <and so on...
-            </tbody> -->
-        </table>
-        <div class="create-blog edit-form hide-blogs">
-          <form class="logn">
-            <label for="topic">Topic</label>
-            <input
-              type="text"
-              name="blog-topic"
-              id="topic"
-              class="text-input"
-              value="suggestion"
-            />
-            <label for="Title">Blog-Title</label>
-            <input
-              type="text"
-              name="Blog-Title"
-              id="Title"
-              class="text-input"
-              value="Mac book"
-            />
-            <label for="contents">blog contents</label>
-            <textarea class="text-input"
-            >
-            amet, consectetur it is better Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            </textarea>
-            <button class="lgn-btn">Edit</button>
-          </form>
-        </div>
-        </div>
-        <!--end of blog section-->
-         <div class="contents show-section portifolio-section">
-          <div class="short-nav">
-            <span id="new-project">ADD PROJECT</span>
-            <span id="projects">MANAGE PROJECTS</span>
-          </div>
-          <div class="create-project show-project">
-            <form class="logn">
-              <label for="topic">Project Name</label>
-              <input
-                type="text"
-                name="project-topic"
-                id="topic"
-                class="text-input"
-              />
-              <div id="editor">
-              </div>
-              <script>
-                var quill = new Quill('#editor', {
-                  theme: 'snow',
-                  placeholder:'type your project description'
-                });
-              </script>
-              <label for="image">project image</label>
-              <input type="file" name="Blog-file" id="image"/>
-              <button class="lgn-btn">Save Project</button>
-            </form>
-          </div>
-          <div class="project-table hide-project">
-            <table class="styled-table">
-              <thead>
-                  <tr>
-                      <th>Project Name</th>
-                      <th>Project description</th>
-                      <th>Project image</th>
-                       <th>Action</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr class="active-row">
-                      <td>e-health</td>
-                      <td>amet, consectetur it is better Lorem ipsum dolor
-                        sit amet, consectetur adipiscing elitr</td>
-                      <td>IMG_38AS</td>
-                      <td><button>delete</button><button>update</button></td>
-                  </tr>
-                  <tr>
-                    <td>e-health</td>
-                    <td>amet, consectetur it is better Lorem ipsum dolor
-                      sit amet, consectetur adipiscing elitr</td>
-                    <td>IMG_38AS</td>
-                    <td><button class="delete-proect">delete</button><button id="update-project">update</button></td>
-                  </tr>
-                </tbody>
-          </table>
-          <div class="create-project edit-form hide-project">
-            <form class="logn">
-              <label for="topic">Project Name</label>
-              <input
-                type="text"
-                name="ProjectName"
-                id="topic"
-                class="text-input"
-                value="e-health"
-              />
-              <label for="contents">blog contents</label>
-              <textarea class="text-input"
-              >
+                <div class="blog-table hide-blogs">
+                    <table class="styled-table" id="table-blog">
+                        <thead>
+                            <tr>
+                                <th>Topic</th>
+                                <th>Title</th>
+                                <th>Blog-file</th>
+                                <th>Message</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                        </tbody>
+                    </table>
+                    <div class="update-blog-form remove-updateForm">
+                        <form class="update-form">
+                            <label for="topic">Topic</label>
+                            <input type="text" name="blogtopic" id="topic" class="text-input" value="" />
+                            <label for="Title">Blog-Title</label>
+                            <input type="text" name="BlogTitle" id="Title" class="text-input" value="" />
+                            <label for="contents">blog contents</label>
+                            <textarea class="text-input" name="contents">
+              </textarea>
+                            <button class="lgn-btn" id="editBtn" type="button">Edit</button>
+                        </form>
+                    </div>
+                </div>
+                <!--end of blog section-->
+                <div class="contents show-section portifolio-section">
+                    <div class="short-nav">
+                        <span id="new-project">ADD PROJECT</span>
+                        <span id="projects">MANAGE PROJECTS</span>
+                    </div>
+                    <div class="create-project show-project">
+                        <form class="logn">
+                            <label for="topic">Project Name</label>
+                            <input type="text" name="project-topic" id="topic" class="text-input" />
+                            <div id="editor">
+                            </div>
+                            <script>
+                                var quill = new Quill('#editor', {
+                                    theme: 'snow',
+                                    placeholder: 'type your project description'
+                                });
+                            </script>
+                            <label for="image">project image</label>
+                            <input type="file" name="Blog-file" id="image" />
+                            <button class="lgn-btn">Save Project</button>
+                        </form>
+                    </div>
+                    <div class="project-table hide-project">
+                        <table class="styled-table">
+                            <thead>
+                                <tr>
+                                    <th>Project Name</th>
+                                    <th>Project description</th>
+                                    <th>Project image</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="active-row">
+                                    <td>e-health</td>
+                                    <td>amet, consectetur it is better Lorem ipsum dolor
+                                        sit amet, consectetur adipiscing elitr</td>
+                                    <td>IMG_38AS</td>
+                                    <td><button>delete</button><button>update</button></td>
+                                </tr>
+                                <tr>
+                                    <td>e-health</td>
+                                    <td>amet, consectetur it is better Lorem ipsum dolor
+                                        sit amet, consectetur adipiscing elitr</td>
+                                    <td>IMG_38AS</td>
+                                    <td><button class="delete-proect">delete</button><button
+                                            id="update-project">update</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="create-project edit-form hide-project">
+                            <form class="logn">
+                                <label for="topic">Project Name</label>
+                                <input type="text" name="ProjectName" id="topic" class="text-input"
+                                    value="e-health" />
+                                <label for="contents">blog contents</label>
+                                <textarea class="text-input">
               amet, consectetur it is better Lorem ipsum dolor
               sit amet, consectetur adipiscing elit, sed do eiusmod tempor
               </textarea>
-              <button class="lgn-btn">Edit</button>
-            </form>
-          </div>
-          </div>
-          <!--end of portifolio-->
-           <div class="contents show-section skills-section">
-          <div class="short-nav">
-            <span id="new-skills">ADD AND MANIPULATE SKILLS</span>
-             </div>
-          <div class="create-skills show-skills">
-            <form class="logn">
-              <label for="topic">skills category</label>
-              <input
-                type="text"
-                name="project-topic"
-                id="topic"
-                class="text-input"
-              />
-              <label for="contents">skills description</label>
-              <input
-                type="text"
-                name="project-topic"
-                id="topic"
-                class="text-input"
-              />
-              <label for="deatails">skills details</label>
-              <input
-                type="text"
-                name="project-topic"
-                id="details"
-                class="text-input"
-              />
-             <button class="lgn-btn">Save skills</button>
-            </form>
-          </div>
-          <div class="skills-table hide-skill">
-            <table class="styled-table">
-              <thead>
-                  <tr>
-                      <th>Skills category</th>
-                      <th>skills description</th>
-                      <th>Skills details</th>
-                       <th>Action</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr class="active-row">
-                      <td>UI/UX Design</td>
-                      <td>amet, consectetur it is better Lorem ipsum dolor
-                        sit amet, consectetur adipiscing elitr</td>
-                      <td>figma and XD design</td>
-                      <td><button>delete</button><button>update</button></td>
-                  </tr>
-                  <tr>
-                    <td>Website and web app...</td>
-                    <td>amet, consectetur it is better Lorem ipsum dolor
-                      sit amet, consectetur adipiscing elitr</td>
-                    <td>react js ,node js</td>
-                    <td><button class="delete-proect">delete</button><button id="update-project">update</button></td>
-                  </tr>
-                  <!-- and so on... -->
-              </tbody>
-          </table>
-           </div>
-           </div>
-           </div>
-           </div>
-  <!-- home contents  -->
-  <div class="hom-container hide-section">
-      <section class="main">
-      <div class="main-top">
-        <h1>WEBSITE STATISTICS</h1>
-         </div>
-      <div class="upperPart">
-        <div class="card">
-          <img src="../images/message-icon.png">
-          <h4>Messages</h4>
-           <div class="per">
-            <table>
-              <tr>
-                <br>
-                <td><span>10</span></td>
-                <td><span>New</span></td>
-              </tr>
-              </table>
-          </div>
-         </div>
-        <div class="card">
-          <img src="../images/blog-icon.png">
-          <h4>BLOGS</h4>
-          <div class="per">
-            <table>
-              <br>
-              <tr>
-                <td><span id="count-blogs"></span></td>
-                <td><span>saved</span></td>
-              </tr>
-            </table>
-          </div>
-         </div>
-        <div class="card">
-          <img src="../images/project-icon.png">
-          <h4>PROJECTS</h4>
-          <div class="per">
-            <table>
-              <br>
-              <tr>
-                <td><span>40</span></td>
-                <td><span>worked on</span></td>
-              </tr>
-              </table>
-          </div>
-         </div>
-        <div class="card">
-          <img src="../images/skills-icon.png">
-          <h4>SKILLS</h4>
-           <div class="per">
-            <table>
-              <br>
-              <tr>
-                <td><span>10</span></td>
-                <td><span>language and frameworks</span></td>
-              </tr>
-              <tr>
-            </tr>
-            </table>
-          </div>
-         </div>
-      </div>
+                                <button class="lgn-btn">Edit</button>
+                            </form>
+                        </div>
+                    </div>
+                    <!--end of portifolio-->
+                    <div class="contents show-section skills-section">
+                        <div class="short-nav">
+                            <span id="new-skills">ADD AND MANIPULATE SKILLS</span>
+                        </div>
+                        <div class="create-skills show-skills">
+                            <form class="logn">
+                                <label for="topic">skills category</label>
+                                <input type="text" name="project-topic" id="topic" class="text-input" />
+                                <label for="contents">skills description</label>
+                                <input type="text" name="project-topic" id="topic" class="text-input" />
+                                <label for="deatails">skills details</label>
+                                <input type="text" name="project-topic" id="details" class="text-input" />
+                                <button class="lgn-btn">Save skills</button>
+                            </form>
+                        </div>
+                        <div class="skills-table hide-skill">
+                            <table class="styled-table">
+                                <thead>
+                                    <tr>
+                                        <th>Skills category</th>
+                                        <th>skills description</th>
+                                        <th>Skills details</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="active-row">
+                                        <td>UI/UX Design</td>
+                                        <td>amet, consectetur it is better Lorem ipsum dolor
+                                            sit amet, consectetur adipiscing elitr</td>
+                                        <td>figma and XD design</td>
+                                        <td><button>delete</button><button>update</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Website and web app...</td>
+                                        <td>amet, consectetur it is better Lorem ipsum dolor
+                                            sit amet, consectetur adipiscing elitr</td>
+                                        <td>react js ,node js</td>
+                                        <td><button class="delete-proect">delete</button><button
+                                                id="update-project">update</button></td>
+                                    </tr>
+                                    <!-- and so on... -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- home contents  -->
+            <div class="hom-container hide-section">
+                <section class="main">
+                    <div class="main-top">
+                        <h1>WEBSITE STATISTICS</h1>
+                    </div>
+                    <div class="upperPart">
+                        <div class="card">
+                            <img src="../images/message-icon.png">
+                            <h4>Messages</h4>
+                            <div class="per">
+                                <table>
+                                    <tr>
+                                        <br>
+                                        <td><span>10</span></td>
+                                        <td><span>New</span></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="../images/blog-icon.png">
+                            <h4>BLOGS</h4>
+                            <div class="per">
+                                <table>
+                                    <br>
+                                    <tr>
+                                        <td><span id="count-blogs"></span></td>
+                                        <td><span>saved</span></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="../images/project-icon.png">
+                            <h4>PROJECTS</h4>
+                            <div class="per">
+                                <table>
+                                    <br>
+                                    <tr>
+                                        <td><span>40</span></td>
+                                        <td><span>worked on</span></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="../images/skills-icon.png">
+                            <h4>SKILLS</h4>
+                            <div class="per">
+                                <table>
+                                    <br>
+                                    <tr>
+                                        <td><span>10</span></td>
+                                        <td><span>language and frameworks</span></td>
+                                    </tr>
+                                    <tr>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
 
-      <section class="message-section">
-        <div class="message-list">
-          <h1>Message List</h1>
-          <table class="table">
-            <thead>
-              <tr>
-                <th>NO</th>
-                <th>Sender's Name</th>
-                <th>Message</th>
-                <th>Date</th>
-                <th>sending Time</th>
-                <th>Details</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>01</td>
-                <td>ben chris</td>
-                <td>you are talented</td>
-                <td>03-24-22</td>
-                <td>8:00AM</td>
-                <td><button>View</button></td>
-              </tr>
-              <tr class="active">
-                <td>02</td>
-                <td>john doe</td>
-                <td>keep up work my brother</td>
-                <td>03-24-22</td>
-                <td>4:00PM</td>
-                <td><button>View</button></td>
-              </tr>
-              <tr>
-                <td>03</td>
-                <td>Ishimwe jimmy</td>
-                <td>keep up doing many projects</td>
-                <td>03-24-22</td>
-                 <td>3:00PM</td>
-                <td><button>View</button></td>
-              </tr>
-              </tbody>
-          </table>
+                    <section class="message-section">
+                        <div class="message-list">
+                            <h1>Message List</h1>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>NO</th>
+                                        <th>Sender's Name</th>
+                                        <th>Message</th>
+                                        <th>sending Time</th>
+                                        <th>Details</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="msgTbody">
+                                    <!-- <tr>
+                                        <td>01</td>
+                                        <td>ben chris</td>
+                                        <td>you are talented</td>
+                                        <td>03-24-22</td>
+                                        <td>8:00AM</td>
+                                        <td><button>View</button></td>
+                                    </tr>
+                                    <tr class="active">
+                                        <td>02</td>
+                                        <td>john doe</td>
+                                        <td>keep up work my brother</td>
+                                        <td>03-24-22</td>
+                                        <td>4:00PM</td>
+                                        <td><button>View</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>03</td>
+                                        <td>Ishimwe jimmy</td>
+                                        <td>keep up doing many projects</td>
+                                        <td>03-24-22</td>
+                                        <td>3:00PM</td>
+                                        <td><button>View</button></td>
+                                    </tr> -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </section>
+            </div>
         </div>
-      </section>
-    </section>
-  </div>
-  </div>
 
-    <script src="../js/admindash.js"></script>
-    <!-- <script src="../js/blogDatastore.js"></script> -->
-    <!-- <script src="../js/deleteBlog.js"></script> -->
-    <script src="../js/index.js"></script>
-    <script  src="/dst/addBlog.bundler.js"></script>
-    <script  src="/dst/deleteBlog.bundler.js"></script>
-     </body>
+        <script src="../js/admindash.js"></script>
+        <!-- <script src="../js/blogDatastore.js"></script> -->
+        <!-- <script src="../js/deleteBlog.js"></script> -->
+        <script src="../js/index.js"></script>
+        <script src="/dst/addBlog.bundler.js"></script>
+        <script src="/dst/deleteBlog.bundler.js"></script>
+        <script src="/dst/viewMessages.bundler.js"></script>
+</body>
+
 </html>

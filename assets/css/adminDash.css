@@ -20,6 +20,8 @@ body{
   background-color: var(--main-background-color);
   height: 100vh;
   width: 20vw;
+  position: fixed;
+  z-index:1
 }
 #logo {
   margin-top: 4vh;
@@ -52,6 +54,7 @@ body{
   position: relative;
   height: 100vh;
   background-color: #d6d8f8;
+  margin-left: 20vw;
 }
 .contents {
   margin-top: -10vh;
@@ -241,6 +244,56 @@ td .delete {
   border-radius: 0.2vh;
   margin-left: 25vw;
 }
+/*blog update form*/
+.update-form{
+  display:flex;
+  flex-direction: column;
+  gap:1vh;
+}
+.update-form label{
+  font-weight: bold;
+  opacity: 60%;
+  font-size: 2vh;
+}
+.update-form input{
+  width: 30vw;
+  height:5vh;
+  border-radius: 1vh;
+  padding-left:5vw;
+  border:none;
+}
+.update-form textarea{
+  width: 30vw;
+  height:15vh;
+  border-radius: 1vh;
+  padding-left:5vw;
+  border:none;
+}
+.update-form input,textarea:focus{
+  outline: none;
+}
+.update-form button{
+  width: 30vw;
+  border-radius:1vh;
+  margin-left: -0.1vw;
+}
+.update-blog-form{
+  background-color:#a5a8d1;
+  padding: 5vh;
+  opacity:80%;
+  border: 2px solid #9597d1;
+  border-radius: 1vh;
+  position: absolute;
+  top:-10vh;
+}
+.show-updateForm{
+  display: block;
+}
+.remove-updateForm{
+  display: none;
+}
+
+/*end ofblog update form*/
 .create-project {
   width: 50vw;
   margin-left: 18vh;
@@ -272,11 +325,11 @@ td .delete {
 }
 .active-menu{
   background-color:#504874 ;
-  padding-right: 14vw;
+  padding-right: 5vw;
   padding-left: 8vw;
   padding-top: 0.9vw;
   padding-bottom: 0.9vw;
-}
+  }
 .active-menu::before{
   content: "";
   background-color:#1d3b43;
@@ -451,6 +504,7 @@ cursor: pointer;
   }
   .right-contents {
     width: 100vw;
+    margin:0;
   }
   .contents {
     width: 100vw;
@@ -460,10 +514,10 @@ cursor: pointer;
     display: flex;
     margin-left: 5vh;
     width: 80vw;
-  }
+      }
   .short-nav span {
     margin-left: 10vw;
-    font-size: 1.8vh;
+    font-size: 1.2vh;
   }
   .create-skills .logn,
   .create-project .logn,
@@ -495,23 +549,20 @@ cursor: pointer;
   }
   .blog-table {
     width: 90vw;
-    margin-left: -6vh;
-    overflow-x: scroll;
-  }
-  .blog-table.styled-table thead th,
-  .blog-table.styled-table tbody td {
-    padding: 6px 8px;
-  }
-  .project-table .styled-table,
+    margin-left: -4vh;
+    overflow: scroll;
+    font-size: 1vh;
+      }
+   .project-table .styled-table,
   .blog-table .styled-table {
-    margin-left: -6vh;
+    margin-left: 1vh;
   }
   .skills-table .styled-table thead th,
   .project-table .styled-table thead th {
-    font-size: 2vh;
+    font-size: 1vh;
   }
   .blog-table .styled-table thead th {
-    font-size: 1.6vh;
+    font-size: 1vh;
   }
   .skills-table .styled-table tbody tr,
   .project-table .styled-table tbody tr,
@@ -560,6 +611,9 @@ cursor: pointer;
     opacity: 80%;
     margin-left: 20vw;
     margin-top: -7vh;
+  }
+  .update-blog-form{
+    display: none;
   }
 }
 @media only screen and (min-width: 624px) and (max-width: 1024px) {
@@ -705,5 +759,8 @@ cursor: pointer;
       opacity: 80%;
       margin-left: 20vw;
       margin-top: -7vh;
+    }
+    .update-blog-form{
+      display: none;
     }
   }

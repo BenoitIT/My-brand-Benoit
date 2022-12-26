@@ -92,7 +92,12 @@ body{
      .dsc p{
         font-size: 3vh;
         width:42vw;
+        height:28vh;
+        overflow-y: scroll;
      }
+     .dsc p::-webkit-scrollbar{
+        display: none;
+      }
      .dsc p span{
         padding-top:2vh;
      }

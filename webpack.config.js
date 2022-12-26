@@ -9,7 +9,9 @@ module.exports={
         frontPageBlog:'./firebase/src/displayFrontBlogs.js',
         subscribePage:'./firebase/src/subscribePage.js',
         addComment:'./firebase/src/addcomment.js',
-        displayComment:'./firebase/src/Displaycomment.js'
+        displayComment:'./firebase/src/Displaycomment.js',
+        recordMessage:'./firebase/src/recordMessage.js',
+        viewMessages:'./firebase/src/viewMessage.js',
       },
     output:{
         path:path.resolve(__dirname,'dst'),

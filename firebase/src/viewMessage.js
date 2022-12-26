@@ -17,42 +17,26 @@ appId: "1:9301501628:web:09bed15352d193ad1c92b9",
 };
 initializeApp(firebaseConfig);
 const db = getFirestore();
-let blogs = [];
-const colRef = collection(db, "blogs");
+let messages = [];
+const colRef = collection(db, "messages");
 onSnapshot(colRef, (snapshot) => {
   snapshot.docs.forEach((doc) => {
-    blogs.push({ ...doc.data(), id: doc.id });
+    messages.push({ ...doc.data(), id: doc.id });
   });
   let tableData;
 
- blogs.forEach((blog,i)=>{
+ messages.forEach((message,i)=>{
   tableData+=`<tr>
-  <td>${blog.topic}</td>
-  <td>${blog.Title.slice(0,15)+".."}</td>
-  <td>${blog.description.slice(0,30)+".."}</td>
-  <td>${blog.image.slice(0,15)+".."}</td>
-  <td><button class="dlt-btn">delete</button><button class="update" id="update">update</button>
+  <td>${i+1}</td>
+  <td>${message.sender}</td>
+  <td>${message.message.slice(0,30)+".."}</td>
+  <td>${message.createdAt.toDate()}</td>
+  <td><button class="viewBtn">view</button>
   </td>
   </tr>`;
 })
-let tableBODY=document.querySelector("#table-body");
+let tableBODY=document.querySelector("#msgTbody");
 tableBODY.innerHTML=tableData;
-
-const deleteBtn = document.querySelectorAll('.dlt-btn')
-let buttonIndex;
-deleteBtn.forEach((el, i)=>{
-  el.addEventListener('click', function(){
-    buttonIndex=i;
-    blogs.forEach((element, i)=>{
-      if(i===buttonIndex){
-      const docRef=doc(db,'blogs',element.id);
-       deleteDoc(docRef).then(()=>{
-        alert('blog is deleted');
-       })
-      }
-    })
-  })
-})
 const updateBtn = document.querySelectorAll('.update');
 const updateForm=document.querySelector('.update-blog-form');
 const blogTable=document.querySelector('#table-blog');
