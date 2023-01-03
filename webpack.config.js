@@ -12,6 +12,7 @@ module.exports={
         displayComment:'./firebase/src/Displaycomment.js',
         recordMessage:'./firebase/src/recordMessage.js',
         viewMessages:'./firebase/src/viewMessage.js',
+        auth:'./firebase/src/auth.js',
       },
     output:{
         path:path.resolve(__dirname,'dst'),

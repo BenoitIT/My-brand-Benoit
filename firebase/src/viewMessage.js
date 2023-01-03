@@ -23,8 +23,9 @@ onSnapshot(colRef, (snapshot) => {
   snapshot.docs.forEach((doc) => {
     messages.push({ ...doc.data(), id: doc.id });
   });
+  const messageNumber = document.querySelectorAll('#count-Msg');
+  messageNumber.innerText=messages.length;
   let tableData;
-
  messages.forEach((message,i)=>{
   tableData+=`<tr>
   <td>${i+1}</td>
@@ -37,36 +38,32 @@ onSnapshot(colRef, (snapshot) => {
 })
 let tableBODY=document.querySelector("#msgTbody");
 tableBODY.innerHTML=tableData;
-const updateBtn = document.querySelectorAll('.update');
-const updateForm=document.querySelector('.update-blog-form');
-const blogTable=document.querySelector('#table-blog');
-const updateFormNative=document.querySelector('.update-form');
-const editBtn=document.querySelector('#editBtn');
+//working on view single message
+const viewBtn = document.querySelectorAll('.viewBtn');
+const ViewMessgForm=document.querySelector('.message-View');
+const MsgTable=document.querySelector('.table');
+const close=document.querySelector('#message-close');
+const senderName=document.querySelector('#nam');
+const senderEmail=document.querySelector('#iml');
+const senderMsg=document.querySelector('#messg');
 let upbuttonIndex;
-updateBtn.forEach((el, i)=>{
+viewBtn.forEach((el, i)=>{
   el.addEventListener('click', function(){
     upbuttonIndex=i;
-    blogs.forEach((element, i)=>{
+    messages.forEach((element, i)=>{
       if(i===upbuttonIndex){
-        const docRef=doc(db,'blogs',element.id);
 //adding values in inputs
-      updateForm.classList.remove('remove-updateForm');
-      updateForm.classList.add('show-updateForm');
-      blogTable.style.opacity='5%';
-      updateFormNative.blogtopic.value=element.topic;
-      updateFormNative.BlogTitle.value=element.Title;
-      updateFormNative.contents.value=element.description;
-      editBtn.addEventListener('click',()=>{
-        updateDoc(docRef,{
-         topic:updateFormNative.blogtopic.value,
-         Title:updateFormNative.BlogTitle.value,
-         description: updateFormNative.contents.value
-        }).then(()=>{
-          alert('update success');
-        })
-        updateForm.classList.add('remove-updateForm');
-        updateForm.classList.remove('show-updateForm');
-        blogTable.style.opacity='100%';
+console.log(senderEmail)
+     ViewMessgForm.classList.remove('remove-updateForm');
+     ViewMessgForm.classList.add('show-updateForm');
+     MsgTable.style.opacity='15%';
+     senderName.innerText=element.sender;
+     senderEmail.innerText=element.email;
+     senderMsg.innerText=element.message;
+     close.addEventListener('click',()=>{
+      ViewMessgForm.classList.add('remove-updateForm');
+      ViewMessgForm.classList.remove('show-updateForm');
+      MsgTable.style.opacity='100%';
       })
       }
     })
