@@ -1162,6 +1162,10 @@ hr {
  .logn label {
     font-size: 2vh;
   }
+  .logn .text-input{
+    font-size: 2vh;
+    padding-left: 2vw;
+  }
   .logn .material-icons {
     font-size: 2.5vh;
   }
