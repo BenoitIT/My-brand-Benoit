@@ -23,13 +23,27 @@ const auth=getAuth();
 const loginForm=document.querySelector("#login-form");
 const signUp=document.querySelector("#lognbtn");
 //adding new user
-const email=loginForm.username.value;
-const password=loginForm.password.value;
-console.log(email);
 //login new user
-loginForm.addEventListener('submit',e=>{
-        e.preventDefault();
-signInWithEmailAndPassword(auth,email,password).then(()=>{
-    alert('welcome');
-})
-})
+loginForm.addEventListener('submit',(e)=>{
+  e.preventDefault();
+    const email=loginForm.username.value;
+    console.log(email);
+     const password=loginForm.password.value;
+  //   createUserWithEmailAndPassword(auth,email,password).then((userCredentials)=>{
+  //  const user=userCredentials.user;
+  //  alert('new user created successfully');
+  //  }).catch((error)=>{
+  //   const erorCode=error.code;
+  //   const message=error.message;
+  //   alert(message)
+  // });
+  signInWithEmailAndPassword(auth,email,password).then((userCredentials)=>{
+    const user=userCredentials.user;
+    alert(`${user.email} logged successfully`);
+    window.location.href = 'http://127.0.0.1:5500/assets/dashboard/adminDash.html';
+    }).catch((error)=>{
+     const erorCode=error.code;
+     const message=error.message;
+     alert(message)
+   });
+});
