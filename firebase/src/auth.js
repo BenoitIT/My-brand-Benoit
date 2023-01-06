@@ -26,7 +26,6 @@ const userEmailPace=document.querySelector("#userEmail");
 //adding new user
 //login new user
 let userEmail;
-userEmailPace.innerText=userEmail;
 loginForm.addEventListener('submit',(e)=>{
   e.preventDefault();
     const email=loginForm.username.value;
@@ -50,3 +49,4 @@ loginForm.addEventListener('submit',(e)=>{
      alert(message)
    });
 });
+userEmailPace.innerText=userEmail;
