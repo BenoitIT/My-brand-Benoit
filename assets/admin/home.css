@@ -106,10 +106,10 @@ body{
   color:white;
   font-weight: bold;
   padding-right: 2vw;
-  padding-top: 0.2vh;
-  padding-bottom: 0.2vh;
+  padding-top: 0.4vh;
+  padding-bottom: 0.4vh;
   border-radius: 0.2vw;
-  border: 2px white solid;
+  border: 0.5vh white solid;
   }
 /* home view message */
 .message-View{
@@ -418,6 +418,9 @@ cursor: pointer;
   .update-blog-form{
     display: none;
   }
+  .header{
+    display:none
+    }
 }
 @media only screen and (min-width: 624px) and (max-width: 1024px) {
     .side-bar {
@@ -566,4 +569,7 @@ cursor: pointer;
     .update-blog-form{
       display: none;
     }
+    .header{
+      display:none
+      }
   }
