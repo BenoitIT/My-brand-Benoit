@@ -23,6 +23,7 @@ const logout=document.querySelector("#logout");
 logout.addEventListener('click',(e)=>{
   e.preventDefault();
 signOut(auth).then(()=>{
+    window.location.href="https://benn-dev-brand.netlify.app";
     alert('you are logged out');
 }).catch((error)=>{
     const errorCode=error.code;
