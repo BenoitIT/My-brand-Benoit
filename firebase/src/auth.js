@@ -40,7 +40,7 @@ loginForm.addEventListener('submit',(e)=>{
   signInWithEmailAndPassword(auth,email,password).then((userCredentials)=>{
     const user=userCredentials.user;
     alert(`${user.email} logged successfully`);
-    window.location.href = 'https://benn-dev-brand.netlify.app//assets/dashboard/adminDash.html';
+    window.location.href = 'https://benn-dev-brand.netlify.app//assets/admin/home.html';
     }).catch((error)=>{
      const erorCode=error.code;
      const message=error.message;

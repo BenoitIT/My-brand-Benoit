@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/adminDash.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <!--initializing quill cdn main libraries-->
+    <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
+    <!-- Theme included stylesheets for quill -->
+    <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />
+    <link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet" />
+    <link href="//cdn.quilljs.com/1.3.6/quill.core.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="dash-container">
+        <div class="side-bar">
+            <!--nav logo-->
+            <div id="logo">
+                <img src="../images/logp.png" />
+            </div>
+            <!--nav-menus-->
+            <span class="material-icons menu-icon"> menu </span>
+            <div class="side-menus">
+                <ul>
+                    <li>
+                        <a href="home.html" id="home-menu">Home</a>
+                    </li>
+                    <li>
+                        <a href="blogs.html" id="blog-menu">Blogs</a>
+                    </li>
+                    <li>
+                        <a href="portifolio.html" id="portifolio-menu">Portifolio</a>
+                    </li>
+                    <li>
+                        <a href="skills.html" id="skills-menu">Skills</a>
+                    </li>
+                    <li>
+                        <a href="/index.html">logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--end of side bar-->
+        <div class="right-contents">
+            <span class="material-icons menu-icon" id="hurmbug"> menu </span>
+            <div class="contents blogs-section">
+                <div class="short-nav">
+                    <span id="create">CREATE BLOG</span>
+                    <span id="mnge-blog">MANAGE BLOGS</span>
+                </div>
+                <div class="create-blog show-blog">
+                    <form class="logn" id="blog-form">
+                        <label for="topic"><b>Topic</b></label>
+                        <input type="text" name="blog-topic" id="topic" class="text-input" />
+                        <label for="Title"><b>Blog-Title</b></label>
+                        <input type="text" name="Blog-Title" id="Title" class="text-input" />
+                        <label for="image"></label><img id="test-img" class="imge-preview" src=""
+                            alt="blog-file" width="50px" height="50px" /></label>
+                        <input type="file" name="Blog-file" id="image-upload" mimeType="jpg" />
+                        <div id="blog-editor"></div>
+                        <!--adding quill as wyisg editor-->
+                        <script>
+                            var quill = new Quill('#blog-editor', {
+                                theme: 'snow',
+                                placeholder: 'type contents for a blog'
+                            });
+                        </script>
+                        <button id="upload" class="lgn-btn">Save blog</button>
+                    </form>
+
+                </div>
+
+                <div class="blog-table hide-blogs">
+                    <table class="styled-table" id="table-blog">
+                        <thead>
+                            <tr>
+                                <th>Topic</th>
+                                <th>Title</th>
+                                <th>Blog-file</th>
+                                <th>Message</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                        </tbody>
+                    </table>
+                    <div class="update-blog-form remove-updateForm">
+                        <form class="update-form">
+                            <label for="topic">Topic</label>
+                            <input type="text" name="blogtopic" id="topic" class="text-input" value="" />
+                            <label for="Title">Blog-Title</label>
+                            <input type="text" name="BlogTitle" id="Title" class="text-input" value="" />
+                            <label for="contents">blog contents</label>
+                            <textarea class="text-input" name="contents">
+              </textarea>
+                            <button class="lgn-btn" id="editBtn" type="button">Edit</button>
+                        </form>
+                    </div>
+                </div>
+                <!--end of blog section-->
+
+                </section>
+            </div>
+        </div>
+
+        <script src="../js/admindash.js"></script>
+        <!-- <script src="../js/blogDatastore.js"></script> -->
+        <!-- <script src="../js/deleteBlog.js"></script> -->
+        <!-- <script src="../js/index.js"></script> -->
+        <script src="/dst/addBlog.bundler.js"></script>
+        <script src="/dst/deleteBlog.bundler.js"></script>
+       </body>
+
+</html>

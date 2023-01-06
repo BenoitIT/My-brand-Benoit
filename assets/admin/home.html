@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../admin/home.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <!--initializing quill cdn main libraries-->
+    <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
+    <!-- Theme included stylesheets for quill -->
+    <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />
+    <link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet" />
+    <link href="//cdn.quilljs.com/1.3.6/quill.core.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="dash-container">
+        <div class="side-bar">
+            <!--nav logo-->
+            <div id="logo">
+                <img src="../images/logp.png" />
+            </div>
+            <!--nav-menus-->
+            <span class="material-icons menu-icon"> menu </span>
+            <div class="side-menus">
+                <ul>
+                    <li>
+                        <a href="home.html" id="home-menu">Home</a>
+                    </li>
+                    <li>
+                        <a href="blogs.html" id="blog-menu">Blogs</a>
+                    </li>
+                    <li>
+                        <a href="portifolio.html" id="portifolio-menu">Portifolio</a>
+                    </li>
+                    <li>
+                        <a href="skills.html" id="skills-menu">Skills</a>
+                    </li>
+                    <li>
+                        <a href="/index.html">logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--end of side bar-->
+        <div class="right-contents">
+            <span class="material-icons menu-icon" id="hurmbug"> menu </span>
+            <!-- home contents  -->
+            <div class="hom-container hide-section">
+                <section class="main">
+                    <div class="main-top">
+                        <h1>WEBSITE STATISTICS</h1>
+                    </div>
+                    <div class="upperPart">
+                        <div class="card">
+                            <img src="../images/message-icon.png">
+                            <h4>Messages</h4>
+                            <div class="per">
+                                <table>
+                                    <tr>
+                                        <br>
+                                        <td><span id="count-Msg">10</span></td>
+                                        <td><span>New</span></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="../images/blog-icon.png">
+                            <h4>BLOGS</h4>
+                            <div class="per">
+                                <table>
+                                    <br>
+                                    <tr>
+                                        <td><span id="count-blogs"></span></td>
+                                        <td><span>saved</span></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="../images/project-icon.png">
+                            <h4>PROJECTS</h4>
+                            <div class="per">
+                                <table>
+                                    <br>
+                                    <tr>
+                                        <td><span>40</span></td>
+                                        <td><span>worked on</span></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="../images/skills-icon.png">
+                            <h4>SKILLS</h4>
+                            <div class="per">
+                                <table>
+                                    <br>
+                                    <tr>
+                                        <td><span>10</span></td>
+                                        <td><span>language and frameworks</span></td>
+                                    </tr>
+                                    <tr>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <section class="message-section">
+                        <div class="message-list">
+                            <h1>Message List</h1>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>NO</th>
+                                        <th>Sender's Name</th>
+                                        <th>Message</th>
+                                        <th>sending Time</th>
+                                        <th>Details</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="msgTbody">
+                                    <!-- <tr>
+                                        <td>01</td>
+                                        <td>ben chris</td>
+                                        <td>you are talented</td>
+                                        <td>03-24-22</td>
+                                        <td>8:00AM</td>
+                                        <td><button>View</button></td>
+                                    </tr>
+                                    <tr class="active">
+                                        <td>02</td>
+                                        <td>john doe</td>
+                                        <td>keep up work my brother</td>
+                                        <td>03-24-22</td>
+                                        <td>4:00PM</td>
+                                        <td><button>View</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>03</td>
+                                        <td>Ishimwe jimmy</td>
+                                        <td>keep up doing many projects</td>
+                                        <td>03-24-22</td>
+                                        <td>3:00PM</td>
+                                        <td><button>View</button></td>
+                                    </tr> -->
+                                </tbody>
+                            </table>
+                            <div class="message-View remove-updateForm">
+                                 <span class="material-icons" id="message-close"> close</span>
+                                  <div class="message-details">
+                                    <strong>name</strong>
+                                    <em id="nam"></em>
+                                </div>
+                                <div class="message-details">
+                                    <strong>Email</strong>
+                                    <a href="https://mail.google.com/mail/u/0/#inbox?compose=new"><em id="iml"></em></a>
+                                </div>
+                                <div class="message-details">
+                                    <strong>message</strong>
+                                    <span id="messg"></span>
+
+                                    </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+            </div>
+        </div>
+
+        <script src="../js/admindash.js"></script>
+        <!-- <script src="../js/blogDatastore.js"></script> -->
+        <!-- <script src="../js/deleteBlog.js"></script> -->
+        <script src="../js/index.js"></script>
+         <script src="/dst/viewMessages.bundler.js"></script>
+</body>
+
+</html>
