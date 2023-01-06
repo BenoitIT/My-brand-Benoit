@@ -49,4 +49,4 @@ loginForm.addEventListener('submit',(e)=>{
      alert(message)
    });
 });
-userEmailPace.innerText=userEmail;
+userEmailPace.innerText=loginForm.username.value;
