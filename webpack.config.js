@@ -13,6 +13,7 @@ module.exports={
         recordMessage:'./firebase/src/recordMessage.js',
         viewMessages:'./firebase/src/viewMessage.js',
         auth:'./firebase/src/auth.js',
+        logout:'./firebase/src/logout.js',
       },
     output:{
         path:path.resolve(__dirname,'dst'),
