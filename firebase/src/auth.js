@@ -21,9 +21,12 @@ const firebaseApp=initializeApp(firebaseConfig);
 //load database
 const auth=getAuth();
 const loginForm=document.querySelector("#login-form");
-const signUp=document.querySelector("#lognbtn");
+const userEmailPace=document.querySelector("#userEmail");
+
 //adding new user
 //login new user
+let userEmail;
+userEmailPace.innerText=userEmail;
 loginForm.addEventListener('submit',(e)=>{
   e.preventDefault();
     const email=loginForm.username.value;
@@ -38,8 +41,8 @@ loginForm.addEventListener('submit',(e)=>{
   //   alert(message)
   // });
   signInWithEmailAndPassword(auth,email,password).then((userCredentials)=>{
-    const user=userCredentials.user;
-    alert(`${user.email} logged successfully`);
+    userEmail=userCredentials.user.email;
+    alert(`${userEmail} logged successfully`);
     window.location.href = 'https://benn-dev-brand.netlify.app//assets/admin/home.html';
     }).catch((error)=>{
      const erorCode=error.code;
