@@ -2,7 +2,7 @@
   "name": "my-brand-benoit",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "APIs/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
@@ -19,11 +19,18 @@
   },
   "homepage": "https://github.com/BenoitIT/My-brand-Benoit#readme",
   "devDependencies": {
+    "nodemon": "^2.0.20",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1"
   },
   "dependencies": {
+    "body-parser": "^1.20.1",
     "cloudinary": "^1.33.0",
-    "firebase": "^9.15.0"
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "firebase": "^9.15.0",
+    "mongoose": "^6.8.3",
+    "mongoose-type-url": "^2.1.0",
+    "multer": "^1.4.5-lts.1"
   }
 }
