@@ -4,7 +4,7 @@ const loadash = require("lodash");
 const JWT = require("jsonwebtoken");
 require("dotenv").config();
 const { asyncWrapper } = require("../../middlewares/asyncWrapper");
-
+//create user function
 const createUser = asyncWrapper(async (req, res) => {
   const salt = await Bcrypt.genSalt(10);
   const hashedPassword = await Bcrypt.hash(req.body.password, salt);
@@ -23,7 +23,7 @@ const createUser = asyncWrapper(async (req, res) => {
     res.json(loadash.pick(user, ["userName", "email"]));
   }
 });
-
+//login function
 const login = asyncWrapper(async (req, res) => {
   const cookie = req.headers?.cookie;
   if (cookie) {
