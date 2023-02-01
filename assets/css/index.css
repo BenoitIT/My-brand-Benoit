@@ -73,7 +73,10 @@ body {
 .menus ul li {
   float: left;
   color: white;
-  padding: 1.5rem;
+  padding-top: 4.5vh;
+  padding-bottom: 4vh;
+  padding-left: 1.5vh;
+  padding-right: 1.5vh;
   list-style: none;
 }
 .menus ul li a {
@@ -104,13 +107,15 @@ a:hover {
   border-top: 5px solid var(--profile-border-color);
   border-right: 1px solid gainsboro;
   border-radius: 12px;
+  padding-top: 10vh;
+  aspect-ratio: 1/1;
+  object-fit: cover;
   box-shadow: inset 10px 10px 10px 10px gainsboro;
 }
 .profile-container img {
   width: 24vw;
   border-radius: 11px;
   background-color: var(--profile-background-color);
-  margin-bottom: -4px;
 }
 .menu-icon {
   color: white;
@@ -172,8 +177,6 @@ button:hover {
 }
 #about {
   background-color: var(--section-even-background-color);
-  margin: 0vw;
-  padding: 0vh;
   width: 100vw;
   overflow-x: hidden;
 }
@@ -183,18 +186,22 @@ button:hover {
   gap: 4vw;
   font-family: var(--base-font);
   margin-left: 17vw;
-  margin-top: -3vh;
+  margin-top: 5vh;
   margin-right: 20vw;
 }
 .img-container {
   border-left: 10px solid var(--profile-border-color);
   border-top: 10px solid var(--profile-border-color);
-  width: 17vw;
+  width:auto;
   border-radius: 20px;
-  margin-top: 5rem;
-  height: 45vh;
+  margin-top: 15vh;
+  padding-top: 14vh;
+  height: auto;
+  height:17vh;
 }
 .img-container img {
+  aspect-ratio: 1/1;
+  object-fit: cover;
   width: 17vw;
   border-radius: 20px;
 }
@@ -270,12 +277,10 @@ hr {
 }
 #portifolio {
   background-color: var(--section-odd-backcolor);
-  margin: 0;
-  padding: 0;
   width: 100vw;
 }
 .section-title {
-  margin-left: 27vw;
+  text-align: center;
   font-weight: Karla;
   opacity: 70%;
   padding-top: 5vh;
@@ -284,43 +289,49 @@ hr {
   font-weight: 600;
   font-size: 4vh;
 }
+.project-container{
+  display: flex;
+  flex-direction: row;
+  margin-top: 10vh;
+  margin-left: 10vw;
+  margin-right: 20vw;
+  gap: 2vw;
+}
 .projects {
   display: flex;
-  margin-top: 5vh;
-  margin-left: 27vw;
-  margin-right: 20vw;
-  flex-direction: row;
-  gap: 5vw;
+  flex-direction: column;
 }
 .project-img img {
-  width: 17vw;
+  width: 25vw;
+  height:30vh;
 }
 .project-description {
   font-family: var(--profile-description-font);
   font-size: 18px;
+  margin-top: 4vh;
   width: 25vw;
-  margin-top: 2.6vh;
+  display: flex;
+  flex-direction: column;
+  gap:2vh;
+  text-align: center;
 }
 .project-description h3 {
   color: blue;
   opacity: 80%;
   font-weight: 300;
-  margin-left: 5vh;
   font-size: 3vh;
 }
 .project-description p {
   width: 22vw;
-  display: flex;
-  align-items: center;
   font-size: 3vh;
-  margin-top: 2vw;
+  opacity: 70%;
 }
 .project-description > button {
   margin-top: 2vh;
   background-color: var(--main-background-color);
   width: 15vw;
   height: 4vh;
-  margin-left: 8vw;
+  margin-left: 5vw;
   border: none;
   border-radius: 2vw;
   color: white;
@@ -330,8 +341,6 @@ hr {
 }
 #skills {
   background-color: var(--profile-background-color);
-  margin: 0vw;
-  padding: 0vh;
   width: 100vw;
   overflow-x: hidden;
 }
@@ -348,7 +357,6 @@ hr {
   font-weight: 900;
   color: black;
   opacity: 70%;
-  letter-spacing: -4px;
 }
 .sectionskills-title > h2 {
   font-size: 4vh;
@@ -365,8 +373,8 @@ hr {
   grid-template-columns: 1fr 1fr 1fr;
   height: 40vh;
   gap: 2rem;
-  margin-left: 33vh;
-  margin-right: 33vh;
+  margin-left: 15vh;
+  margin-right: 15vh;
   margin-top: 6vh;
   font-family: var(--profile-description-font);
 }
@@ -410,11 +418,11 @@ hr {
 }
 .webdev-card {
   background-color: var(--card-bg-color);
-  opacity: 89%;
-  border: 4px solid var(--card-bg-color);
+  opacity: 80%;
+  border: 1px solid var(--card-bg-color);
   padding: 5vh;
   border-radius: 1rem;
-  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.1);
 }
 .webdev-card > h1 {
   font-size: 5vh;
@@ -423,9 +431,9 @@ hr {
 }
 .webdev-card > h6 {
   font-size: 3vh;
-  opacity: 80%;
+  opacity: 70%;
   margin-top: 5vh;
-  font-weight: 700;
+  font-weight: 400;
   margin-bottom: 4vh;
 }
 .webdev-card > a,
@@ -440,11 +448,11 @@ hr {
 .database-card {
   position: relative;
   background-color: var(--card-bg-color);
-  opacity: 89%;
-  border: 4px solid var(--card-bg-color);
+  opacity: 80%;
+  border: 1px solid var(--card-bg-color);
   padding: 5vh;
   border-radius: 1rem;
-  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.1);
 }
 .database-card > h1 {
   font-size: 5vh;
@@ -453,9 +461,9 @@ hr {
 }
 .database-card > h6 {
   font-size: 3vh;
-  opacity: 80%;
+  opacity: 70%;
   margin-top: 5vh;
-  font-weight: 700;
+  font-weight: 400;
   margin-bottom: 4rem;
 }
 .database-card > hr,
@@ -506,7 +514,7 @@ hr {
 }
 .contact-intro > hr {
   margin-top: -0.2vh;
-  width: 34rem;
+  width: 30rem;
   margin-left: -1rem;
 }
 .contact-body {
@@ -561,7 +569,8 @@ hr {
 .contact-box > h1 {
   font-weight: 300;
   font-size: 3vh;
-  margin-left: 3vw;
+  text-align: center;
+  padding-bottom: 2vh;
 }
 .contact-box > p {
   text-align: center;
@@ -700,9 +709,6 @@ hr {
 }
 /*login page */
 #loginPage {
-  position: absolute;
-  top: 0;
-  left: 0;
   background-color: var(--main-background-color);
   display: flex;
   justify-content: center;
