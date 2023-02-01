@@ -5,11 +5,6 @@ let menuIcon=document.querySelector(".menu-icon");
 let closeIcon=document.querySelector(".close");
 let mobileMenu=document.querySelector(".mobile-menus");
 let body=document.querySelector(".body");
-logo.addEventListener('click',function(){
-    lognForm.classList.add('showLogn');
-    lognForm.classList.remove('hideLogn');
-    body.classList.add("add-overflow");
-});
 home.addEventListener('click',function(){
     lognForm.classList.remove('showLogn');
     lognForm.classList.add('hideLogn');

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/index.css" />
+    <title>loginPage</title>
+</head>
+<body>
+     <!---login-->
+     <section class="section" id="loginPage">
+        <div class="form-container">
+          <div class="title">Login</div>
+          <form class="logn"id="login-form">
+            <div class="field-one">
+            <label for="username">Email</label>
+            <span class="material-icons person-icon">
+                mail_lock
+            </span>
+            <input type="text" name="username" id="username" class="text-input" />
+            <div class="ErrMsg" style="color:red;font-size:2vh;"></div>
+             </div>
+             <div class="field-two">
+            <label for="password">Password</label>
+            <span class="material-icons lock-icon"> lock_outline </span>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              class="text-input"
+            />
+            <div class="ErrMsg" style="color:red;font-size:2vh;"></div>
+          </div>
+            <button type="submit" class="lgn-btn">
+              <a
+                style="text-decoration: none; color: white"
+                          >
+              Sign in</a>
+            </button>
+            <div style="font-size: small; font-weight: bold;">
+                <p style="text-align:center;"> have no account!, please <a href="./signup.html">sign up</a></p>
+            </div>
+            </form>
+        </div>
+      </section>
+</body>
+</html>
