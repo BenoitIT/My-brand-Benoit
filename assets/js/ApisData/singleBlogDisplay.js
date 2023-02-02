@@ -25,16 +25,27 @@ const findblogid = () => {
           likeDiv.classList.add("like");
           let likeIcon = document.createElement("span");
           likeIcon.classList.add("material-icons");
-          likeIcon.innerText = "thumb_up_off_alt ";
-          likeDiv.appendChild(likeIcon);
-          likeDiv.innerText = "like 38";
-    
+          let form = document.createElement("form");
+    form.classList.add("logn");
+    let input = document.createElement("input");
+    input.type = "text";
+    input.name = "comment";
+    input.id = "comment";
+    input.placeholder = "write a comment";
+    input.classList.add("text-input");
+    form.appendChild(input);
+    let button = document.createElement("button");
+    button.id = "comment-btn";
+    button.classList.add("lgn-btn");
+    button.innerText = "comment";
+    form.appendChild(button);
           BodyDiv.appendChild(h1);
           BodyDiv.appendChild(img);
           BodyDiv.appendChild(h6);
           BodyDiv.appendChild(blogParagraph);
           BodyDiv.appendChild(likeDiv);
           blogBody.appendChild(BodyDiv);
+          blogBody.appendChild(form);
           return blogBody;
         }
       });

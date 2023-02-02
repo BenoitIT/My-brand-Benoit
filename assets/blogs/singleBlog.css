@@ -64,6 +64,8 @@ body{
     .blog-body{
         display:flex;
         flex-direction: column;
+        margin-top: 15vh;
+        gap:4vh;
                }
     .dsc{
         margin-top: -15vh;
@@ -80,7 +82,7 @@ body{
     }
     .dsc h6{
         color:white;
-        background-color: #043d03;
+        background-color: #0f8d0d;
         height: 3vh;
         width:10vw;
         margin-left:3vw;
@@ -92,8 +94,7 @@ body{
      .dsc p{
         font-size: 3vh;
         width:42vw;
-        height:28vh;
-        overflow-y: scroll;
+        margin-left: 2vw;
      }
      .dsc p::-webkit-scrollbar{
         display: none;
@@ -103,7 +104,6 @@ body{
      }
      .blog-body .logn{
         position: relative;
-        top: 100vh;
      }
      .blog-body .logn #comment{
         height:7vh;

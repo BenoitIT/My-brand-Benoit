@@ -1,5 +1,5 @@
 
-etch('https://dead-jade-coypu-cape.cyclic.app/Api/blogs/all',{ mode: 'cors' }).then(res=>res.json()
+fetch('https://dead-jade-coypu-cape.cyclic.app/Api/blogs/all',{ mode: 'cors' }).then(res=>res.json()
 ).then( articles => {
   let blogs = articles.data
   let blogContainer = document.querySelector("#blog-Container");
