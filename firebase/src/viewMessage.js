@@ -53,7 +53,7 @@ viewBtn.forEach((el, i)=>{
     messages.forEach((element, i)=>{
       if(i===upbuttonIndex){
 //adding values in inputs
-console.log(senderEmail)
+   console.log(senderEmail)
      ViewMessgForm.classList.remove('remove-updateForm');
      ViewMessgForm.classList.add('show-updateForm');
      MsgTable.style.opacity='15%';

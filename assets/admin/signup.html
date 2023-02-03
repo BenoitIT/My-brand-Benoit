@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,11 +8,12 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../css/index.css" />
-    <title>loginPage</title>
+    <title>signup Page</title>
 </head>
 <body>
      <!---login-->
      <section class="section" id="loginPage">
+      <div class="flash"><span id="logn-notification" class="welcome-mess">you successfully signed up!</span></div>
         <div class="form-container">
           <div class="title">Sign Up</div>
           <form class="logn"id="login-form">
@@ -22,13 +22,13 @@
                 <span class="material-icons person-icon">
                         mail_lock
                     </span>
-                <input type="text" name="username" id="username" class="text-input" />
+                <input type="text" name="Email" id="login-email"  class="text-input" />
                 <div class="ErrMsg" style="color:red;font-size:2vh;"></div>
                  </div>
             <div class="field-one">
             <label for="username">Username</label>
             <span class="material-icons person-icon"> person_outline </span>
-            <input type="text" name="username" id="username" class="text-input" />
+            <input type="text" name="username" id="login-username" class="text-input" />
             <div class="ErrMsg" style="color:red;font-size:2vh;"></div>
              </div>
              <div class="field-two">
@@ -37,12 +37,12 @@
             <input
               type="password"
               name="password"
-              id="password"
+              id="login-password"
               class="text-input"
             />
             <div class="ErrMsg" style="color:red;font-size:2vh;"></div>
           </div>
-            <button type="submit" class="lgn-btn">
+            <button type="submit" id="lgn-btn" class="lgn-btn">
               <a
                 style="text-decoration: none; color: white"
                           >
@@ -54,5 +54,6 @@
             </form>
         </div>
       </section>
+      <script src="../js/ApisData/signup.js"></script>
 </body>
 </html>

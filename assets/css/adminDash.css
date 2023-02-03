@@ -88,6 +88,27 @@ body{
   padding-right: 4vh;
   cursor: pointer;
 }
+/* flash messages*/
+.flashmes{
+  background-color: #7f6a55;
+  padding: 0.5vh;
+  box-shadow: inset 1px 1px 1px 1px violet;
+  border-radius: 1vh;
+  width: fit-content;
+  position: absolute;
+  top:-12vh;
+  right: 2vw;
+  visibility: hidden;
+}
+.welcome-mess{
+  color:white;;
+  padding-left: 1.5vw;
+  padding-right: 1.5vw;
+}
+.showup{
+  visibility: visible;
+}
+/**/
 .create-blog {
   width: 50vw;
   margin-left: 18vh;
