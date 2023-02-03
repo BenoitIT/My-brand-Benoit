@@ -58,9 +58,9 @@
                 </div>
                 <div class="create-blog show-blog">
                     <form class="logn" id="blog-form">
-                        <label for="topic"><b>Topic</b></label>
+                        <label for="topic"><b>Blog Title</b></label>
                         <input type="text" name="blog-topic" id="topic" class="text-input" />
-                        <label for="Title"><b>Blog-Title</b></label>
+                        <label for="Title"><b>category</b></label>
                         <input type="text" name="Blog-Title" id="Title" class="text-input" />
                         <label for="image"></label><img id="test-img" class="imge-preview" src=""
                             alt="blog-file" width="50px" height="50px" /></label>
@@ -82,10 +82,10 @@
                     <table class="styled-table" id="table-blog">
                         <thead>
                             <tr>
-                                <th>Topic</th>
-                                <th>Title</th>
-                                <th>Blog-file</th>
-                                <th>Message</th>
+                                <th>Blog Title</th>
+                                <th>category</th>
+                                <th>Blog-description</th>
+                                <th>blogImageUrl</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -93,14 +93,16 @@
                         </tbody>
                     </table>
                     <div class="update-blog-form remove-updateForm">
-                        <form class="update-form">
-                            <label for="topic">Topic</label>
+                        <form class="update-form" content-type="multipart/form-data">
+                            <label for="topic">Title</label>
                             <input type="text" name="blogtopic" id="topic" class="text-input" value="" />
-                            <label for="Title">Blog-Title</label>
+                            <label for="Title">category</label>
                             <input type="text" name="BlogTitle" id="Title" class="text-input" value="" />
-                            <label for="contents">blog contents</label>
-                            <textarea class="text-input" name="contents">
-              </textarea>
+                            <label for="image">blog image</label>
+                            <input type="file" name="image" id="image" class="text-input" value="" />
+                            <label for="contents">blog description</label>
+                            <textarea class="text-input" name="contents" value="" >
+                              </textarea>
                             <button class="lgn-btn" id="editBtn" type="button">Edit</button>
                         </form>
                     </div>
@@ -112,12 +114,14 @@
         </div>
 
         <script src="../js/admindash.js"></script>
-        <script src="/dst/logout.bundler.js"></script>
+        <script src="../js/ApisData/dashboard/displayBlogTabl.js"></script>
+        <script src="../js/ApisData/dashboard/postBlog.js"></script>
+    
         <!-- <script src="../js/blogDatastore.js"></script> -->
         <!-- <script src="../js/deleteBlog.js"></script> -->
         <!-- <script src="../js/index.js"></script> -->
-        <script src="/dst/addBlog.bundler.js"></script>
-        <script src="/dst/deleteBlog.bundler.js"></script>
+        <!-- <script src="/dst/addBlog.bundler.js"></script>
+        <script src="/dst/deleteBlog.bundler.js"></script> --> 
        </body>
 
 </html>

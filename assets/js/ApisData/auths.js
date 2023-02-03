@@ -20,6 +20,7 @@ body: JSON.stringify({
     console.log(data)
     const message=data.message;
      const accessToken=data.data;
+     const isAdmin=data.role;
      loginMessage.textContent=message;
      setTimeout(()=>{
          if(message!=='welcome'){
@@ -32,13 +33,17 @@ body: JSON.stringify({
                 loginMessage.parentElement.style.backgroundColor='';
                 loginMessage.parentElement.classList.add('showup')
             }
-     },1000)
+     },2000)
     setInterval(()=>{
         loginMessage.parentElement.classList.remove('showup')
-    },10000)
+    },5000)
     if(accessToken){
         localStorage.setItem("accessToken",JSON.stringify(accessToken));
-        window.location.href = 'https://benn-dev-brand.netlify.app//assets/admin/home.html';
+        if(isAdmin){
+            window.location.href = 'http://127.0.0.1:5500//assets/admin/home.html';
+        }else{
+          window.location.href = 'http://127.0.0.1:5500/assets/blogs/singleBlog.html?id=63db4ab63b4b3b58d16b87f7';  
+        }
     }
     });
 })

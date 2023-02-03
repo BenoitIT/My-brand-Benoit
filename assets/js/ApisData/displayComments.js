@@ -4,13 +4,13 @@ const findblogId = () => {
     return foundId;
   };
   let Id = findblogId();
+  if(Id){
   fetch(`https://dead-jade-coypu-cape.cyclic.app/Api/blogs/blog/${Id}`,{ mode: 'cors' }).then(res=>res.json()
   ).then( articles => {
    let comments=articles.data.comments;
    let commentList = document.querySelector(".comment-list");
    comments.reverse().forEach((comm) => {
      if (comm.blog== Id) {
-      console.log(comm.comment);
       let commenting = document.createElement("div");
       commenting.classList.add("comment");
       let commentdDscription = document.createElement("comment-description");
@@ -28,3 +28,4 @@ const findblogId = () => {
 }).catch(err=>{
     console.log(err)
 })
+}
