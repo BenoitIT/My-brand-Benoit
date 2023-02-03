@@ -42,5 +42,7 @@ UploadBlogForm &&
         blogImage:image,
       }),
     }).then(res=>res.json())
-     .then(data=>console.log(data));
+     .then(data=>{
+      alert(data.message)
+     });
   });
