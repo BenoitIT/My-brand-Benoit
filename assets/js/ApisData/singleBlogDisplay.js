@@ -1,4 +1,4 @@
-const token=JSON.parse(localStorage.getItem('accessToken'));
+const token=JSON.parse(localStorage.getItem('accessToken')||"[]");
 const findblogid = () => {
     let parameter = new URLSearchParams(window.location.search);
     let foundId = parameter.get("id");

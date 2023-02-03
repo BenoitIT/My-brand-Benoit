@@ -33,7 +33,7 @@ body: JSON.stringify({
                 loginMessage.parentElement.style.backgroundColor='';
                 loginMessage.parentElement.classList.add('showup')
             }
-     },2000)
+     },900)
     setInterval(()=>{
         loginMessage.parentElement.classList.remove('showup')
     },5000)

@@ -21,7 +21,44 @@ const findblogId = () => {
       p.innerText = comm.comment;
       commentdDscription.appendChild(h1);
       commentdDscription.appendChild(p);
+      let actionDiv=document.createElement('div');
+      actionDiv.classList.add('commentActions');
+      let deleteSpan=document.createElement('span');
+          deleteSpan.innerText='delete';
+          deleteSpan.style.color='orange';
+      let UpdateSpan=document.createElement('span');
+      deleteSpan.addEventListener('click',()=>{
+        fetch(`https://dead-jade-coypu-cape.cyclic.app/Api/blog/comments/delete/${comm._id}`,{
+        method:'DELETE',
+        headers: {
+          "Authorization": `Bearer ${token}`
+      },
+    })
+        .then(res=>res.json())
+        .then(message=>{
+          alert(message.message)
+          console.log(message)
+        });
+      })
+      UpdateSpan.innerText='update';
+      UpdateSpan.style.color='blue';
+      UpdateSpan.addEventListener('click',()=>{
+        fetch(`https://dead-jade-coypu-cape.cyclic.app/Api/blog/comments/update/${comm._id}`,{
+        method:'PATCH',
+        headers: {
+          "Authorization": `Bearer ${token}`
+      },
+    })
+        .then(res=>res.json())
+        .then(message=>{
+          alert(message.message)
+          console.log(message)
+        });
+      })
+      actionDiv.appendChild(deleteSpan);
+      actionDiv.appendChild(UpdateSpan);
       commenting.appendChild(commentdDscription);
+      commenting.appendChild(actionDiv);
       commentList.appendChild(commenting);
     }
   });;

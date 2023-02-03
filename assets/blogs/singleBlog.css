@@ -167,7 +167,7 @@ body{
     width:20vw;
     padding-left: 2vh;
     padding-right: 2vh;
-    padding-bottom: 2vh;
+    padding-bottom: 0.5vh;
    }
    .comment-list h5:hover{
     cursor: pointer;
@@ -190,6 +190,13 @@ body{
   }
   .showup{
     display: block;
+  }
+  .commentActions{
+    display: flex;
+    flex-direction: row;
+    gap:2vw;
+    justify-content: center;
+    font-size:smaller;
   }
 @media(max-width:600px){
     .blog-list .blog{
