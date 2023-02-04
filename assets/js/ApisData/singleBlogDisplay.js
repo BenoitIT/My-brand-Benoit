@@ -47,9 +47,11 @@ const findblogid = () => {
     messSpan.classList.add('welcome-mess');
     messSpan.innerText='hhdhdjdhdhjsjss';
     messDiv.classList.add('flashy');
+    const loader=document.querySelector('.loader');
     button.addEventListener("click",(e)=>{
       e.preventDefault();
-      console.log('clicked')
+      loader.classList.add('loading');
+      loader.classList.remove('loader');
       const commText = input.value
       fetch(`https://dead-jade-coypu-cape.cyclic.app/Api/blog/${id}/addcomment/`,
       {
@@ -65,6 +67,7 @@ const findblogid = () => {
     }).then(res=>res.json()).then(message=>{
       console.log(message)
       setTimeout(()=>{
+      loader.classList.add('stopLoad');
       messSpan.innerText=message.message;
       messDiv.classList.add('showup')      
       },2000)

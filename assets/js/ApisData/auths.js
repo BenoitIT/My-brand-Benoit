@@ -2,8 +2,11 @@ const userEmail=document.querySelector("#login-email");
 const userPassword=document.querySelector("#login-password");
 const loginBtn=document.querySelector("#lgn-btn");
 const loginMessage=document.querySelector("#logn-notification");
+const loader=document.querySelector('.loader');
 loginBtn.addEventListener('click',(e)=>{
     e.preventDefault();
+    loader.classList.add('loading');
+    loader.classList.remove('loader');
 fetch('https://dead-jade-coypu-cape.cyclic.app/Api/admin/login',
 {
 method:'POST',
@@ -23,6 +26,7 @@ body: JSON.stringify({
      const isAdmin=data.role;
      loginMessage.textContent=message;
      setTimeout(()=>{
+        loader.classList.add('stopLoad');
          if(message!=='welcome'){
              loginMessage.parentElement.style.backgroundColor='salmon';
              loginMessage.parentElement.classList.add('showup');

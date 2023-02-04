@@ -21,6 +21,16 @@ const findblogId = () => {
       p.innerText = comm.comment;
       commentdDscription.appendChild(h1);
       commentdDscription.appendChild(p);
+      const loader=document.createElement('div');
+      loader.classList.add('smallLoader');
+      const innerLine=document.createElement('div');
+      innerLine.classList.add('inner');
+      innerLine.classList.add('one');
+      const outerLine=document.createElement('div');
+      outerLine.classList.add('inner');
+      outerLine.classList.add('three');
+      loader.appendChild(innerLine);;
+      loader.appendChild(outerLine);
       let actionDiv=document.createElement('div');
       actionDiv.classList.add('commentActions');
       let deleteSpan=document.createElement('span');
@@ -28,6 +38,7 @@ const findblogId = () => {
           deleteSpan.style.color='orange';
       let UpdateSpan=document.createElement('span');
       deleteSpan.addEventListener('click',()=>{
+        commenting.appendChild(loader);
         fetch(`https://dead-jade-coypu-cape.cyclic.app/Api/blog/comments/delete/${comm._id}`,{
         method:'DELETE',
         headers: {
@@ -36,13 +47,15 @@ const findblogId = () => {
     })
         .then(res=>res.json())
         .then(message=>{
-          alert(message.message)
+         commenting.removeChild(loader)
+          alert(message.message);
           console.log(message)
         });
       })
       UpdateSpan.innerText='update';
       UpdateSpan.style.color='blue';
       UpdateSpan.addEventListener('click',()=>{
+        commenting.appendChild(loader);
         fetch(`https://dead-jade-coypu-cape.cyclic.app/Api/blog/comments/update/${comm._id}`,{
         method:'PATCH',
         headers: {
@@ -51,6 +64,7 @@ const findblogId = () => {
     })
         .then(res=>res.json())
         .then(message=>{
+          commenting.removeChild(loader)
           alert(message.message)
           console.log(message)
         });

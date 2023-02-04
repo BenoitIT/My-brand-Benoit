@@ -3,8 +3,11 @@ const userEmail=document.querySelector("#login-email");
 const userName=document.querySelector("#login-username");
 const userPassword=document.querySelector("#login-password");
 const loginMessage=document.querySelector("#logn-notification");
+const loader=document.querySelector('.loader');
 loginBtn.addEventListener('click',(e)=>{
     e.preventDefault();
+    loader.classList.add('loading');
+    loader.classList.remove('loader');
 fetch('https://dead-jade-coypu-cape.cyclic.app/Api/admin/register',
 {
 method:'POST',
@@ -25,6 +28,7 @@ body: JSON.stringify({
      const isAdmin=responses.role;
      loginMessage.textContent=message;
      setTimeout(()=>{
+        loader.classList.add('stopLoad');
          if(message!=='account successfully created'){
              loginMessage.parentElement.style.backgroundColor='salmon';
              loginMessage.parentElement.classList.add('showup');
