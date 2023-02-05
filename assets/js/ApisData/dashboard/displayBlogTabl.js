@@ -1,4 +1,5 @@
 const token=JSON.parse(localStorage.getItem('accessToken'));
+const loader=document.querySelector('.loader');
 fetch('https://dead-jade-coypu-cape.cyclic.app/Api/blogs/all',
 { mode: 'cors' })
 .then(res=>res.json()
@@ -23,6 +24,8 @@ const updateBtn =document.querySelectorAll('.update')
 let buttonIndex;
 deleteBtn.forEach((el, i)=>{
   el.addEventListener('click', function(){
+    loader.classList.add('loading');
+    loader.classList.remove('loader');
     buttonIndex=i;
     blogs.forEach((element, i)=>{
       if(i===buttonIndex){
@@ -35,11 +38,10 @@ deleteBtn.forEach((el, i)=>{
     }).then(res=>res.json())
         .then(data=>{
           console.log(data)
-          const updateBtn = document.querySelectorAll('.update');
-          const updateForm=document.querySelector('.update-blog-form');
-          const blogTable=document.querySelector('#table-blog');
-          const updateFormNative=document.querySelector('.update-form');
-          const editBtn=document.querySelector('#editBtn');
+          loader.classList.add('stopLoad');
+          setTimeout(()=>{
+            location.reload()
+          },500);
       });
       }
     })
@@ -52,6 +54,8 @@ const editBtn=document.querySelector('#editBtn');
 let upbuttonIndex;
 updateBtn.forEach((el, i)=>{
   el.addEventListener('click', function(){
+    loader.classList.add('loading');
+    loader.classList.remove('loader');
     upbuttonIndex=i;
     blogs.forEach((element, i)=>{
       if(i===upbuttonIndex){
@@ -74,6 +78,7 @@ updateBtn.forEach((el, i)=>{
       }).then(res=>res.json())
       .then(data=>{
         console.log(data)
+        loader.classList.add('stopLoad');
         
       });
       updateForm.classList.add('remove-updateForm');

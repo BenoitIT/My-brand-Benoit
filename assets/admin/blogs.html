@@ -8,6 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="../css/index.css">
     <link rel="stylesheet" type="text/css" href="../css/adminDash.css">
+    <link rel="stylesheet" type="text/css" href="./login.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <!--initializing quill cdn main libraries-->
@@ -64,7 +65,7 @@
                         <label for="Title"><b>category</b></label>
                         <input type="text" name="Blog-Title" id="Title" class="text-input" />
                         <label for="image"></label><img id="test-img" class="imge-preview" src=""
-                            alt="blog-file" width="50px" height="50px" /></label>
+                        alt="blog-file" width="50px" height="50px" /></label>
                         <input type="file" name="Blog-file" id="image-upload" mimeType="jpg" />
                         <div id="blog-editor"></div>
                         <!--adding quill as wyisg editor-->
@@ -73,12 +74,12 @@
                                 theme: 'snow',
                                 placeholder: 'type contents for a blog'
                             });
-                        </script>
+                            </script>
                         <button id="upload" class="lgn-btn">Save blog</button>
                     </form>
-
+                    
                 </div>
-
+                
                 <div class="blog-table hide-blogs">
                     <table class="styled-table" id="table-blog">
                         <thead>
@@ -93,6 +94,7 @@
                         <tbody id="table-body">
                         </tbody>
                     </table>
+                    <div class="loader">Loading...</div>
                     <div class="update-blog-form remove-updateForm">
                         <form class="update-form" content-type="multipart/form-data">
                             <label for="topic">Title</label>

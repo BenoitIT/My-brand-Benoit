@@ -69,7 +69,8 @@ const findblogid = () => {
       setTimeout(()=>{
       loader.classList.add('stopLoad');
       messSpan.innerText=message.message;
-      messDiv.classList.add('showup')      
+      messDiv.classList.add('showup') 
+        location.reload()     
       },2000)
      setInterval(()=>{
       messDiv.classList.remove('showup')
