@@ -65,7 +65,6 @@ const findblogid = () => {
        comment:commText
       }),
     }).then(res=>res.json()).then(message=>{
-      console.log(message)
       setTimeout(()=>{
       loader.classList.add('stopLoad');
       messSpan.innerText=message.message;

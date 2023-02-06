@@ -3,6 +3,9 @@ const blogImage = document.querySelector("#image-upload");
 const blogTopic = document.querySelector("#topic");
 const blogTitle = document.querySelector("#Title");
 const quillEditor = document.querySelector("#blog-editor");
+const messDiv=document.querySelector(".flashme");
+const messSpan=document.querySelector(".welcome-mes");
+const loaderr=document.querySelector('.loader');
 const formData = new FormData();
 blogImage.addEventListener("change", (event) => {
   event.preventDefault();
@@ -24,6 +27,8 @@ const UploadBlogForm = document.querySelector("#blog-form");
 UploadBlogForm &&
   UploadBlogForm.addEventListener("submit", (e) => {
     e.preventDefault();
+    loaderr.classList.add('loading');
+    loaderr.classList.remove('loader');
     formData.append("title", blogTitle.value);
     formData.append("category", blogTopic.value);
     formData.append("blogDescription", quillEditor.textContent);
@@ -37,6 +42,14 @@ UploadBlogForm &&
     })
       .then((res) => res.json())
       .then((data) => {
-        alert(data.message)
+        setTimeout(()=>{
+        loaderr.classList.add('stopLoad');
+        messSpan.innerText=data.message;
+        messDiv.classList.add('showup') 
+      },1000)
+      setInterval(()=>{
+        messDiv.classList.remove('showup')
+        location.reload()     
+       },8000)
       });
   });
