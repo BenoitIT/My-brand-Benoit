@@ -44,9 +44,9 @@ body: JSON.stringify({
     if(accessToken){
         localStorage.setItem("accessToken",JSON.stringify(accessToken));
         if(isAdmin){
-            window.location.href = 'http://127.0.0.1:5500//assets/admin/home.html';
+            window.location.href = 'https://benn-dev-brand.netlify.app/assets/admin/home.html';
         }else{
-          window.location.href = 'http://127.0.0.1:5500/assets/blogs/singleBlog.html?id=63db4ab63b4b3b58d16b87f7';  
+          window.location.href = 'https://benn-dev-brand.netlify.app/assets/blogs/singleBlog.html?id=63db4ab63b4b3b58d16b87f7';  
         }
     }
     });
