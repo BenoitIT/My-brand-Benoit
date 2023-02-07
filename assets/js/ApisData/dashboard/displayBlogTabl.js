@@ -67,7 +67,6 @@ fetch("https://dead-jade-coypu-cape.cyclic.app/Api/blogs/all", { mode: "cors" })
             blogTable.style.opacity = "5%";
             updateFormNative.blogtopic.value = element.title;
             updateFormNative.BlogTitle.value = element.category;
-            updateFormNative.image.value = element.blogImage;
             updateFormNative.contents.value = element.blogDescription;
             const formDat = new FormData();
             const blogImag = document.querySelector("#image");
@@ -76,26 +75,27 @@ fetch("https://dead-jade-coypu-cape.cyclic.app/Api/blogs/all", { mode: "cors" })
             const quillEdit = document.querySelector("#content");
             blogImag.addEventListener("change", (event) => {
               event.preventDefault();
-              const fille = blogImage.files[0];
+              const fille = blogImag.files[0];
               formDat.append("blogImage", fille);
             });
             editBtn.addEventListener("click", () => {
               formDat.append("title", blogTitl.value);
               formDat.append("category", blogTop.value);
               formDat.append("blogDescription", quillEdit.value);
+              console.log(formDat);
               fetch(
                 `https://dead-jade-coypu-cape.cyclic.app/Api/blog/${element._id}`,
                 {
                   method: "PATCH",
                   headers: {
-                    Authorization: `Bearer ${token}`,
+                    "Authorization": `Bearer ${token}`,
                   },
-                  body: formData,
+                  body: formDat,
                 }
               )
                 .then((res) => res.json())
                 .then((data) => {
-                  console.log(data);
+                  alert(data.message);
                   loader.classList.add("stopLoad");
                 });
               updateForm.classList.add("remove-updateForm");
