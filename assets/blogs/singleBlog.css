@@ -385,6 +385,9 @@ body{
     justify-content: center;
     font-size:smaller;
   }
+  .commentActions:hover{
+    cursor: pointer;
+  }
 @media(max-width:600px){
     .blog-list .blog{
         display:none;
@@ -425,6 +428,13 @@ body{
         width:35vw;
         font-size: 3vw;
     }
+    .comment-list .logn .edit-btn{
+      margin-left:40vw;
+      height:2vh;
+      color:white;
+      width:30vw;
+      font-size: 1.5vw;
+  }
     .blog-body .like .material-icons{
         padding-top:-1vh;
         font-size: 2vh;

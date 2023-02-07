@@ -3,7 +3,7 @@ const findblogId = () => {
     let foundId = parameter.get("id");
     return foundId;
   };
-  const token=JSON.parse(localStorage.getItem('accessToken'));
+  const userToken=JSON.parse(localStorage.getItem('accessToken'));
   let Id = findblogId();
   if(Id){
   fetch(`https://dead-jade-coypu-cape.cyclic.app/Api/blogs/blog/${Id}`,{ mode: 'cors' }).then(res=>res.json()
@@ -43,7 +43,7 @@ const findblogId = () => {
         fetch(`https://dead-jade-coypu-cape.cyclic.app/Api/blog/comments/delete/${comm._id}`,{
         method:'DELETE',
         headers: {
-          "Authorization": `Bearer ${token}`
+          "Authorization": `Bearer ${userToken}`
       },
     })
         .then(res=>res.json())
@@ -61,7 +61,7 @@ const findblogId = () => {
       UpdateSpan.addEventListener('click',()=>{
         fetch(`https://dead-jade-coypu-cape.cyclic.app/Api/blog/comments/${comm._id}`,{
           headers: {
-            "Authorization": `Bearer ${token}`
+            "Authorization": `Bearer ${userToken}`
           },
         })
         .then(res=>res.json())
@@ -79,15 +79,16 @@ const findblogId = () => {
           form.appendChild(input);
           let button = document.createElement("button");
           button.type="button";
-          button.id = "comment-btn";
-          button.classList.add("lgn-btn");
+          button.id = "edit-btn";
+          button.classList.add("edit-btn");
           button.innerText = "edit";
           button.addEventListener('click',()=>{
             commenting.appendChild(loader);
             fetch(`https://dead-jade-coypu-cape.cyclic.app/Api/blog/comments/update/${comm._id}`,{
             method:'PATCH',
             headers: {
-              "Authorization": `Bearer ${token}`
+              "Content-Type": "application/json",
+              "Authorization": `Bearer ${userToken}`
           },
           body:JSON.stringify({
             comment:input.value
