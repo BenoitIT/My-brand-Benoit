@@ -975,16 +975,18 @@ hr {
     height: 70vh;
   }
   .projects {
-    display: flex;
-    flex-direction: column;
-    margin-left: 18vw;
-  }
-  .projects:nth-child(2) {
     display: none;
+    flex-direction: column;
+    margin-left: 4vw;
+  }
+  .projects:nth-child(1) {
+    display: block;
   }
   .project-img img {
-    width: 50vw;
-    margin-left: 5vw;
+    width: 70vw;
+    margin-left: 1vw;
+    aspect-ratio: 1/1;
+    object-fit: cover;
   }
   .project-description {
     font-family: var(--profile-description-font);
@@ -993,14 +995,17 @@ hr {
     margin-top: 1vh;
   }
   .project-description h3 {
-    margin-top: -3vh;
+   font-size: 2.5vh;
   }
   .project-description p {
     width: 70vw;
-    font-size: 2.4vh;
+    font-size: 1.8vh;
   }
   .project-description button{
+    margin-top: -0.5vh;
     margin-left: 10vw;
+    height: 3vh;
+    font-size: smaller;
   }
   /*skills*/
   .sectionskills-title > h1 {
@@ -1063,7 +1068,7 @@ hr {
   }
   .contact-box h1 {
     margin-top: -3vh;
-    margin-left: 15vw;
+    margin-left: -20vw;
     font-weight: 600;
     font-size: 2vh;
     margin-bottom: 2vh;
@@ -1073,7 +1078,7 @@ hr {
     margin-right: 25vw;
   }
   .icons {
-    margin-left: 5vw;
+    margin-left: 10vw;
   }
   .icon-fb img,
   .icon-linkedin img {
@@ -1140,11 +1145,11 @@ hr {
     margin-left: -10vw;
   }
   .footer .menu {
-    margin-left: -28vw;
+    margin-left: -30vw;
     font-size: 2vh;
   }
   .subscribe {
-    margin-left: -20vw;
+    margin-left: -30vw;
   }
   .footer .menu ul li {
     list-style: none;
@@ -1364,9 +1369,9 @@ hr {
     height: 85vh;
   }
   .projects {
-    display: flex;
+    display: none;
     flex-direction: column;
-    margin-left: 18vw;
+    margin-left: 10vw;
   }
   .section-title h2{
     font-size: 5vh;
@@ -1374,22 +1379,24 @@ hr {
   .section-title h5{
     font-size: 2vh;
   }
-  .projects:nth-child(2) {
-    display: none;
+  .projects:nth-child(1) {
+    display: block;
   }
   .project-img img {
     width: 60vw;
     margin-left:2vw;
+    aspect-ratio: 1/1;
+    object-fit: cover;
   }
   .project-description {
     font-family: var(--profile-description-font);
     font-size: 3vh;
     width: 60vw;
-    margin-top: 1vh;
+   
   }
   .project-description h3 {
     margin-top: -3vh;
-    margin-left: 18vw;
+    margin-left: 10vw;
   }
   .project-description p {
     width: 70vw;
@@ -1501,7 +1508,7 @@ hr {
   }
   .contact-box h1 {
     margin-top: -3vh;
-    margin-left: 18vw;
+    margin-left: -20vw;
     font-weight: 600;
     font-size: 2.3vh;
     margin-bottom: 2vh;

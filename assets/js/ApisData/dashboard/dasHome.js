@@ -1,4 +1,5 @@
 const token=JSON.parse(localStorage.getItem('accessToken'));
+const deleteBtn=document.querySelector("#deleteMs");
 fetch('https://dead-jade-coypu-cape.cyclic.app/Api/messages/all',{
     headers: {"Authorization": `Bearer ${token}`}
 },{ mode: 'cors' })
@@ -40,6 +41,25 @@ fetch('https://dead-jade-coypu-cape.cyclic.app/Api/messages/all',{
        senderName.innerText=element.senderName;
        senderEmail.innerText=element.senderEmail;
        senderMsg.innerText=element.message;
+       deleteBtn.addEventListener('click',()=>{
+        fetch(`https://dead-jade-coypu-cape.cyclic.app/Api/messages/message/delete/${element._id}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+        .then((res) =>{
+         if(res){
+           ViewMessgForm.classList.add('remove-updateForm');
+           ViewMessgForm.classList.remove('show-updateForm');
+           MsgTable.style.opacity='100%';
+           alert('message deleted');
+           location.reload();
+         }
+        })
+       });
        close.addEventListener('click',()=>{
         ViewMessgForm.classList.add('remove-updateForm');
         ViewMessgForm.classList.remove('show-updateForm');
