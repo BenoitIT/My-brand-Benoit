@@ -272,6 +272,16 @@ table thead tr{
 background-color: rgb(195, 59, 59);
 cursor: pointer;
  }
+ .delete-btn{
+  background-color: darkorange;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-top: 0.5vh;
+  padding-bottom: 0.5vh;
+  border: none;
+  border-radius: 10px;
+  color: white;
+ }
 
 @media (max-width: 600px) {
   .side-bar {
