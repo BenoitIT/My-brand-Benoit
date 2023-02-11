@@ -8,9 +8,11 @@ const findblogId = () => {
   const login=document.querySelector(".login");
   if(userToken.length<1){
     logout.classList.add('hideLogout');
+    login.classList.remove('hideLogout');
   }else{
-  login.classList.add('hideLogout');
-  logout.addEventListener('click',(e)=>{
+    login.classList.add('hideLogout');
+    logout.classList.remove('hideLogout');
+    logout.addEventListener('click',(e)=>{
     e.preventDefault();
     localStorage.setItem("accessToken","");
      window.location.href="http://127.0.0.1:5500/";
