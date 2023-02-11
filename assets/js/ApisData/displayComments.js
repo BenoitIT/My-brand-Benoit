@@ -7,18 +7,18 @@ const findblogId = () => {
   const logout=document.querySelector(".logout");
   const login=document.querySelector(".login");
   if(userToken.length<1){
-    logout.classList.remove('hideLogout');
-    login.classList.add('hideLogout');
-  }else{
-    login.classList.remove('hideLogout');
     logout.classList.add('hideLogout');
+    login.classList.remove('hideLogout');
+  }else{
+    login.classList.add('hideLogout');
+    logout.classList.remove('hideLogout');
+  }
     logout.addEventListener('click',(e)=>{
     e.preventDefault();
     localStorage.setItem("accessToken","");
      window.location.href="http://127.0.0.1:5500/";
      alert('you are logged out');
   })
-}
   let Id = findblogId();
   if(Id){
   fetch(`https://dead-jade-coypu-cape.cyclic.app/Api/blogs/blog/${Id}`,{ mode: 'cors' }).then(res=>res.json()
