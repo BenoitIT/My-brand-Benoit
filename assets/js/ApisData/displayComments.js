@@ -16,7 +16,7 @@ const findblogId = () => {
     logout.addEventListener('click',(e)=>{
     e.preventDefault();
     localStorage.setItem("accessToken","");
-     window.location.href="http://127.0.0.1:5500/";
+     window.location.href="https://benn-dev-brand.netlify.app/";
      alert('you are logged out');
   })
   let Id = findblogId();
