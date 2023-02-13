@@ -70,8 +70,6 @@ fetch("https://dead-jade-coypu-cape.cyclic.app/Api/blogs/all", { mode: "cors" })
             updateFormNative.contents.value = element.blogDescription;
             const formDat = new FormData();
             const blogImag = document.querySelector("#image");
-            const blogTop = document.querySelector("#topic");
-            const blogTitl = document.querySelector("#Title");
             const quillEdit = document.querySelector("#content");
             blogImag.addEventListener("change", (event) => {
               event.preventDefault();
@@ -79,10 +77,10 @@ fetch("https://dead-jade-coypu-cape.cyclic.app/Api/blogs/all", { mode: "cors" })
               formDat.append("blogImage", fille);
             });
             editBtn.addEventListener("click", () => {
-              formDat.append("title", blogTitl.value);
-              formDat.append("category", blogTop.value);
+              console.log(updateFormNative.blogtopic.value);
+              formDat.append("title", updateFormNative.blogtopic.value);
+              formDat.append("category", updateFormNative.BlogTitle.value)
               formDat.append("blogDescription", quillEdit.value);
-              console.log(formDat);
               fetch(
                 `https://dead-jade-coypu-cape.cyclic.app/Api/blog/${element._id}`,
                 {
