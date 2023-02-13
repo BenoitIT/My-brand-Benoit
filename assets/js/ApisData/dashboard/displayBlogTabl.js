@@ -7,7 +7,7 @@ fetch("https://dead-jade-coypu-cape.cyclic.app/Api/blogs/all", { mode: "cors" })
   .then((articles) => {
     loader.classList.add("stopLoad");
     let blogs = articles.data;
-    let tableData;
+    let tableData="";
     blogs.forEach((blog, i) => {
       tableData += `<tr>
   <td>${blog.title}</td>

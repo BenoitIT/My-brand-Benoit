@@ -10,7 +10,7 @@ fetch('https://dead-jade-coypu-cape.cyclic.app/Api/messages/all',{
 ).then( messages => {
   loader.classList.add('stopLoad');
   let messagesArr = messages.message;
-  let tableData;
+  let tableData=" ";
   messagesArr.forEach((message,i)=>{
     tableData+=`<tr>
     <td>${i+1}</td>
@@ -21,7 +21,7 @@ fetch('https://dead-jade-coypu-cape.cyclic.app/Api/messages/all',{
     </td>
     </tr>`;
   })
-  let tableBODY=document.querySelector("#msgTbody");
+  let tableBODY=document.getElementById("msgTbody");
   tableBODY.innerHTML=tableData;
   //working on view single message
   const viewBtn = document.querySelectorAll('.viewBtn');
