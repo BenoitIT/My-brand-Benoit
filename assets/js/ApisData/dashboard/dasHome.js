@@ -1,10 +1,14 @@
 const token=JSON.parse(localStorage.getItem('accessToken'));
 const deleteBtn=document.querySelector("#deleteMs");
+const loader=document.querySelector('.load');
+loader.classList.add('loading');
+loader.classList.remove('load');
 fetch('https://dead-jade-coypu-cape.cyclic.app/Api/messages/all',{
     headers: {"Authorization": `Bearer ${token}`}
 },{ mode: 'cors' })
 .then(res=>res.json()
 ).then( messages => {
+  loader.classList.add('stopLoad');
   let messagesArr = messages.message;
   let tableData;
   messagesArr.forEach((message,i)=>{
