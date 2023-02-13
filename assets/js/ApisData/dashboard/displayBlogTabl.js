@@ -1,8 +1,11 @@
 const token = JSON.parse(localStorage.getItem("accessToken"));
-const loader = document.querySelector(".loader");
+const loader = document.querySelector(".loade");
+loader.classList.add("loading");
+loader.classList.remove("loade");
 fetch("https://dead-jade-coypu-cape.cyclic.app/Api/blogs/all", { mode: "cors" })
   .then((res) => res.json())
   .then((articles) => {
+    loader.classList.add("stopLoad");
     let blogs = articles.data;
     let tableData;
     blogs.forEach((blog, i) => {
@@ -24,7 +27,7 @@ fetch("https://dead-jade-coypu-cape.cyclic.app/Api/blogs/all", { mode: "cors" })
     deleteBtn.forEach((el, i) => {
       el.addEventListener("click", function () {
         loader.classList.add("loading");
-        loader.classList.remove("loader");
+        loader.classList.remove("loade");
         buttonIndex = i;
         blogs.forEach((element, i) => {
           if (i === buttonIndex) {
@@ -40,10 +43,10 @@ fetch("https://dead-jade-coypu-cape.cyclic.app/Api/blogs/all", { mode: "cors" })
               .then((res) => res.json())
               .then((data) => {
                 console.log(data);
-                loader.classList.add("stopLoad");
                 setTimeout(() => {
+                  loader.classList.add("stopLoad");
                   location.reload();
-                }, 500);
+                }, 900);
               });
           }
         });
@@ -56,8 +59,6 @@ fetch("https://dead-jade-coypu-cape.cyclic.app/Api/blogs/all", { mode: "cors" })
     let upbuttonIndex;
     updateBtn.forEach((el, i) => {
       el.addEventListener("click", function () {
-        loader.classList.add("loading");
-        loader.classList.remove("loader");
         upbuttonIndex = i;
         blogs.forEach((element, i) => {
           if (i === upbuttonIndex) {
@@ -77,7 +78,8 @@ fetch("https://dead-jade-coypu-cape.cyclic.app/Api/blogs/all", { mode: "cors" })
               formDat.append("blogImage", fille);
             });
             editBtn.addEventListener("click", () => {
-              console.log(updateFormNative.blogtopic.value);
+              loader.classList.add("loading");
+              loader.classList.remove("loade");
               formDat.append("title", updateFormNative.blogtopic.value);
               formDat.append("category", updateFormNative.BlogTitle.value)
               formDat.append("blogDescription", quillEdit.value);
@@ -95,10 +97,11 @@ fetch("https://dead-jade-coypu-cape.cyclic.app/Api/blogs/all", { mode: "cors" })
                 .then((data) => {
                   alert(data.message);
                   loader.classList.add("stopLoad");
+                  updateForm.classList.add("remove-updateForm");
+                  updateForm.classList.remove("show-updateForm");
+                  blogTable.style.opacity = "100%";
+                  location.reload();
                 });
-              updateForm.classList.add("remove-updateForm");
-              updateForm.classList.remove("show-updateForm");
-              blogTable.style.opacity = "100%";
             });
           }
         });

@@ -1,6 +1,9 @@
 .loader{
     visibility: hidden;
  }
+ .loade{
+  visibility: hidden;
+}
 .loading {
 position: fixed;
 z-index: 999;
