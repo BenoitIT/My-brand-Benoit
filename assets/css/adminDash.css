@@ -480,6 +480,7 @@ table thead tr{
 }
 .table tbody tr{
   border-bottom: 0.1vw solid #ddd;
+  display: inline-block;
 }
 .table tbody tr:nth-of-type(odd){
   background: #f3f3f3;
@@ -523,7 +524,7 @@ cursor: pointer;
   .side-bar {
     height: 100vh;
     width: 100vw;
-    margin-left: -100vw;
+   display: none;
   }
   .show-side-bar {
     display: block;
@@ -536,8 +537,7 @@ cursor: pointer;
   }
   .hide-menu-icon {
     display: none;
-    z-index: -1;
-    margin-left: -10vw;
+    margin-left: -20vw;
   }
   #logo {
     margin-top: 2vh;
@@ -598,9 +598,11 @@ cursor: pointer;
   }
   .blog-table {
     width: 90vw;
+    margin-top: -20vh;
     margin-left: -4vh;
     overflow: scroll;
     font-size: 1vh;
+    border: 1px solid darkslategray;
       }
    .project-table .styled-table,
   .blog-table .styled-table {
@@ -608,15 +610,24 @@ cursor: pointer;
   }
   .skills-table .styled-table thead th,
   .project-table .styled-table thead th {
-    font-size: 1vh;
+   display: none;
   }
   .blog-table .styled-table thead th {
-    font-size: 1vh;
+    display: none;
+  }
+  .skills-table .styled-table tbody tr td,
+  .project-table .styled-table tbody tr td,
+  .blog-table .styled-table tbody tr  td{
+    font-size: 1.5vh;
+    display: block;
+    width: 100vw;
+    text-align: center;
   }
   .skills-table .styled-table tbody tr,
   .project-table .styled-table tbody tr,
-  .blog-table .styled-table tbody tr {
-    font-size: 1.5vh;
+  .blog-table .styled-table tbody tr{
+    border: 1px solid darkslategray;
+    margin-bottom: 1vh;
   }
   td button {
     width: 15vw;

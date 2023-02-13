@@ -13,13 +13,14 @@ let mngProjectBtn = document.querySelector("#projects");
 let createProjectForm = document.querySelector(".create-project");
 let ManageProjectTable = document.querySelector(".project-table");
 let UpdateprojectBtn = document.querySelector("#update-project");
+let sideBar=document.querySelector('.side-bar');
 //swiching menus varibales
 //home variables
 menuIcon.addEventListener("click", () => {
-  sideBar.classList.remove("hide-side-bar");
-  sideBar.classList.add("show-side-bar");
-  rightContents.classList.add("hide-side-bar");
+  menuIcon.classList.add("hide-menu-icon");
   menuDiv.classList.add("hide-menu-icon");
+  sideBar.classList.add("show-side-bar");
+  rightContents.classList.add("side-bar");
 });
 
 //manage blog button
